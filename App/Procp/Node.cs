@@ -13,10 +13,12 @@ namespace Procp
         public bool IsFree { get; set; }
         public string Name { get; set; }
         public int NumberOfBaggages { get; set; }
+        
 
         public Node()
         {
             baggage = new List<Baggage>();
+          
         }
     }
 }

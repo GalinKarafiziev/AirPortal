@@ -10,6 +10,26 @@ namespace Procp
     {
         List<CheckIn> checkIns = new List<CheckIn>();
         List<Passenger> Passengers = new List<Passenger>();
+        List<Baggage> bags = new List<Baggage>();
+
+        public List<Baggage> getBagByDropOff(DropOff d)
+        {
+            List<Baggage> temp = new List<Baggage>();
+
+            foreach (Baggage b in bags)
+            {
+                if(b.DropOffGate == d)
+                {
+                    temp.Add(b);
+                }
+            }
+            return temp;
+        }
+
+        public void AddBag(Baggage bag)
+        {
+            bags.Add(bag);
+        }
 
         public void addPassenger(Passenger p)
         {
