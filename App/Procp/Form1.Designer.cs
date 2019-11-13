@@ -29,9 +29,31 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbDropoff3 = new System.Windows.Forms.GroupBox();
+            this.lbBagsLost3 = new System.Windows.Forms.Label();
+            this.lbTickets3 = new System.Windows.Forms.Label();
+            this.lbPassenger3 = new System.Windows.Forms.Label();
+            this.lbCheckIn3 = new System.Windows.Forms.Label();
+            this.lbBags3 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.gbDropoff2 = new System.Windows.Forms.GroupBox();
+            this.lbBagsLost2 = new System.Windows.Forms.Label();
+            this.lbTickets2 = new System.Windows.Forms.Label();
+            this.lbPassenger2 = new System.Windows.Forms.Label();
+            this.lbCheckIn2 = new System.Windows.Forms.Label();
+            this.lbBags2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.gbDropoff1 = new System.Windows.Forms.GroupBox();
             this.lbBagsLost = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbTickets1 = new System.Windows.Forms.Label();
             this.lbPassenger = new System.Windows.Forms.Label();
             this.lbCheckIn = new System.Windows.Forms.Label();
             this.lbBags = new System.Windows.Forms.Label();
@@ -41,32 +63,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Passengers = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
-            this.gbDropoff2 = new System.Windows.Forms.GroupBox();
-            this.lbBagsLost2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbPassenger2 = new System.Windows.Forms.Label();
-            this.lbCheckIn2 = new System.Windows.Forms.Label();
-            this.lbBags2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.gbDropoff3 = new System.Windows.Forms.GroupBox();
-            this.lbBagsLost3 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lbPassenger3 = new System.Windows.Forms.Label();
-            this.lbCheckIn3 = new System.Windows.Forms.Label();
-            this.lbBags3 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.gbDropoff1.SuspendLayout();
-            this.gbDropoff2.SuspendLayout();
             this.gbDropoff3.SuspendLayout();
+            this.gbDropoff2.SuspendLayout();
+            this.gbDropoff1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -82,10 +82,229 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistics";
             // 
+            // gbDropoff3
+            // 
+            this.gbDropoff3.Controls.Add(this.lbBagsLost3);
+            this.gbDropoff3.Controls.Add(this.lbTickets3);
+            this.gbDropoff3.Controls.Add(this.lbPassenger3);
+            this.gbDropoff3.Controls.Add(this.lbCheckIn3);
+            this.gbDropoff3.Controls.Add(this.lbBags3);
+            this.gbDropoff3.Controls.Add(this.label20);
+            this.gbDropoff3.Controls.Add(this.label21);
+            this.gbDropoff3.Controls.Add(this.label22);
+            this.gbDropoff3.Controls.Add(this.label23);
+            this.gbDropoff3.Controls.Add(this.label24);
+            this.gbDropoff3.Location = new System.Drawing.Point(911, 46);
+            this.gbDropoff3.Name = "gbDropoff3";
+            this.gbDropoff3.Size = new System.Drawing.Size(304, 269);
+            this.gbDropoff3.TabIndex = 10;
+            this.gbDropoff3.TabStop = false;
+            this.gbDropoff3.Text = "Dropoff ";
+            // 
+            // lbBagsLost3
+            // 
+            this.lbBagsLost3.AutoSize = true;
+            this.lbBagsLost3.Location = new System.Drawing.Point(174, 193);
+            this.lbBagsLost3.Name = "lbBagsLost3";
+            this.lbBagsLost3.Size = new System.Drawing.Size(48, 20);
+            this.lbBagsLost3.TabIndex = 9;
+            this.lbBagsLost3.Text = "Bags";
+            // 
+            // lbTickets3
+            // 
+            this.lbTickets3.AutoSize = true;
+            this.lbTickets3.Location = new System.Drawing.Point(174, 144);
+            this.lbTickets3.Name = "lbTickets3";
+            this.lbTickets3.Size = new System.Drawing.Size(48, 20);
+            this.lbTickets3.TabIndex = 8;
+            this.lbTickets3.Text = "Bags";
+            // 
+            // lbPassenger3
+            // 
+            this.lbPassenger3.AutoSize = true;
+            this.lbPassenger3.Location = new System.Drawing.Point(174, 109);
+            this.lbPassenger3.Name = "lbPassenger3";
+            this.lbPassenger3.Size = new System.Drawing.Size(48, 20);
+            this.lbPassenger3.TabIndex = 7;
+            this.lbPassenger3.Text = "Bags";
+            // 
+            // lbCheckIn3
+            // 
+            this.lbCheckIn3.AutoSize = true;
+            this.lbCheckIn3.Location = new System.Drawing.Point(174, 76);
+            this.lbCheckIn3.Name = "lbCheckIn3";
+            this.lbCheckIn3.Size = new System.Drawing.Size(48, 20);
+            this.lbCheckIn3.TabIndex = 6;
+            this.lbCheckIn3.Text = "Bags";
+            // 
+            // lbBags3
+            // 
+            this.lbBags3.AutoSize = true;
+            this.lbBags3.Location = new System.Drawing.Point(174, 38);
+            this.lbBags3.Name = "lbBags3";
+            this.lbBags3.Size = new System.Drawing.Size(48, 20);
+            this.lbBags3.TabIndex = 5;
+            this.lbBags3.Text = "Bags";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 193);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 20);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Bags Lost";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 38);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(106, 20);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Bags Arrived";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 144);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(101, 20);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Tickets Sold";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 76);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(88, 20);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Check In/s";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 109);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(98, 20);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Passengers";
+            // 
+            // gbDropoff2
+            // 
+            this.gbDropoff2.Controls.Add(this.lbBagsLost2);
+            this.gbDropoff2.Controls.Add(this.lbTickets2);
+            this.gbDropoff2.Controls.Add(this.lbPassenger2);
+            this.gbDropoff2.Controls.Add(this.lbCheckIn2);
+            this.gbDropoff2.Controls.Add(this.lbBags2);
+            this.gbDropoff2.Controls.Add(this.label10);
+            this.gbDropoff2.Controls.Add(this.label11);
+            this.gbDropoff2.Controls.Add(this.label12);
+            this.gbDropoff2.Controls.Add(this.label13);
+            this.gbDropoff2.Controls.Add(this.label14);
+            this.gbDropoff2.Location = new System.Drawing.Point(437, 46);
+            this.gbDropoff2.Name = "gbDropoff2";
+            this.gbDropoff2.Size = new System.Drawing.Size(304, 269);
+            this.gbDropoff2.TabIndex = 10;
+            this.gbDropoff2.TabStop = false;
+            this.gbDropoff2.Text = "Dropoff ";
+            // 
+            // lbBagsLost2
+            // 
+            this.lbBagsLost2.AutoSize = true;
+            this.lbBagsLost2.Location = new System.Drawing.Point(174, 193);
+            this.lbBagsLost2.Name = "lbBagsLost2";
+            this.lbBagsLost2.Size = new System.Drawing.Size(48, 20);
+            this.lbBagsLost2.TabIndex = 9;
+            this.lbBagsLost2.Text = "Bags";
+            // 
+            // lbTickets2
+            // 
+            this.lbTickets2.AutoSize = true;
+            this.lbTickets2.Location = new System.Drawing.Point(174, 144);
+            this.lbTickets2.Name = "lbTickets2";
+            this.lbTickets2.Size = new System.Drawing.Size(48, 20);
+            this.lbTickets2.TabIndex = 8;
+            this.lbTickets2.Text = "Bags";
+            this.lbTickets2.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // lbPassenger2
+            // 
+            this.lbPassenger2.AutoSize = true;
+            this.lbPassenger2.Location = new System.Drawing.Point(174, 109);
+            this.lbPassenger2.Name = "lbPassenger2";
+            this.lbPassenger2.Size = new System.Drawing.Size(48, 20);
+            this.lbPassenger2.TabIndex = 7;
+            this.lbPassenger2.Text = "Bags";
+            // 
+            // lbCheckIn2
+            // 
+            this.lbCheckIn2.AutoSize = true;
+            this.lbCheckIn2.Location = new System.Drawing.Point(174, 76);
+            this.lbCheckIn2.Name = "lbCheckIn2";
+            this.lbCheckIn2.Size = new System.Drawing.Size(48, 20);
+            this.lbCheckIn2.TabIndex = 6;
+            this.lbCheckIn2.Text = "Bags";
+            // 
+            // lbBags2
+            // 
+            this.lbBags2.AutoSize = true;
+            this.lbBags2.Location = new System.Drawing.Point(174, 38);
+            this.lbBags2.Name = "lbBags2";
+            this.lbBags2.Size = new System.Drawing.Size(48, 20);
+            this.lbBags2.TabIndex = 5;
+            this.lbBags2.Text = "Bags";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 193);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 20);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Bags Lost";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 38);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 20);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Bags Arrived";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 144);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(101, 20);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Tickets Sold";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 76);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(88, 20);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Check In/s";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 109);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 20);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Passengers";
+            // 
             // gbDropoff1
             // 
             this.gbDropoff1.Controls.Add(this.lbBagsLost);
-            this.gbDropoff1.Controls.Add(this.label7);
+            this.gbDropoff1.Controls.Add(this.lbTickets1);
             this.gbDropoff1.Controls.Add(this.lbPassenger);
             this.gbDropoff1.Controls.Add(this.lbCheckIn);
             this.gbDropoff1.Controls.Add(this.lbBags);
@@ -110,14 +329,14 @@
             this.lbBagsLost.TabIndex = 9;
             this.lbBagsLost.Text = "Bags";
             // 
-            // label7
+            // lbTickets1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(174, 144);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Bags";
+            this.lbTickets1.AutoSize = true;
+            this.lbTickets1.Location = new System.Drawing.Point(174, 144);
+            this.lbTickets1.Name = "lbTickets1";
+            this.lbTickets1.Size = new System.Drawing.Size(48, 20);
+            this.lbTickets1.TabIndex = 8;
+            this.lbTickets1.Text = "Bags";
             // 
             // lbPassenger
             // 
@@ -201,224 +420,6 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // gbDropoff2
-            // 
-            this.gbDropoff2.Controls.Add(this.lbBagsLost2);
-            this.gbDropoff2.Controls.Add(this.label5);
-            this.gbDropoff2.Controls.Add(this.lbPassenger2);
-            this.gbDropoff2.Controls.Add(this.lbCheckIn2);
-            this.gbDropoff2.Controls.Add(this.lbBags2);
-            this.gbDropoff2.Controls.Add(this.label10);
-            this.gbDropoff2.Controls.Add(this.label11);
-            this.gbDropoff2.Controls.Add(this.label12);
-            this.gbDropoff2.Controls.Add(this.label13);
-            this.gbDropoff2.Controls.Add(this.label14);
-            this.gbDropoff2.Location = new System.Drawing.Point(437, 46);
-            this.gbDropoff2.Name = "gbDropoff2";
-            this.gbDropoff2.Size = new System.Drawing.Size(304, 269);
-            this.gbDropoff2.TabIndex = 10;
-            this.gbDropoff2.TabStop = false;
-            this.gbDropoff2.Text = "Dropoff ";
-            // 
-            // lbBagsLost2
-            // 
-            this.lbBagsLost2.AutoSize = true;
-            this.lbBagsLost2.Location = new System.Drawing.Point(174, 193);
-            this.lbBagsLost2.Name = "lbBagsLost2";
-            this.lbBagsLost2.Size = new System.Drawing.Size(48, 20);
-            this.lbBagsLost2.TabIndex = 9;
-            this.lbBagsLost2.Text = "Bags";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(174, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Bags";
-            // 
-            // lbPassenger2
-            // 
-            this.lbPassenger2.AutoSize = true;
-            this.lbPassenger2.Location = new System.Drawing.Point(174, 109);
-            this.lbPassenger2.Name = "lbPassenger2";
-            this.lbPassenger2.Size = new System.Drawing.Size(48, 20);
-            this.lbPassenger2.TabIndex = 7;
-            this.lbPassenger2.Text = "Bags";
-            // 
-            // lbCheckIn2
-            // 
-            this.lbCheckIn2.AutoSize = true;
-            this.lbCheckIn2.Location = new System.Drawing.Point(174, 76);
-            this.lbCheckIn2.Name = "lbCheckIn2";
-            this.lbCheckIn2.Size = new System.Drawing.Size(48, 20);
-            this.lbCheckIn2.TabIndex = 6;
-            this.lbCheckIn2.Text = "Bags";
-            // 
-            // lbBags2
-            // 
-            this.lbBags2.AutoSize = true;
-            this.lbBags2.Location = new System.Drawing.Point(174, 38);
-            this.lbBags2.Name = "lbBags2";
-            this.lbBags2.Size = new System.Drawing.Size(48, 20);
-            this.lbBags2.TabIndex = 5;
-            this.lbBags2.Text = "Bags";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 193);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Bags Lost";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 38);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 20);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Bags Arrived";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 144);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(101, 20);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Tickets Sold";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 76);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 20);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Check In/s";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 109);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 20);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Passengers";
-            // 
-            // gbDropoff3
-            // 
-            this.gbDropoff3.Controls.Add(this.lbBagsLost3);
-            this.gbDropoff3.Controls.Add(this.label16);
-            this.gbDropoff3.Controls.Add(this.lbPassenger3);
-            this.gbDropoff3.Controls.Add(this.lbCheckIn3);
-            this.gbDropoff3.Controls.Add(this.lbBags3);
-            this.gbDropoff3.Controls.Add(this.label20);
-            this.gbDropoff3.Controls.Add(this.label21);
-            this.gbDropoff3.Controls.Add(this.label22);
-            this.gbDropoff3.Controls.Add(this.label23);
-            this.gbDropoff3.Controls.Add(this.label24);
-            this.gbDropoff3.Location = new System.Drawing.Point(911, 46);
-            this.gbDropoff3.Name = "gbDropoff3";
-            this.gbDropoff3.Size = new System.Drawing.Size(304, 269);
-            this.gbDropoff3.TabIndex = 10;
-            this.gbDropoff3.TabStop = false;
-            this.gbDropoff3.Text = "Dropoff ";
-            // 
-            // lbBagsLost3
-            // 
-            this.lbBagsLost3.AutoSize = true;
-            this.lbBagsLost3.Location = new System.Drawing.Point(174, 193);
-            this.lbBagsLost3.Name = "lbBagsLost3";
-            this.lbBagsLost3.Size = new System.Drawing.Size(48, 20);
-            this.lbBagsLost3.TabIndex = 9;
-            this.lbBagsLost3.Text = "Bags";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(174, 144);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(48, 20);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "Bags";
-            // 
-            // lbPassenger3
-            // 
-            this.lbPassenger3.AutoSize = true;
-            this.lbPassenger3.Location = new System.Drawing.Point(174, 109);
-            this.lbPassenger3.Name = "lbPassenger3";
-            this.lbPassenger3.Size = new System.Drawing.Size(48, 20);
-            this.lbPassenger3.TabIndex = 7;
-            this.lbPassenger3.Text = "Bags";
-            // 
-            // lbCheckIn3
-            // 
-            this.lbCheckIn3.AutoSize = true;
-            this.lbCheckIn3.Location = new System.Drawing.Point(174, 76);
-            this.lbCheckIn3.Name = "lbCheckIn3";
-            this.lbCheckIn3.Size = new System.Drawing.Size(48, 20);
-            this.lbCheckIn3.TabIndex = 6;
-            this.lbCheckIn3.Text = "Bags";
-            // 
-            // lbBags3
-            // 
-            this.lbBags3.AutoSize = true;
-            this.lbBags3.Location = new System.Drawing.Point(174, 38);
-            this.lbBags3.Name = "lbBags3";
-            this.lbBags3.Size = new System.Drawing.Size(48, 20);
-            this.lbBags3.TabIndex = 5;
-            this.lbBags3.Text = "Bags";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 193);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 20);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "Bags Lost";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 38);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(106, 20);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Bags Arrived";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 144);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(101, 20);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "Tickets Sold";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 76);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(88, 20);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "Check In/s";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 109);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(98, 20);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Passengers";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -430,12 +431,12 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
-            this.gbDropoff1.ResumeLayout(false);
-            this.gbDropoff1.PerformLayout();
-            this.gbDropoff2.ResumeLayout(false);
-            this.gbDropoff2.PerformLayout();
             this.gbDropoff3.ResumeLayout(false);
             this.gbDropoff3.PerformLayout();
+            this.gbDropoff2.ResumeLayout(false);
+            this.gbDropoff2.PerformLayout();
+            this.gbDropoff1.ResumeLayout(false);
+            this.gbDropoff1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -450,14 +451,14 @@
         private System.Windows.Forms.GroupBox gbDropoff1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbBagsLost;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbTickets1;
         private System.Windows.Forms.Label lbPassenger;
         private System.Windows.Forms.Label lbCheckIn;
         private System.Windows.Forms.Label lbBags;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.GroupBox gbDropoff3;
         private System.Windows.Forms.Label lbBagsLost3;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbTickets3;
         private System.Windows.Forms.Label lbPassenger3;
         private System.Windows.Forms.Label lbCheckIn3;
         private System.Windows.Forms.Label lbBags3;
@@ -468,7 +469,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox gbDropoff2;
         private System.Windows.Forms.Label lbBagsLost2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbTickets2;
         private System.Windows.Forms.Label lbPassenger2;
         private System.Windows.Forms.Label lbCheckIn2;
         private System.Windows.Forms.Label lbBags2;

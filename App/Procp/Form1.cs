@@ -157,17 +157,25 @@ namespace Procp
             syss.PassBaggage(bag3);
 
 
+            airport.buyTicket(a, 500, "FR6013");
+            airport.buyTicket(b, 500, "FR6013");
+            airport.buyTicket(c, 500, "FR6013");
+            airport.buyTicket(d, 500, "FR6013");
+            airport.buyTicket(k, 500, "FR6013");
+
             gbDropoff3.Text = drop3.Name.ToString();
             lbCheckIn3.Text = airport.GetNumberOfChickIns(gbDropoff3.Text).ToString();
             lbBags3.Text = syss.getAllBags().Count().ToString();
             lbPassenger3.Text = airport.getPassengers(drop3).Count().ToString();
             lbBagsLost3.Text = (airport.getBagByDropOff(drop3).Count() - syss.getAllBags().Count()).ToString();
+            lbTickets1.Text = airport.GetNumberOfTicketsSold(dropOff1).ToString();
+            lbTickets2.Text = airport.GetNumberOfTicketsSold(dropOff2).ToString();
+            lbTickets3.Text = airport.GetNumberOfTicketsSold(drop3).ToString();
 
 
+            
 
-
-
-
+      
 
 
             Console.ReadLine();
@@ -176,6 +184,11 @@ namespace Procp
             
             
 
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }

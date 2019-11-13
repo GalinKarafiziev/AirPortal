@@ -28,3 +28,13 @@ C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\App\Procp\obj\Debug\Procp.csp
 C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\App\Procp\obj\Debug\Procp.csproj.CoreCompileInputs.cache
 C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\App\Procp\obj\Debug\Procp.exe
 C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\App\Procp\obj\Debug\Procp.pdb
+C:\procp2\airportal\App\Procp\bin\Debug\Procp.exe.config
+C:\procp2\airportal\App\Procp\bin\Debug\Procp.exe
+C:\procp2\airportal\App\Procp\bin\Debug\Procp.pdb
+C:\procp2\airportal\App\Procp\obj\Debug\Procp.csprojResolveAssemblyReference.cache
+C:\procp2\airportal\App\Procp\obj\Debug\Procp.Form1.resources
+C:\procp2\airportal\App\Procp\obj\Debug\Procp.Properties.Resources.resources
+C:\procp2\airportal\App\Procp\obj\Debug\Procp.csproj.GenerateResource.Cache
+C:\procp2\airportal\App\Procp\obj\Debug\Procp.csproj.CoreCompileInputs.cache
+C:\procp2\airportal\App\Procp\obj\Debug\Procp.exe
+C:\procp2\airportal\App\Procp\obj\Debug\Procp.pdb

@@ -11,7 +11,7 @@ namespace Procp
         List<CheckIn> checkIns = new List<CheckIn>();
         List<Passenger> Passengers = new List<Passenger>();
         List<Baggage> bags = new List<Baggage>();
-
+        List<Ticket> ticketsSold = new List<Ticket>();
         public List<Baggage> getBagByDropOff(DropOff d)
         {
             List<Baggage> temp = new List<Baggage>();
@@ -34,6 +34,11 @@ namespace Procp
         public void addPassenger(Passenger p)
         {
             Passengers.Add(p);
+        }
+        public void buyTicket(Passenger p, double price, string flightNr)
+        {
+            Ticket t = new Ticket(flightNr, p, price);
+            ticketsSold.Add(t);
         }
 
         public List<Passenger> getAllPassengers()
@@ -68,6 +73,18 @@ namespace Procp
                 if (c.DestinationGate.Name == dropoffName)
                 {
                     temp.Add(c);
+                }
+            }
+            return temp.Count();
+        }
+        public int GetNumberOfTicketsSold(DropOff d)
+        {
+            List<Ticket> temp = new List<Ticket>();
+            foreach (Ticket t in ticketsSold)
+            {
+                if (t.cust.flightDropOff == d)
+                {
+                    temp.Add(t);
                 }
             }
             return temp.Count();
