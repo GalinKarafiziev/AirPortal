@@ -12,7 +12,7 @@ namespace Procp
 {
     public partial class Form1 : Form
     {
-        public bool stuck = false;
+        public bool stuck = false;//if true then red bag stops moving
 
         public Form1()
         {
@@ -21,32 +21,31 @@ namespace Procp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Timer_Game.Interval = 1;
-           
+            Timer_Game.Interval = 1;//red square timer
             Timer_Game.Start();
-            secondBag.Interval = 1;
-            thirdBag.Interval = 1;
-            timerBag4.Interval = 1;
-            
-            timerBag5.Interval = 1;
-            timerBag6.Interval = 1;
-            timer2.Interval = 14100;
+            secondBag.Interval = 1;//green square timer
+            thirdBag.Interval = 1;//blue square timer 
+            timerBag4.Interval = 1;//orange square timer(from check in 2)
+            timerBag5.Interval = 1;//gray square timer(from check in 2)
+            timerBag6.Interval = 1;//pink square timer(from check in 2)
+            timer2.Interval = 14100;//timer for bag stuck randomization
             timer2.Start();
 
            
-            securityCheck.Interval = 1000;
+            securityCheck.Interval = 1000;//timer for the time for second bag to start NOT FOR SECURITY!!(Sorry for that)
             securityCheck.Start();
-            switchTimer.Interval = 11200;
+            switchTimer.Interval = 11200;//timer for SECURITY CHECK randomization
             switchTimer.Start();
-            thirdBagSwitch.Interval = 2000;
+            thirdBagSwitch.Interval = 2000;//timer for the time for third bag to start
             thirdBagSwitch.Start();
-            bag5Switch.Interval = 1000;
+            bag5Switch.Interval = 1000;//timer for the second bag OF CHECK IN 2 to start
             
-            bag6Switch.Interval = 2000;
-            pb_luggage4.Visible = false;
-            pb_luggage5.Visible = false;
-            pb_luggage6.Visible = false;
-            dropoff1.Visible = false;
+            bag6Switch.Interval = 2000;//timer for the third bag OF CHECK IN 2 to start
+            pb_luggage4.Visible = false//shows the first bag of check in 2
+            pb_luggage5.Visible = false;//shows the second bag of check in 2
+            pb_luggage6.Visible = false;//shows the third bag of check in 2
+            
+            dropoff1.Visible = false;//i think in the new version Ivan deleted this and the rest
             dropoff2.Visible = false;
             dropoff3.Visible = false;
             dropoff5.Visible = false;
@@ -60,31 +59,29 @@ namespace Procp
             dropofftimer5.Interval = 50;
             dropofftimer6.Interval = 50;
         }
-
+        
+        //the red square moves to the drop off in a predefined path
         private void Timer_Game_Tick(object sender, EventArgs e)
         {
             if (stuck == true)
             {
-                pictureBox1.Top += 0;
+                pictureBox1.Top += 0;// when true the red square stops moving
             }
             else
             {
                 if (pb_luggage.Top < 60)
                 {
                     pb_luggage.Top += 2;
-                    //  pb_luggage5.Top += 2;
                 }
                 else if (pb_luggage.Top < 390 && pb_luggage.Left < 200)
                 {
                     pb_luggage.Left += 2;
-                    //  pb_luggage5.Left += 2;
                 }
                 else
                 {
                     if (pb_luggage.Top > 390 && pb_luggage.Left > 10)
                     {
                         pb_luggage.Left -= 2;
-                        // pb_luggage4.Top += 2;
                     }
                     else
                     {
@@ -92,41 +89,25 @@ namespace Procp
                     }
                 }
             }
-        /*
-            if(pb_luggage2.Top < 60 && pb_luggage.Top > 60)
-            {
-                pb_luggage2.Top += 2;
-            }
-            else if(pb_luggage2.Left < 200 && pb_luggage.Left > 200)
-            {
-                pb_luggage2.Left += 2;
-            }
-            else if( pb_luggage2.Left > 200)
-            {
-                pb_luggage2.Top += 2;
-            }
-          */
             
         }
-
+        
+         //the green square moves to the drop off in a predefined path
         private void secondBag_Tick(object sender, EventArgs e)
         {
 
             if (pb_luggage2.Top < 60)
             {
                 pb_luggage2.Top += 2;
-                //  pb_luggage5.Top += 2;
             }
             else if (pb_luggage2.Top < 390 && pb_luggage2.Left < 200)
             {
                 pb_luggage2.Left += 2;
-                //  pb_luggage5.Left += 2;
             }
             else {
                 if (pb_luggage2.Top > 390 && pb_luggage2.Left > 10)
                 {
                     pb_luggage2.Left -= 2;
-                    // pb_luggage4.Top += 2;
                 }
                 else
                 {
@@ -134,144 +115,8 @@ namespace Procp
                 }
             }
         }
-
-        private void pb_luggage_LocationChanged(object sender, EventArgs e)
-        {
-         
-            if ( pb_luggage.Top >= this.Width)
-            {
-                pb_luggage.Top = 0 - pb_luggage.Height;
-                pb_luggage.Left = 200;
-                dropofftimer4.Start();
-            }
-         /*   if (pb_luggage2.Top >= this.Width)
-            {
-                pb_luggage2.Top = 0 - pb_luggage2.Height;
-                pb_luggage2.Left = 75;
-            }
-            */
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-           
-            secondBag.Stop();
-            stuck = true;
-            securityCheck.Stop();
-            blink.Start();
-        }
-
-        private void bagStuck_Click(object sender, EventArgs e)
-        {
-            timer2.Stop();
-            stuck = false;
-            secondBag.Start();
-            blink.Stop();
-            bagStuck.BackColor = Color.Blue;
-            timer2.Start();
-        }
-
-
-        private void blink_Tick(object sender, EventArgs e)
-        {
-            if (bagStuck.BackColor == Color.Black)
-            {
-                bagStuck.BackColor = Color.Red;
-            }
-            else
-            {
-                bagStuck.BackColor = Color.Black;
-            }
-        }
-
-
-
-        private void switchTimer_Tick(object sender, EventArgs e)
-        {
-            //  securityCheck.Start();
-            Timer_Game.Stop();
-            blink2.Start();
-            pb_luggage.Top = 0;
-            pb_luggage.Left = 0;
-
-        }
-
-        private void securityCheck_Tick(object sender, EventArgs e)
-        {
-
-            secondBag.Start();
-
-
-            /*     Timer_Game.Stop();
-                 blink2.Start();
-                 if (pb_luggage2.Top < 60)
-                 {
-                     pb_luggage2.Top += 2;
-                 }
-                 else if (pb_luggage2.Left < 200 )
-                 {
-                     pb_luggage2.Left += 2;
-                 }
-                 else if (pb_luggage2.Left > 200)
-                 {
-                     pb_luggage2.Top += 2;
-                 }
-               */
-
-        }
         
-
-        private void buttonSec_Click(object sender, EventArgs e)
-        {
-
-            switchTimer.Stop();
-            pb_luggage.Visible = true;
-            Timer_Game.Start();
-            blink2.Stop();
-            buttonSec.BackColor = Color.Blue;
-            switchTimer.Start();
-
-            
-        }
-
-        private void blink2_Tick(object sender, EventArgs e)
-        {
-            
-            if (buttonSec.BackColor == Color.Black)
-            {
-                buttonSec.BackColor = Color.Red;
-            }
-            else
-            {
-                buttonSec.BackColor = Color.Black;
-            }
-            
-        }
-
-        private void pb_luggage2_LocationChanged(object sender, EventArgs e)
-        {
-            if (pb_luggage2.Top >= this.Width)
-            {
-                pb_luggage2.Top = 0 - pb_luggage2.Height;
-                pb_luggage2.Left = 200;
-                dropofftimer5.Start();
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Timer_Game.Interval = 50;
-            secondBag.Interval = 50;
-            thirdBag.Interval = 50;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Timer_Game.Interval = 1;
-            secondBag.Interval = 1;
-            thirdBag.Interval = 1;
-        }
-
+         //the blue square moves to the drop off in a predefined path
         private void thirdBag_Tick(object sender, EventArgs e)
         {
             if (stuck == true)
@@ -283,19 +128,16 @@ namespace Procp
                 if (pictureBox1.Top < 60)
                 {
                     pictureBox1.Top += 2;
-                    //  pb_luggage5.Top += 2;
                 }
                 else if (pictureBox1.Top < 390 && pictureBox1.Left < 200)
                 {
                     pictureBox1.Left += 2;
-                    //  pb_luggage5.Left += 2;
                 }
                 else
                 {
                     if (pictureBox1.Top > 390 && pictureBox1.Left > 10)
                     {
                         pictureBox1.Left -= 2;
-                        // pb_luggage4.Top += 2;
                     }
                     else
                     {
@@ -304,112 +146,14 @@ namespace Procp
                 }
             }
         }
-
-        private void thirdBagSwitch_Tick(object sender, EventArgs e)
+        
+         //starts the blue square
+           private void thirdBagSwitch_Tick(object sender, EventArgs e)
         {
             thirdBag.Start();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_LocationChanged(object sender, EventArgs e)
-        {
-            if (pictureBox1.Top >= this.Width)
-            {
-                pictureBox1.Top = 0 - pictureBox1.Height;
-                pictureBox1.Left = 200;
-                dropofftimer6.Start();
-            }
-        }
-
-        private void pb_luggage5_LocationChanged(object sender, EventArgs e)
-        {
-            if (pb_luggage5.Top >= this.Width)
-            {
-                pb_luggage5.Top = 0 - pb_luggage5.Height;
-                pb_luggage5.Left = 515;
-                // dropoff5.Visible = true;
-                dropofftimer1.Start();
-            }
-        }
-
-        private void pb_luggage6_LocationChanged(object sender, EventArgs e)
-        {
-            if (pb_luggage6.Top >= this.Width)
-            {
-                pb_luggage6.Top = 0 - pb_luggage6.Height;
-                pb_luggage6.Left = 515;
-                dropofftimer2.Start();
-            }
-        }
-
-        private void pb_luggage4_LocationChanged(object sender, EventArgs e)
-        {
-            if (pb_luggage4.Top >= this.Width)
-            {
-                pb_luggage4.Top = 0 - pb_luggage4.Height;
-                pb_luggage4.Left = 515;
-                dropoff.Start();
-            }
-        }
-
-        private void dropoff_Tick(object sender, EventArgs e)
-        {
-            dropofftimer2.Stop();
-            dropoff6.Visible = false;
-            dropoff4.Visible = true;
-        }
-
-        private void dropofftimer1_Tick(object sender, EventArgs e)
-        {
-            dropoff.Stop();
-            dropoff4.Visible = false;
-            dropoff5.Visible = true;
-        }
-        private void dropofftimer2_Tick(object sender, EventArgs e)
-        {
-            dropofftimer1.Stop();
-            dropoff5.Visible = false;
-            dropoff6.Visible = true;
-        }
-
-        private void dropofftimer4_Tick(object sender, EventArgs e)
-        {
-            dropofftimer6.Stop();
-            dropoff3.Visible = false;
-            dropoff1.Visible = true;
-        }
-
-        private void dropofftimer5_Tick(object sender, EventArgs e)
-        {
-            dropofftimer4.Stop();
-            dropoff1.Visible = false;
-            dropoff2.Visible = true;
-        }
-
-        private void dropofftimer6_Tick(object sender, EventArgs e)
-        {
-            dropofftimer5.Stop();
-            dropoff2.Visible = false;
-            dropoff3.Visible = true;
-        }
-
-
-
-        private void bag5Switch_Tick(object sender, EventArgs e)
-        {
-            
-            timerBag5.Start();
-        }
-
-        private void bag6Switch_Tick(object sender, EventArgs e)
-        {
-            timerBag6.Start();
-        }
-
+        
+        //the orange square (from check in 2) moves to the drop off in a predefined path
         private void timerBag4_Tick(object sender, EventArgs e)
         {
             if (pb_luggage4.Top < 60)
@@ -425,7 +169,6 @@ namespace Procp
                 if (pb_luggage4.Top > 390 && pb_luggage4.Left < 515)
                 {
                     pb_luggage4.Left += 2;
-                    // pb_luggage4.Top += 2;
                 }
                 else
                 {
@@ -433,8 +176,9 @@ namespace Procp
                 }
             }
         }
-
-        private void timerBag5_Tick(object sender, EventArgs e)
+        
+         //the gray square (from check in 2) moves to the drop off in a predefined path
+           private void timerBag5_Tick(object sender, EventArgs e)
         {
             if (pb_luggage5.Top < 60)
             {
@@ -456,7 +200,16 @@ namespace Procp
                 }
             }
         }
+        
+        //starts the gray square
+        private void bag5Switch_Tick(object sender, EventArgs e)
+        {
+            
+            timerBag5.Start();
+        }
 
+       
+        //the pink square (from check in 2) moves to the drop off in a predefined path
         private void timerBag6_Tick(object sender, EventArgs e)
         {
             if (pb_luggage6.Top < 60)
@@ -479,7 +232,234 @@ namespace Procp
                 }
             }
         }
+        
+        //starts the pink square
+         private void bag6Switch_Tick(object sender, EventArgs e)
+        {
+            timerBag6.Start();
+        }
 
+        
+        //this one is deleted by Ivan in the new version i think so dont care about this
+        private void pb_luggage_LocationChanged(object sender, EventArgs e)
+        {
+         
+            if ( pb_luggage.Top >= this.Width)
+            {
+                pb_luggage.Top = 0 - pb_luggage.Height;
+                pb_luggage.Left = 200;
+                dropofftimer4.Start();
+            }
+     
+        }
+
+        //triggers the bag stuck button, which stops the conveyer
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+           
+            secondBag.Stop();
+            stuck = true;
+            securityCheck.Stop();
+            blink.Start();
+        }
+        
+        //stops the blinking of the bag stuck button and starts the conveyer
+        private void bagStuck_Click(object sender, EventArgs e)
+        {
+            timer2.Stop();
+            stuck = false;
+            secondBag.Start();
+            blink.Stop();
+            bagStuck.BackColor = Color.Blue;
+            timer2.Start();
+        }
+
+        //changes the color of the bag stuck button 
+        private void blink_Tick(object sender, EventArgs e)
+        {
+            if (bagStuck.BackColor == Color.Black)
+            {
+                bagStuck.BackColor = Color.Red;
+            }
+            else
+            {
+                bagStuck.BackColor = Color.Black;
+            }
+        }
+
+
+        //triggers the security check button, which sends the bag at the top left corner
+        private void switchTimer_Tick(object sender, EventArgs e)
+        {
+            
+            Timer_Game.Stop();
+            blink2.Start();
+            pb_luggage.Top = 0;
+            pb_luggage.Left = 0;
+
+        }
+        
+        //starts the timer which sets the time between the bags
+        private void securityCheck_Tick(object sender, EventArgs e)
+        {
+
+            secondBag.Start();
+
+        }
+        
+        //when you click on the security button it sends the seized bag back to the conveyer
+        private void buttonSec_Click(object sender, EventArgs e)
+        {
+
+            switchTimer.Stop();
+            pb_luggage.Visible = true;
+            Timer_Game.Start();
+            blink2.Stop();
+            buttonSec.BackColor = Color.Blue;
+            switchTimer.Start();
+
+            
+        }
+
+        //changes the color of the security check button
+        private void blink2_Tick(object sender, EventArgs e)
+        {
+            
+            if (buttonSec.BackColor == Color.Black)
+            {
+                buttonSec.BackColor = Color.Red;
+            }
+            else
+            {
+                buttonSec.BackColor = Color.Black;
+            }
+            
+        }
+        
+        //Ivan deleted this from the new version
+        private void pb_luggage2_LocationChanged(object sender, EventArgs e)
+        {
+            if (pb_luggage2.Top >= this.Width)
+            {
+                pb_luggage2.Top = 0 - pb_luggage2.Height;
+                pb_luggage2.Left = 200;
+                dropofftimer5.Start();
+            }
+        }
+        
+        //Slows down the bags in a specific speed
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Timer_Game.Interval = 50;
+            secondBag.Interval = 50;
+            thirdBag.Interval = 50;
+        }
+
+        //returns the speed of the bags into the predifined speed
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Timer_Game.Interval = 1;
+            secondBag.Interval = 1;
+            thirdBag.Interval = 1;
+        }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Ivan removed it from the new version
+        private void pictureBox1_LocationChanged(object sender, EventArgs e)
+        {
+            if (pictureBox1.Top >= this.Width)
+            {
+                pictureBox1.Top = 0 - pictureBox1.Height;
+                pictureBox1.Left = 200;
+                dropofftimer6.Start();
+            }
+        }
+        
+        //Ivan removed it from the new version
+        private void pb_luggage5_LocationChanged(object sender, EventArgs e)
+        {
+            if (pb_luggage5.Top >= this.Width)
+            {
+                pb_luggage5.Top = 0 - pb_luggage5.Height;
+                pb_luggage5.Left = 515;
+                dropofftimer1.Start();
+            }
+        }
+        
+        
+        //Ivan removed it from the new version
+        private void pb_luggage6_LocationChanged(object sender, EventArgs e)
+        {
+            if (pb_luggage6.Top >= this.Width)
+            {
+                pb_luggage6.Top = 0 - pb_luggage6.Height;
+                pb_luggage6.Left = 515;
+                dropofftimer2.Start();
+            }
+        }
+        
+        //Ivan removed it from the new version
+        private void pb_luggage4_LocationChanged(object sender, EventArgs e)
+        {
+            if (pb_luggage4.Top >= this.Width)
+            {
+                pb_luggage4.Top = 0 - pb_luggage4.Height;
+                pb_luggage4.Left = 515;
+                dropoff.Start();
+            }
+        }
+        //Ivan removed it from the new version
+        private void dropoff_Tick(object sender, EventArgs e)
+        {
+            dropofftimer2.Stop();
+            dropoff6.Visible = false;
+            dropoff4.Visible = true;
+        }
+        //Ivan removed it from the new version
+        private void dropofftimer1_Tick(object sender, EventArgs e)
+        {
+            dropoff.Stop();
+            dropoff4.Visible = false;
+            dropoff5.Visible = true;
+        }
+        //Ivan removed it from the new version
+        private void dropofftimer2_Tick(object sender, EventArgs e)
+        {
+            dropofftimer1.Stop();
+            dropoff5.Visible = false;
+            dropoff6.Visible = true;
+        }
+        
+        //Ivan removed it from the new version
+        private void dropofftimer4_Tick(object sender, EventArgs e)
+        {
+            dropofftimer6.Stop();
+            dropoff3.Visible = false;
+            dropoff1.Visible = true;
+        }
+        
+        //Ivan removed it from the new version
+        private void dropofftimer5_Tick(object sender, EventArgs e)
+        {
+            dropofftimer4.Stop();
+            dropoff1.Visible = false;
+            dropoff2.Visible = true;
+        }
+        
+        //Ivan removed it from the new version
+        private void dropofftimer6_Tick(object sender, EventArgs e)
+        {
+            dropofftimer5.Stop();
+            dropoff2.Visible = false;
+            dropoff3.Visible = true;
+        }
+        
+        //starts the 2nd check in 
         private void button3_Click(object sender, EventArgs e)
         {
             pb_luggage4.Visible = true;
@@ -490,6 +470,7 @@ namespace Procp
             bag6Switch.Start();
         }
 
+        //closes the 2nd check in
         private void CloseCheckIn_Click(object sender, EventArgs e)
         {
            
@@ -498,11 +479,6 @@ namespace Procp
                 timerBag5.Stop();
                 bag6Switch.Stop();
                 timerBag6.Stop();
-            
-           // timerBag5.Stop();
-             //   bag6Switch.Stop();
-                //timerBag6.Stop();
-                // dropoff.Start();
         }
 
         private void dropoff5_Click(object sender, EventArgs e)
