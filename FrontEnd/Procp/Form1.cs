@@ -41,23 +41,9 @@ namespace Procp
             bag5Switch.Interval = 1000;//timer for the second bag OF CHECK IN 2 to start
             
             bag6Switch.Interval = 2000;//timer for the third bag OF CHECK IN 2 to start
-            pb_luggage4.Visible = false//shows the first bag of check in 2
+            pb_luggage4.Visible = false;//shows the first bag of check in 2
             pb_luggage5.Visible = false;//shows the second bag of check in 2
             pb_luggage6.Visible = false;//shows the third bag of check in 2
-            
-            dropoff1.Visible = false;//i think in the new version Ivan deleted this and the rest
-            dropoff2.Visible = false;
-            dropoff3.Visible = false;
-            dropoff5.Visible = false;
-            dropoff6.Visible = false;
-            dropoff4.Visible = false;
-            dropoff.Interval = 50;
-            
-            dropofftimer1.Interval = 50;
-            dropofftimer2.Interval = 50;
-            dropofftimer4.Interval = 50;
-            dropofftimer5.Interval = 50;
-            dropofftimer6.Interval = 50;
         }
         
         //the red square moves to the drop off in a predefined path
@@ -239,18 +225,17 @@ namespace Procp
             timerBag6.Start();
         }
 
-        
-        //this one is deleted by Ivan in the new version i think so dont care about this
+
+        //This places the luggage at the starting point when it finishes the conveyer belt
         private void pb_luggage_LocationChanged(object sender, EventArgs e)
         {
-         
-            if ( pb_luggage.Top >= this.Width)
+
+            if (pb_luggage.Top >= this.Width)
             {
                 pb_luggage.Top = 0 - pb_luggage.Height;
                 pb_luggage.Left = 200;
-                dropofftimer4.Start();
             }
-     
+
         }
 
         //triggers the bag stuck button, which stops the conveyer
@@ -336,14 +321,13 @@ namespace Procp
             
         }
         
-        //Ivan deleted this from the new version
+        //This places the luggage at the starting point when it finishes the conveyer belt
         private void pb_luggage2_LocationChanged(object sender, EventArgs e)
         {
             if (pb_luggage2.Top >= this.Width)
             {
                 pb_luggage2.Top = 0 - pb_luggage2.Height;
                 pb_luggage2.Left = 200;
-                dropofftimer5.Start();
             }
         }
         
@@ -369,94 +353,45 @@ namespace Procp
 
         }
 
-        //Ivan removed it from the new version
+        //This places the luggage at the starting point when it finishes the conveyer belt
         private void pictureBox1_LocationChanged(object sender, EventArgs e)
         {
             if (pictureBox1.Top >= this.Width)
             {
                 pictureBox1.Top = 0 - pictureBox1.Height;
                 pictureBox1.Left = 200;
-                dropofftimer6.Start();
             }
         }
-        
-        //Ivan removed it from the new version
+
+        //This places the luggage at the starting point when it finishes the conveyer belt
         private void pb_luggage5_LocationChanged(object sender, EventArgs e)
         {
             if (pb_luggage5.Top >= this.Width)
             {
                 pb_luggage5.Top = 0 - pb_luggage5.Height;
                 pb_luggage5.Left = 515;
-                dropofftimer1.Start();
             }
         }
-        
-        
-        //Ivan removed it from the new version
+
+
+        //This places the luggage at the starting point when it finishes the conveyer belt
         private void pb_luggage6_LocationChanged(object sender, EventArgs e)
         {
             if (pb_luggage6.Top >= this.Width)
             {
                 pb_luggage6.Top = 0 - pb_luggage6.Height;
                 pb_luggage6.Left = 515;
-                dropofftimer2.Start();
             }
         }
-        
-        //Ivan removed it from the new version
+
+        //This places the luggage at the starting point when it finishes the conveyer belt
         private void pb_luggage4_LocationChanged(object sender, EventArgs e)
         {
             if (pb_luggage4.Top >= this.Width)
             {
                 pb_luggage4.Top = 0 - pb_luggage4.Height;
                 pb_luggage4.Left = 515;
-                dropoff.Start();
             }
-        }
-        //Ivan removed it from the new version
-        private void dropoff_Tick(object sender, EventArgs e)
-        {
-            dropofftimer2.Stop();
-            dropoff6.Visible = false;
-            dropoff4.Visible = true;
-        }
-        //Ivan removed it from the new version
-        private void dropofftimer1_Tick(object sender, EventArgs e)
-        {
-            dropoff.Stop();
-            dropoff4.Visible = false;
-            dropoff5.Visible = true;
-        }
-        //Ivan removed it from the new version
-        private void dropofftimer2_Tick(object sender, EventArgs e)
-        {
-            dropofftimer1.Stop();
-            dropoff5.Visible = false;
-            dropoff6.Visible = true;
-        }
-        
-        //Ivan removed it from the new version
-        private void dropofftimer4_Tick(object sender, EventArgs e)
-        {
-            dropofftimer6.Stop();
-            dropoff3.Visible = false;
-            dropoff1.Visible = true;
-        }
-        
-        //Ivan removed it from the new version
-        private void dropofftimer5_Tick(object sender, EventArgs e)
-        {
-            dropofftimer4.Stop();
-            dropoff1.Visible = false;
-            dropoff2.Visible = true;
-        }
-        
-        //Ivan removed it from the new version
-        private void dropofftimer6_Tick(object sender, EventArgs e)
-        {
-            dropofftimer5.Stop();
-            dropoff2.Visible = false;
-            dropoff3.Visible = true;
         }
         
         //starts the 2nd check in 
@@ -479,21 +414,6 @@ namespace Procp
                 timerBag5.Stop();
                 bag6Switch.Stop();
                 timerBag6.Stop();
-        }
-
-        private void dropoff5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dropoff6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dropoff4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)

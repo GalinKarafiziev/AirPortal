@@ -51,19 +51,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.CloseCheckIn = new System.Windows.Forms.Button();
             this.labelDrop = new System.Windows.Forms.Label();
-            this.dropoff = new System.Windows.Forms.Timer(this.components);
-            this.dropofftimer1 = new System.Windows.Forms.Timer(this.components);
-            this.dropofftimer2 = new System.Windows.Forms.Timer(this.components);
-            this.dropofftimer4 = new System.Windows.Forms.Timer(this.components);
-            this.dropofftimer5 = new System.Windows.Forms.Timer(this.components);
-            this.dropofftimer6 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.dropoff1 = new System.Windows.Forms.PictureBox();
-            this.dropoff2 = new System.Windows.Forms.PictureBox();
-            this.dropoff3 = new System.Windows.Forms.PictureBox();
-            this.dropoff4 = new System.Windows.Forms.PictureBox();
-            this.dropoff6 = new System.Windows.Forms.PictureBox();
-            this.dropoff5 = new System.Windows.Forms.PictureBox();
             this.pb_luggage5 = new System.Windows.Forms.PictureBox();
             this.pb_luggage6 = new System.Windows.Forms.PictureBox();
             this.pb_luggage4 = new System.Windows.Forms.PictureBox();
@@ -72,12 +60,6 @@
             this.pb_luggage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage4)).BeginInit();
@@ -245,30 +227,6 @@
             this.labelDrop.TabIndex = 15;
             this.labelDrop.Text = "DROP OFF1";
             // 
-            // dropoff
-            // 
-            this.dropoff.Tick += new System.EventHandler(this.dropoff_Tick);
-            // 
-            // dropofftimer1
-            // 
-            this.dropofftimer1.Tick += new System.EventHandler(this.dropofftimer1_Tick);
-            // 
-            // dropofftimer2
-            // 
-            this.dropofftimer2.Tick += new System.EventHandler(this.dropofftimer2_Tick);
-            // 
-            // dropofftimer4
-            // 
-            this.dropofftimer4.Tick += new System.EventHandler(this.dropofftimer4_Tick);
-            // 
-            // dropofftimer5
-            // 
-            this.dropofftimer5.Tick += new System.EventHandler(this.dropofftimer5_Tick);
-            // 
-            // dropofftimer6
-            // 
-            this.dropofftimer6.Tick += new System.EventHandler(this.dropofftimer6_Tick);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -278,76 +236,6 @@
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 21;
             this.label2.Text = "DROP OFF2";
-            // 
-            // dropoff1
-            // 
-            this.dropoff1.BackColor = System.Drawing.Color.Red;
-            this.dropoff1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dropoff1.Location = new System.Drawing.Point(10, 490);
-            this.dropoff1.Name = "dropoff1";
-            this.dropoff1.Size = new System.Drawing.Size(50, 50);
-            this.dropoff1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dropoff1.TabIndex = 20;
-            this.dropoff1.TabStop = false;
-            // 
-            // dropoff2
-            // 
-            this.dropoff2.BackColor = System.Drawing.Color.Green;
-            this.dropoff2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dropoff2.Location = new System.Drawing.Point(10, 490);
-            this.dropoff2.Name = "dropoff2";
-            this.dropoff2.Size = new System.Drawing.Size(50, 50);
-            this.dropoff2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dropoff2.TabIndex = 19;
-            this.dropoff2.TabStop = false;
-            // 
-            // dropoff3
-            // 
-            this.dropoff3.BackColor = System.Drawing.Color.Blue;
-            this.dropoff3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dropoff3.Location = new System.Drawing.Point(10, 490);
-            this.dropoff3.Name = "dropoff3";
-            this.dropoff3.Size = new System.Drawing.Size(50, 50);
-            this.dropoff3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dropoff3.TabIndex = 18;
-            this.dropoff3.TabStop = false;
-            // 
-            // dropoff4
-            // 
-            this.dropoff4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dropoff4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dropoff4.Location = new System.Drawing.Point(515, 490);
-            this.dropoff4.Name = "dropoff4";
-            this.dropoff4.Size = new System.Drawing.Size(50, 50);
-            this.dropoff4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dropoff4.TabIndex = 17;
-            this.dropoff4.TabStop = false;
-            this.dropoff4.Click += new System.EventHandler(this.dropoff4_Click);
-            // 
-            // dropoff6
-            // 
-            this.dropoff6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dropoff6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dropoff6.Location = new System.Drawing.Point(515, 490);
-            this.dropoff6.Name = "dropoff6";
-            this.dropoff6.Size = new System.Drawing.Size(50, 50);
-            this.dropoff6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dropoff6.TabIndex = 16;
-            this.dropoff6.TabStop = false;
-            this.dropoff6.Click += new System.EventHandler(this.dropoff6_Click);
-            // 
-            // dropoff5
-            // 
-            this.dropoff5.BackColor = System.Drawing.Color.Teal;
-            this.dropoff5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.dropoff5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dropoff5.Location = new System.Drawing.Point(515, 490);
-            this.dropoff5.Name = "dropoff5";
-            this.dropoff5.Size = new System.Drawing.Size(50, 50);
-            this.dropoff5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dropoff5.TabIndex = 14;
-            this.dropoff5.TabStop = false;
-            this.dropoff5.Click += new System.EventHandler(this.dropoff5_Click);
             // 
             // pb_luggage5
             // 
@@ -454,13 +342,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dropoff1);
-            this.Controls.Add(this.dropoff2);
-            this.Controls.Add(this.dropoff3);
-            this.Controls.Add(this.dropoff4);
-            this.Controls.Add(this.dropoff6);
             this.Controls.Add(this.labelDrop);
-            this.Controls.Add(this.dropoff5);
             this.Controls.Add(this.CloseCheckIn);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pb_luggage5);
@@ -478,12 +360,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dropoff5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage4)).EndInit();
@@ -524,19 +400,7 @@
         private System.Windows.Forms.Timer bag6Switch;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button CloseCheckIn;
-        private System.Windows.Forms.PictureBox dropoff5;
         private System.Windows.Forms.Label labelDrop;
-        private System.Windows.Forms.PictureBox dropoff6;
-        private System.Windows.Forms.PictureBox dropoff4;
-        private System.Windows.Forms.Timer dropoff;
-        private System.Windows.Forms.Timer dropofftimer1;
-        private System.Windows.Forms.Timer dropofftimer2;
-        private System.Windows.Forms.PictureBox dropoff3;
-        private System.Windows.Forms.PictureBox dropoff2;
-        private System.Windows.Forms.PictureBox dropoff1;
-        private System.Windows.Forms.Timer dropofftimer4;
-        private System.Windows.Forms.Timer dropofftimer5;
-        private System.Windows.Forms.Timer dropofftimer6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
