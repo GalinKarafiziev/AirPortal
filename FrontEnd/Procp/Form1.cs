@@ -23,24 +23,11 @@ namespace Procp
         {
             Timer_Game.Interval = 1;//red square timer
             Timer_Game.Start();
-            secondBag.Interval = 1;//green square timer
-            thirdBag.Interval = 1;//blue square timer 
             timerBag4.Interval = 1;//orange square timer(from check in 2)
-            timerBag5.Interval = 1;//gray square timer(from check in 2)
-            timerBag6.Interval = 1;//pink square timer(from check in 2)
             timer2.Interval = 14100;//timer for bag stuck randomization
             timer2.Start();
-
-           
-            securityCheck.Interval = 1000;//timer for the time for second bag to start NOT FOR SECURITY!!(Sorry for that)
-            securityCheck.Start();
             switchTimer.Interval = 11200;//timer for SECURITY CHECK randomization
             switchTimer.Start();
-            thirdBagSwitch.Interval = 2000;//timer for the time for third bag to start
-            thirdBagSwitch.Start();
-            bag5Switch.Interval = 1000;//timer for the second bag OF CHECK IN 2 to start
-            
-            bag6Switch.Interval = 2000;//timer for the third bag OF CHECK IN 2 to start
             pb_luggage4.Visible = false;//shows the first bag of check in 2
             pb_luggage5.Visible = false;//shows the second bag of check in 2
             pb_luggage6.Visible = false;//shows the third bag of check in 2
@@ -49,99 +36,92 @@ namespace Procp
         //the red square moves to the drop off in a predefined path
         private void Timer_Game_Tick(object sender, EventArgs e)
         {
-            if (stuck == true)
+            /*  if (stuck == true)
+              {
+                  pictureBox1.Top += 0;// when true the red square stops moving
+              }
+              */
+
+            if (pb_luggage.Top < 60)
             {
-                pictureBox1.Top += 0;// when true the red square stops moving
+                pb_luggage.Top += 2;
+
+            }
+            else if (pb_luggage.Top < 390 && pb_luggage.Left < 200)
+            {
+                pb_luggage.Left += 2;
+
             }
             else
             {
-                if (pb_luggage.Top < 60)
+                if (pb_luggage.Top > 390 && pb_luggage.Left > 10)
+                {
+                    pb_luggage.Left -= 2;
+
+                }
+                else
                 {
                     pb_luggage.Top += 2;
                 }
-                else if (pb_luggage.Top < 390 && pb_luggage.Left < 200)
-                {
-                    pb_luggage.Left += 2;
-                }
-                else
-                {
-                    if (pb_luggage.Top > 390 && pb_luggage.Left > 10)
-                    {
-                        pb_luggage.Left -= 2;
-                    }
-                    else
-                    {
-                        pb_luggage.Top += 2;
-                    }
-                }
             }
-            
-        }
-        
-         //the green square moves to the drop off in a predefined path
-        private void secondBag_Tick(object sender, EventArgs e)
-        {
 
-            if (pb_luggage2.Top < 60)
+            //the green square moves to the drop off in a predefined path
+            if (pb_luggage2.Top < 60 && pb_luggage.Top > 59)
             {
                 pb_luggage2.Top += 2;
+
             }
-            else if (pb_luggage2.Top < 390 && pb_luggage2.Left < 200)
+            else if (pb_luggage2.Top < 390 && pb_luggage2.Left < 200 && pb_luggage.Top > 59)
             {
                 pb_luggage2.Left += 2;
+
             }
-            else {
-                if (pb_luggage2.Top > 390 && pb_luggage2.Left > 10)
+            else
+            {
+                if (pb_luggage2.Top > 390 && pb_luggage2.Left > 10 && pb_luggage.Top > 59)
                 {
                     pb_luggage2.Left -= 2;
+
                 }
-                else
+                else if (pb_luggage.Top > 59 || pictureBox1.Top > 300)
                 {
                     pb_luggage2.Top += 2;
                 }
             }
-        }
-        
-         //the blue square moves to the drop off in a predefined path
-        private void thirdBag_Tick(object sender, EventArgs e)
-        {
-            if (stuck == true)
+
+            //the blue square moves to the drop off in a predefined path
+            if (pictureBox1.Top < 60 && pb_luggage2.Top > 59)
             {
-                pictureBox1.Top += 0;
+                pictureBox1.Top += 2;
+
+            }
+            else if (pictureBox1.Top < 390 && pictureBox1.Left < 200 && pb_luggage2.Top > 59)
+            {
+                pictureBox1.Left += 2;
+
             }
             else
             {
-                if (pictureBox1.Top < 60)
+                if (pictureBox1.Top > 390 && pictureBox1.Left > 10 && pb_luggage2.Top > 59)
+                {
+                    pictureBox1.Left -= 2;
+
+                }
+                else if (pb_luggage2.Top > 59 || pictureBox1.Top > 300)
                 {
                     pictureBox1.Top += 2;
                 }
-                else if (pictureBox1.Top < 390 && pictureBox1.Left < 200)
-                {
-                    pictureBox1.Left += 2;
-                }
-                else
-                {
-                    if (pictureBox1.Top > 390 && pictureBox1.Left > 10)
-                    {
-                        pictureBox1.Left -= 2;
-                    }
-                    else
-                    {
-                        pictureBox1.Top += 2;
-                    }
-                }
             }
         }
+
+
+
+
+
         
-         //starts the blue square
-           private void thirdBagSwitch_Tick(object sender, EventArgs e)
-        {
-            thirdBag.Start();
-        }
-        
-        //the orange square (from check in 2) moves to the drop off in a predefined path
         private void timerBag4_Tick(object sender, EventArgs e)
         {
+            //the orange square (from check in 2) moves to the drop off in a predefined path
             if (pb_luggage4.Top < 60)
             {
                 pb_luggage4.Top += 2;
@@ -149,6 +129,7 @@ namespace Procp
             else if (pb_luggage4.Top < 390 && pb_luggage4.Left > 300)
             {
                 pb_luggage4.Left -= 2;
+
             }
             else
             {
@@ -161,68 +142,49 @@ namespace Procp
                     pb_luggage4.Top += 2;
                 }
             }
-        }
-        
-         //the gray square (from check in 2) moves to the drop off in a predefined path
-           private void timerBag5_Tick(object sender, EventArgs e)
-        {
-            if (pb_luggage5.Top < 60)
+            //the gray square (from check in 2) moves to the drop off in a predefined path
+            if (pb_luggage5.Top < 60 && pb_luggage4.Top > 59)
             {
                 pb_luggage5.Top += 2;
             }
-            else if (pb_luggage5.Top < 390 && pb_luggage5.Left > 300)
+            else if (pb_luggage5.Top < 390 && pb_luggage5.Left > 300 && pb_luggage4.Top > 59)
             {
                 pb_luggage5.Left -= 2;
             }
             else
             {
-                if (pb_luggage5.Top > 390 && pb_luggage5.Left < 515)
+                if (pb_luggage5.Top > 390 && pb_luggage5.Left < 515 && pb_luggage4.Top > 59)
                 {
                     pb_luggage5.Left += 2;
+
                 }
-                else
+                else if (pb_luggage4.Top > 59 || pb_luggage6.Top > 300)
                 {
                     pb_luggage5.Top += 2;
                 }
             }
-        }
-        
-        //starts the gray square
-        private void bag5Switch_Tick(object sender, EventArgs e)
-        {
-            
-            timerBag5.Start();
-        }
-
-       
-        //the pink square (from check in 2) moves to the drop off in a predefined path
-        private void timerBag6_Tick(object sender, EventArgs e)
-        {
-            if (pb_luggage6.Top < 60)
+            //the pink square (from check in 2) moves to the drop off in a predefined path
+            if (pb_luggage6.Top < 60 && pb_luggage5.Top > 59)
             {
                 pb_luggage6.Top += 2;
             }
-            else if (pb_luggage6.Top < 390 && pb_luggage6.Left > 300)
+            else if (pb_luggage6.Top < 390 && pb_luggage6.Left > 300 && pb_luggage5.Top > 59)
             {
                 pb_luggage6.Left -= 2;
             }
             else
             {
-                if (pb_luggage6.Top > 390 && pb_luggage6.Left < 515)
+                if (pb_luggage6.Top > 390 && pb_luggage6.Left < 515 && pb_luggage5.Top > 59)
                 {
                     pb_luggage6.Left += 2;
+
                 }
-                else
+                else if (pb_luggage6.Top > 59)
                 {
                     pb_luggage6.Top += 2;
                 }
             }
-        }
-        
-        //starts the pink square
-         private void bag6Switch_Tick(object sender, EventArgs e)
-        {
-            timerBag6.Start();
+
         }
 
 
@@ -241,10 +203,7 @@ namespace Procp
         //triggers the bag stuck button, which stops the conveyer
         private void timer2_Tick(object sender, EventArgs e)
         {
-           
-            secondBag.Stop();
             stuck = true;
-            securityCheck.Stop();
             blink.Start();
         }
         
@@ -253,7 +212,7 @@ namespace Procp
         {
             timer2.Stop();
             stuck = false;
-            secondBag.Start();
+           
             blink.Stop();
             bagStuck.BackColor = Color.Blue;
             timer2.Start();
@@ -281,14 +240,6 @@ namespace Procp
             blink2.Start();
             pb_luggage.Top = 0;
             pb_luggage.Left = 0;
-
-        }
-        
-        //starts the timer which sets the time between the bags
-        private void securityCheck_Tick(object sender, EventArgs e)
-        {
-
-            secondBag.Start();
 
         }
         
@@ -335,16 +286,12 @@ namespace Procp
         private void button2_Click(object sender, EventArgs e)
         {
             Timer_Game.Interval = 50;
-            secondBag.Interval = 50;
-            thirdBag.Interval = 50;
         }
 
         //returns the speed of the bags into the predifined speed
         private void button1_Click(object sender, EventArgs e)
         {
             Timer_Game.Interval = 1;
-            secondBag.Interval = 1;
-            thirdBag.Interval = 1;
         }
 
 
@@ -401,19 +348,12 @@ namespace Procp
             pb_luggage5.Visible = true;
             pb_luggage6.Visible = true;
             timerBag4.Start();
-            bag5Switch.Start();
-            bag6Switch.Start();
         }
 
         //closes the 2nd check in
         private void CloseCheckIn_Click(object sender, EventArgs e)
         {
-           
                 timerBag4.Stop();
-                bag5Switch.Stop();
-                timerBag5.Stop();
-                bag6Switch.Stop();
-                timerBag6.Stop();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
