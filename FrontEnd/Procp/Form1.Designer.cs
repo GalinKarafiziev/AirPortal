@@ -34,20 +34,12 @@
             this.bagStuck = new System.Windows.Forms.Button();
             this.blink = new System.Windows.Forms.Timer(this.components);
             this.switchTimer = new System.Windows.Forms.Timer(this.components);
-            this.securityCheck = new System.Windows.Forms.Timer(this.components);
             this.buttonSec = new System.Windows.Forms.Button();
             this.blink2 = new System.Windows.Forms.Timer(this.components);
-            this.secondBag = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.thirdBag = new System.Windows.Forms.Timer(this.components);
-            this.thirdBagSwitch = new System.Windows.Forms.Timer(this.components);
             this.timerBag4 = new System.Windows.Forms.Timer(this.components);
-            this.timerBag5 = new System.Windows.Forms.Timer(this.components);
-            this.timerBag6 = new System.Windows.Forms.Timer(this.components);
-            this.bag5Switch = new System.Windows.Forms.Timer(this.components);
-            this.bag6Switch = new System.Windows.Forms.Timer(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.CloseCheckIn = new System.Windows.Forms.Button();
             this.labelDrop = new System.Windows.Forms.Label();
@@ -100,11 +92,6 @@
             this.switchTimer.Interval = 1000;
             this.switchTimer.Tick += new System.EventHandler(this.switchTimer_Tick);
             // 
-            // securityCheck
-            // 
-            this.securityCheck.Interval = 1000;
-            this.securityCheck.Tick += new System.EventHandler(this.securityCheck_Tick);
-            // 
             // buttonSec
             // 
             this.buttonSec.BackColor = System.Drawing.Color.Blue;
@@ -121,10 +108,6 @@
             // blink2
             // 
             this.blink2.Tick += new System.EventHandler(this.blink2_Tick);
-            // 
-            // secondBag
-            // 
-            this.secondBag.Tick += new System.EventHandler(this.secondBag_Tick);
             // 
             // label1
             // 
@@ -163,33 +146,9 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // thirdBag
-            // 
-            this.thirdBag.Tick += new System.EventHandler(this.thirdBag_Tick);
-            // 
-            // thirdBagSwitch
-            // 
-            this.thirdBagSwitch.Tick += new System.EventHandler(this.thirdBagSwitch_Tick);
-            // 
             // timerBag4
             // 
             this.timerBag4.Tick += new System.EventHandler(this.timerBag4_Tick);
-            // 
-            // timerBag5
-            // 
-            this.timerBag5.Tick += new System.EventHandler(this.timerBag5_Tick);
-            // 
-            // timerBag6
-            // 
-            this.timerBag6.Tick += new System.EventHandler(this.timerBag6_Tick);
-            // 
-            // bag5Switch
-            // 
-            this.bag5Switch.Tick += new System.EventHandler(this.bag5Switch_Tick);
-            // 
-            // bag6Switch
-            // 
-            this.bag6Switch.Tick += new System.EventHandler(this.bag6Switch_Tick);
             // 
             // button3
             // 
@@ -380,24 +339,16 @@
         private System.Windows.Forms.Button bagStuck;
         private System.Windows.Forms.Timer blink;
         private System.Windows.Forms.Timer switchTimer;
-        private System.Windows.Forms.Timer securityCheck;
         private System.Windows.Forms.Button buttonSec;
         private System.Windows.Forms.Timer blink2;
-        private System.Windows.Forms.Timer secondBag;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Timer thirdBag;
-        private System.Windows.Forms.Timer thirdBagSwitch;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pb_luggage4;
         private System.Windows.Forms.PictureBox pb_luggage6;
         private System.Windows.Forms.PictureBox pb_luggage5;
         private System.Windows.Forms.Timer timerBag4;
-        private System.Windows.Forms.Timer timerBag5;
-        private System.Windows.Forms.Timer timerBag6;
-        private System.Windows.Forms.Timer bag5Switch;
-        private System.Windows.Forms.Timer bag6Switch;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button CloseCheckIn;
         private System.Windows.Forms.Label labelDrop;
