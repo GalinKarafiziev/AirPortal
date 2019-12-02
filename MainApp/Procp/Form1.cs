@@ -16,11 +16,16 @@ namespace Procp
         public bool stuck = false;//if true then red bag stops moving
         Airport airport;
         MainProcessArea mpa;
+        DropOff d1;
+       
+        
         public Form1()
         {
             InitializeComponent();
             airport = new Airport();
             mpa = new MainProcessArea();
+            d1 = airport.getDrop("drop1");
+            
         }
         public int bagMove(PictureBox p)
         {
@@ -66,11 +71,18 @@ namespace Procp
             pb_luggage5.Visible = false;//shows the second bag of check in 2
             pb_luggage6.Visible = false;//shows the third bag of check in 2
 
+            startDropOff1();
+
+        }
+
+        public void startDropOff1()
+        {
             //For dropOff1
             LinkedList link1 = new LinkedList();
-            DropOff d1 = airport.getDrop("drop1");
+            //DropOff d1 = airport.getDrop("drop1");
             CheckIn checkIn1 = new CheckIn(d1, "checkIn1");
             airport.addCheckin(checkIn1);
+            
             Conveyor conveyor1 = new Conveyor(d1, "conv1");
             Conveyor conveyor2 = new Conveyor(d1, "conv2");
             Point point1 = new Point(22, 647);
@@ -84,28 +96,29 @@ namespace Procp
             {
                 PictureBox p = new PictureBox
                 {
-                    Name = "pictureBox",
-                    Margin= new Padding(4,4,4,4),
+                    Name = $"pictureBox{b.BaggageNumber}",
+                    Margin = new Padding(4, 4, 4, 4),
                     Size = new Size(50, 55),
                     Location = new Point(200, 0),
 
                     BackColor = Color.Black
-                   
+
                 };
                 this.Controls.Add(p);
 
-                  //use the method movebag inside the timer ticker 
+
+                //use the method movebag inside the timer ticker
+                
+                Timer_Game.Tick += new System.EventHandler(Timer_Game_Tick);
                 
 
 
                 //if it reaches the end line !!
-                //link1.PassBaggage(b);
+                ///link1.PassBaggage(b);
             }
-
         }
 
-        
-
+       
        
 
 
@@ -119,8 +132,31 @@ namespace Procp
               }
               */
 
-
+            int x = airport.getBagByDropOff(d1).First().BaggageNumber;
             
+
+           
+            foreach(Control bl in this.Controls)
+            {
+                if (bl.Name == $"pictureBox{x}")
+                {
+                    bagMove((PictureBox)bl);
+                }
+            }
+           
+            //Controls.Remove(bl);
+            Thread.Sleep(5);
+            
+            //Timer_Game.Stop();
+            Timer_Game.Start();
+
+
+
+
+
+
+
+
 
             //the green square moves to the drop off in a predefined path
 
