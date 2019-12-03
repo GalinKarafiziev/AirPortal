@@ -10,12 +10,21 @@ namespace Procp
     {
         List<CheckIn> checkIns = new List<CheckIn>();
         List<Passenger> Passengers = new List<Passenger>();
-        List<Baggage> bags = new List<Baggage>();
+        public List<Baggage> bags = new List<Baggage>();
         List<Ticket> ticketsSold = new List<Ticket>();
         List<DropOff> DropOffs;
         Random rnd = new Random();
         
-
+        //public void removeBagFromList(Baggage b)
+        //{
+        //    foreach (Baggage bag in bags)
+        //    {
+        //        if(bag == b)
+        //        {
+        //            bags.Remove(b);
+        //        }
+        //    }
+        //}
         public Airport()
         {
            

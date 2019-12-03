@@ -17,20 +17,24 @@ namespace Procp
         Airport airport;
         MainProcessArea mpa;
         DropOff d1;
-       
-        
+        Baggage Sbag;
+
+        int count = 0;
+        int currentBag = 0;
+        int nextDrop=50;
+
         public Form1()
         {
             InitializeComponent();
             airport = new Airport();
             mpa = new MainProcessArea();
             d1 = airport.getDrop("drop1");
+            Sbag = airport.bags.First();
             
+
         }
         public int bagMove(PictureBox p)
         {
-
-
             if (p.Top < 60)
             {
                 p.Top += 2;
@@ -53,7 +57,6 @@ namespace Procp
                     p.Top += 2;
                 }
             }
-
             return p.Bottom;
 
         }
@@ -82,7 +85,7 @@ namespace Procp
             //DropOff d1 = airport.getDrop("drop1");
             CheckIn checkIn1 = new CheckIn(d1, "checkIn1");
             airport.addCheckin(checkIn1);
-            
+
             Conveyor conveyor1 = new Conveyor(d1, "conv1");
             Conveyor conveyor2 = new Conveyor(d1, "conv2");
             Point point1 = new Point(22, 647);
@@ -91,86 +94,108 @@ namespace Procp
             link1.AddLast(conveyor1);
             link1.AddLast(mpa);
             link1.AddLast(d1);
+        }
+
+        public void dropoff1ff()
+        {
+
 
             foreach (Baggage b in airport.getBagByDropOff(d1))
             {
-                PictureBox p = new PictureBox
+
+                if (!b.IsOnConveyer)
                 {
-                    Name = $"pictureBox{b.BaggageNumber}",
-                    Margin = new Padding(4, 4, 4, 4),
-                    Size = new Size(50, 55),
-                    Location = new Point(200, 0),
+                    PictureBox p = new PictureBox
+                    {
+                        Name = $"pictureBox{b.BaggageNumber}",
+                        Margin = new Padding(4, 4, 4, 4),
+                        Size = new Size(50, 55),
+                        Location = new Point(200, 0),
 
-                    BackColor = Color.Black
+                        BackColor = Color.Black
 
-                };
-                this.Controls.Add(p);
+                    };
+                    this.Controls.Add(p);
+                    Sbag = b;
+                    airport.bags.Remove(b);
 
+                    //use the method movebag inside the timer ticker
+                    b.IsOnConveyer = true;
 
-                //use the method movebag inside the timer ticker
-                
-                Timer_Game.Tick += new System.EventHandler(Timer_Game_Tick);
-                
-
-
+                    //Timer_Game.Tick += new System.EventHandler(Timer_Game_Tick);
+                    //this.Paint += new PaintEventHandler(this.Form1_Paint);
+                    //Thread.Sleep(20);
+                    break;
+                }  
                 //if it reaches the end line !!
                 ///link1.PassBaggage(b);
             }
         }
 
-       
-       
+        
+        private void sendBag()
+        {
+            if (currentBag < airport.getBagByDropOff(d1).Count)
+            {
+                Baggage b = airport.getBagByDropOff(d1)[currentBag];
 
+                currentBag++;
 
+                if (!b.IsOnConveyer)
+                {
+                    PictureBox p = new PictureBox
+                    {
+                        Name = $"pictureBox{b.BaggageNumber}",
+                        Margin = new Padding(4, 4, 4, 4),
+                        Size = new Size(50, 55),
+                        Location = new Point(200, 0),
+
+                        BackColor = Color.Black
+
+                    };
+                    this.Controls.Add(p);
+                    //Sbag = b;
+                    //airport.bags.Remove(b);
+
+                    //use the method movebag inside the timer ticker
+                    b.IsOnConveyer = true;
+                }
+            }
+        }
 
         //the red square moves to the drop off in a predefined path
         private void Timer_Game_Tick(object sender, EventArgs e)
         {
-            /*  if (stuck == true)
-              {
-                  pictureBox1.Top += 0;// when true the red square stops moving
-              }
-              */
+            //int x = Sbag.BaggageNumber;
 
-            int x = airport.getBagByDropOff(d1).First().BaggageNumber;
-            
-
-           
-            foreach(Control bl in this.Controls)
+            for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (bl.Name == $"pictureBox{x}")
+                for (int j = 0; j < currentBag; j++)
                 {
-                    bagMove((PictureBox)bl);
+                    if (this.Controls[i].Name == $"pictureBox{j}")
+                    {
+                        bagMove((PictureBox)this.Controls[i]);
+                    }
                 }
+                
             }
-           
+
+
+
             //Controls.Remove(bl);
-            Thread.Sleep(5);
-            
-            //Timer_Game.Stop();
-            Timer_Game.Start();
+            //Thread.Sleep(20);
+            if (count % nextDrop == 0)
+            {
+                sendBag();//dropoff1ff();
+                Random random = new Random();
+                nextDrop = random.Next(60, 100);
+            }
+
+                //Timer_Game.Stop();
+                //Timer_Game.Start();
+                count++;
 
 
-
-
-
-
-
-
-
-            //the green square moves to the drop off in a predefined path
-
-            //bagMove(pb_luggage2);
-
-
-
-            //the blue square moves to the drop off in a predefined path
-
-            //bagMove(pictureBox1);
-
-
-            //the red square moves to the drop off in a predefined path
-            //bagMove(pb_luggage);
 
 
         }

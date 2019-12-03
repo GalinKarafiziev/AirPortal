@@ -11,6 +11,8 @@ namespace Procp
         public DropOff DropOffGate { get; set; }
         public int BaggageNumber { get; set; }
         public Passenger passenger { get; set; }
+
+        public bool IsOnConveyer { get; set; }
         public Baggage(DropOff dropOffGate, int baggageNumber, Passenger passenger)
         {
             this.DropOffGate = dropOffGate;
