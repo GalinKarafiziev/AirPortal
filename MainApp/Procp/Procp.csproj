@@ -49,6 +49,7 @@
     <Compile Include="Baggage.cs" />
     <Compile Include="CheckIn.cs" />
     <Compile Include="Conveyor.cs" />
+    <Compile Include="CreateLinkList.cs" />
     <Compile Include="DropOff.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

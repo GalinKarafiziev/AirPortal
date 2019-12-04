@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
-    class Node
+    public class Node
     {
         public Node next;
         public List<Baggage> baggage { get; set; }

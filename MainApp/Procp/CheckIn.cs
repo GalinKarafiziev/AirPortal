@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
-    class CheckIn : Node
+    public class CheckIn : Node
     {
         public DropOff DestinationGate { get; set; }
 

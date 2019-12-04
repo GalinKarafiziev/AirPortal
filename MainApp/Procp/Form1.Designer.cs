@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Timer_Game = new System.Windows.Forms.Timer(this.components);
+            this.Drop1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.bagStuck = new System.Windows.Forms.Button();
             this.blink = new System.Windows.Forms.Timer(this.components);
@@ -52,7 +52,7 @@
             this.pb_luggage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbBagsCounterD1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage4)).BeginInit();
@@ -61,10 +61,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_luggage)).BeginInit();
             this.SuspendLayout();
             // 
-            // Timer_Game
+            // Drop1
             // 
-            this.Timer_Game.Interval = 1000;
-            this.Timer_Game.Tick += new System.EventHandler(this.Timer_Game_Tick);
+            this.Drop1.Interval = 1000;
+            this.Drop1.Tick += new System.EventHandler(this.Drop1_Tick);
             // 
             // timer2
             // 
@@ -313,12 +313,14 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "CHECK IN2";
             // 
-            // textBox1
+            // lbBagsCounterD1
             // 
-            this.textBox1.Location = new System.Drawing.Point(353, 668);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 24;
+            this.lbBagsCounterD1.AutoSize = true;
+            this.lbBagsCounterD1.Location = new System.Drawing.Point(194, 645);
+            this.lbBagsCounterD1.Name = "lbBagsCounterD1";
+            this.lbBagsCounterD1.Size = new System.Drawing.Size(46, 17);
+            this.lbBagsCounterD1.TabIndex = 24;
+            this.lbBagsCounterD1.Text = "lbBagsCounterD1";
             // 
             // Form1
             // 
@@ -326,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1322, 666);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbBagsCounterD1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -363,7 +365,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pb_luggage;
-        private System.Windows.Forms.Timer Timer_Game;
+        private System.Windows.Forms.Timer Drop1;
         private System.Windows.Forms.PictureBox b;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button bagStuck;
@@ -385,7 +387,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbBagsCounterD1;
     }
 }
 

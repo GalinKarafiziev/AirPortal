@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
-    class Passenger
+    public class Passenger
     {
         public string TicketId { get; set; }
         public DropOff flightDropOff { get; set; }

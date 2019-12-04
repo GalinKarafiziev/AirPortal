@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
-    class LinkedList
+    public class LinkedList
     {
         private Node first;
 

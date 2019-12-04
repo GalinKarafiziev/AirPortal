@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
-    class DropOff : Node
+    public class DropOff : Node
     {
         public int Number { get; set; }
 

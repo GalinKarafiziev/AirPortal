@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
-    class Airport
+    public class Airport
     {
         List<CheckIn> checkIns = new List<CheckIn>();
         List<Passenger> Passengers = new List<Passenger>();
@@ -14,6 +14,7 @@ namespace Procp
         List<Ticket> ticketsSold = new List<Ticket>();
         List<DropOff> DropOffs;
         Random rnd = new Random();
+        DropOff RandomDrop;
         
         //public void removeBagFromList(Baggage b)
         //{
@@ -41,14 +42,16 @@ namespace Procp
             //random values for passengers
             for (int i = 0; i < 50; i++)
             {
-                Passengers.Add(new Passenger(i.ToString(),DropOffs[rnd.Next(DropOffs.Count)]));
+                Passengers.Add(new Passenger(i.ToString(), RandomDrop=DropOffs[rnd.Next(DropOffs.Count)]));
+
+                bags.Add(new Baggage(RandomDrop, i, Passengers[i]));
             }
 
             //random values for bags
-            for (int i = 0; i < 50; i++)
-            {
-                bags.Add(new Baggage(DropOffs[rnd.Next(DropOffs.Count)],i,Passengers[i]));
-            }
+            //for (int i = 0; i < 50; i++)
+            //{
+                
+            //}
             
         }
 

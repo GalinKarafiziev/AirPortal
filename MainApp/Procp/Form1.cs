@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,21 +18,22 @@ namespace Procp
         Airport airport;
         MainProcessArea mpa;
         DropOff d1;
-        Baggage Sbag;
+        LinkedList link1;
 
         int count = 0;
         int currentBag = 0;
-        int nextDrop=50;
+        int nextDrop= 0;
+        int CounterForDropOff1 = 0;
 
         public Form1()
         {
             InitializeComponent();
             airport = new Airport();
             mpa = new MainProcessArea();
+            link1 = new LinkedList();
             d1 = airport.getDrop("drop1");
-            Sbag = airport.bags.First();
+            startDropOff1();
             
-
         }
         public int bagMove(PictureBox p)
         {
@@ -63,8 +65,8 @@ namespace Procp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Timer_Game.Interval = 1;//red square timer
-            Timer_Game.Start();
+            Drop1.Interval = 1;//red square timer
+            Drop1.Start();
             timerBag4.Interval = 1;//orange square timer(from check in 2)
             timer2.Interval = 14100;//timer for bag stuck randomization
             timer2.Start();
@@ -73,64 +75,19 @@ namespace Procp
             pb_luggage4.Visible = false;//shows the first bag of check in 2
             pb_luggage5.Visible = false;//shows the second bag of check in 2
             pb_luggage6.Visible = false;//shows the third bag of check in 2
-
-            startDropOff1();
-
         }
 
         public void startDropOff1()
         {
             //For dropOff1
-            LinkedList link1 = new LinkedList();
-            //DropOff d1 = airport.getDrop("drop1");
             CheckIn checkIn1 = new CheckIn(d1, "checkIn1");
             airport.addCheckin(checkIn1);
-
             Conveyor conveyor1 = new Conveyor(d1, "conv1");
             Conveyor conveyor2 = new Conveyor(d1, "conv2");
-            Point point1 = new Point(22, 647);
 
-            link1.AddLast(checkIn1);
-            link1.AddLast(conveyor1);
-            link1.AddLast(mpa);
-            link1.AddLast(d1);
+            CreateLinkList C1 = new CreateLinkList(link1,checkIn1,conveyor1,conveyor2,mpa,d1);
         }
-
-        public void dropoff1ff()
-        {
-
-
-            foreach (Baggage b in airport.getBagByDropOff(d1))
-            {
-
-                if (!b.IsOnConveyer)
-                {
-                    PictureBox p = new PictureBox
-                    {
-                        Name = $"pictureBox{b.BaggageNumber}",
-                        Margin = new Padding(4, 4, 4, 4),
-                        Size = new Size(50, 55),
-                        Location = new Point(200, 0),
-
-                        BackColor = Color.Black
-
-                    };
-                    this.Controls.Add(p);
-                    Sbag = b;
-                    airport.bags.Remove(b);
-
-                    //use the method movebag inside the timer ticker
-                    b.IsOnConveyer = true;
-
-                    //Timer_Game.Tick += new System.EventHandler(Timer_Game_Tick);
-                    //this.Paint += new PaintEventHandler(this.Form1_Paint);
-                    //Thread.Sleep(20);
-                    break;
-                }  
-                //if it reaches the end line !!
-                ///link1.PassBaggage(b);
-            }
-        }
+  
 
         
         private void sendBag()
@@ -149,60 +106,47 @@ namespace Procp
                         Margin = new Padding(4, 4, 4, 4),
                         Size = new Size(50, 55),
                         Location = new Point(200, 0),
-
-                        BackColor = Color.Black
+                        BackColor = Color.Brown
 
                     };
                     this.Controls.Add(p);
-                    //Sbag = b;
-                    //airport.bags.Remove(b);
-
-                    //use the method movebag inside the timer ticker
                     b.IsOnConveyer = true;
                 }
             }
         }
 
         //the red square moves to the drop off in a predefined path
-        private void Timer_Game_Tick(object sender, EventArgs e)
+        private void Drop1_Tick(object sender, EventArgs e)
         {
-            //int x = Sbag.BaggageNumber;
-
             for (int i = 0; i < this.Controls.Count; i++)
             {
                 for (int j = 0; j < currentBag; j++)
                 {
-                    if (this.Controls[i].Name == $"pictureBox{j}")
+                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d1)[j].BaggageNumber}")
                     {
                         bagMove((PictureBox)this.Controls[i]);
+                        if (((PictureBox)this.Controls[i]).Location.Y == 520)
+                        {
+                            link1.PassBaggage(airport.getBagByDropOff(d1)[j]);
+                            CounterForDropOff1++;
+                            lbBagsCounterD1.Text = link1.getAllBags().Count().ToString();
+                            airport.getBagByDropOff(d1)[j].IsOnConveyer = false;
+                        }
+                        
                     }
                 }
                 
             }
-
-
-
-            //Controls.Remove(bl);
-            //Thread.Sleep(20);
-            if (count % nextDrop == 0)
+            
+            int[] arrays = { 50, 100, 400 };
+            if (count % arrays[nextDrop] == 0)
             {
-                sendBag();//dropoff1ff();
+                sendBag();
                 Random random = new Random();
-                nextDrop = random.Next(60, 100);
+                nextDrop = random.Next(0, 2);
             }
-
-                //Timer_Game.Stop();
-                //Timer_Game.Start();
-                count++;
-
-
-
-
-        }
-
-
-
-
+            count++;
+        }  
 
         //checkIn2
         private void timerBag4_Tick(object sender, EventArgs e)
@@ -322,7 +266,7 @@ namespace Procp
         private void switchTimer_Tick(object sender, EventArgs e)
         {
 
-            //Timer_Game.Stop();
+            //Drop1.Stop();
             //blink2.Start();
             //pb_luggage.Top = 0;
             //pb_luggage.Left = 0;
@@ -335,7 +279,7 @@ namespace Procp
 
             //switchTimer.Stop();
             //pb_luggage.Visible = true;
-            //Timer_Game.Start();
+            //Drop1.Start();
             //blink2.Stop();
             //buttonSec.BackColor = Color.Blue;
             //switchTimer.Start();
@@ -371,13 +315,13 @@ namespace Procp
         //Slows down the bags in a specific speed
         private void button2_Click(object sender, EventArgs e)
         {
-            Timer_Game.Interval = 50;
+            Drop1.Interval = 50;
         }
 
         //returns the speed of the bags into the predifined speed
         private void button1_Click(object sender, EventArgs e)
         {
-            Timer_Game.Interval = 1;
+            Drop1.Interval = 1;
         }
 
 
