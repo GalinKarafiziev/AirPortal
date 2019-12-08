@@ -159,11 +159,12 @@ namespace Procp
                     if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d1)[j].BaggageNumber}")
                     {
                         bagMoveD1((PictureBox)this.Controls[i]);
-                        if (((PictureBox)this.Controls[i]).Location.Y == 520)
+                        if (((PictureBox)this.Controls[i]).Location.Y == 546)
                         {
                             link1.PassBaggage(airport.getBagByDropOff(d1)[j]);
                             lbBagsCounterD1.Text = link1.getAllBags().Count().ToString();
                             airport.getBagByDropOff(d1)[j].IsOnConveyer = false;
+                            ((PictureBox)this.Controls[i]).Visible = false;
                         }
 
                     }
@@ -225,10 +226,11 @@ namespace Procp
                     {
                         LinkedList link2 = C2.LinkList;
                         bagMoveD2((PictureBox)this.Controls[i]);
-                        if (((PictureBox)this.Controls[i]).Location.Y == 520)
+                        if (((PictureBox)this.Controls[i]).Location.Y == 546)
                         {
                             link2.PassBaggage(airport.getBagByDropOff(d2)[j]);
                             lbBagsCounterD2.Text = link2.getAllBags().Count().ToString();
+                            ((PictureBox)this.Controls[i]).Visible = false;
                         }
 
                     }
