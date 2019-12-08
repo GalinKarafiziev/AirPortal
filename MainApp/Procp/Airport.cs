@@ -16,16 +16,7 @@ namespace Procp
         Random rnd = new Random();
         DropOff RandomDrop;
         
-        //public void removeBagFromList(Baggage b)
-        //{
-        //    foreach (Baggage bag in bags)
-        //    {
-        //        if(bag == b)
-        //        {
-        //            bags.Remove(b);
-        //        }
-        //    }
-        //}
+        
         public Airport()
         {
            
@@ -36,23 +27,14 @@ namespace Procp
                  new DropOff(2, "drop2"),
                  new DropOff(3, "drop3"),
                  new DropOff(4, "drop4")
-                
             };
 
             //random values for passengers
             for (int i = 0; i < 50; i++)
             {
                 Passengers.Add(new Passenger(i.ToString(), RandomDrop=DropOffs[rnd.Next(DropOffs.Count)]));
-
                 bags.Add(new Baggage(RandomDrop, i, Passengers[i]));
             }
-
-            //random values for bags
-            //for (int i = 0; i < 50; i++)
-            //{
-                
-            //}
-            
         }
 
         public DropOff getDrop(string name)

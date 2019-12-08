@@ -14,16 +14,17 @@ namespace Procp
 {
     public partial class Form1 : Form
     {
-        public bool stuck = false;//if true then red bag stops moving
         Airport airport;
         MainProcessArea mpa;
         DropOff d1;
         LinkedList link1;
+        CreateLinkList C2;
 
-        int count = 0;
-        int currentBag = 0;
-        int nextDrop= 0;
-        int CounterForDropOff1 = 0;
+        //for dropOff1
+        int countD1 = 0;
+        int currentBagD1 = 0;
+        int nextDropD1 = 0;
+        Point PointD1 = new Point(200, 0);
 
         public Form1()
         {
@@ -33,9 +34,9 @@ namespace Procp
             link1 = new LinkedList();
             d1 = airport.getDrop("drop1");
             startDropOff1();
-            
         }
-        public int bagMove(PictureBox p)
+
+        public void bagMoveD1(PictureBox p)
         {
             if (p.Top < 60)
             {
@@ -59,22 +60,12 @@ namespace Procp
                     p.Top += 2;
                 }
             }
-            return p.Bottom;
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Drop1.Interval = 1;//red square timer
+            Drop1.Interval = 1;
             Drop1.Start();
-            timerBag4.Interval = 1;//orange square timer(from check in 2)
-            timer2.Interval = 14100;//timer for bag stuck randomization
-            timer2.Start();
-            switchTimer.Interval = 11200;//timer for SECURITY CHECK randomization
-            switchTimer.Start();
-            pb_luggage4.Visible = false;//shows the first bag of check in 2
-            pb_luggage5.Visible = false;//shows the second bag of check in 2
-            pb_luggage6.Visible = false;//shows the third bag of check in 2
         }
 
         public void startDropOff1()
@@ -85,18 +76,61 @@ namespace Procp
             Conveyor conveyor1 = new Conveyor(d1, "conv1");
             Conveyor conveyor2 = new Conveyor(d1, "conv2");
 
-            CreateLinkList C1 = new CreateLinkList(link1,checkIn1,conveyor1,conveyor2,mpa,d1);
+            CreateLinkList C1 = new CreateLinkList(link1, checkIn1, conveyor1, conveyor2, mpa, d1);
         }
-  
 
-        
-        private void sendBag()
+        public void startDropOff2()
         {
-            if (currentBag < airport.getBagByDropOff(d1).Count)
-            {
-                Baggage b = airport.getBagByDropOff(d1)[currentBag];
+            //For dropOff2
+            CheckIn checkIn2 = new CheckIn(airport.getDrop("drop2"), "checkIn2");
+            airport.addCheckin(checkIn2);
+            Conveyor conveyor3 = new Conveyor(d1, "conv3");
+            Conveyor conveyor4 = new Conveyor(d1, "conv4");
+            DropOff d2 = airport.getDrop("drop2");
+            d2.Count = 0;
+            d2.CurrentBag = 0;
+            d2.Point = new Point(520, 0);
+            LinkedList link2 = new LinkedList();
 
-                currentBag++;
+            C2 = new CreateLinkList(link2, checkIn2, conveyor3, conveyor4, mpa, d2);
+        }
+
+        public void adder(DropOff DF)
+        {
+            DropOff d2 = airport.getDrop("drop2");
+            if (DF == d1)
+            {
+                currentBagD1++;
+            }
+            if (DF == d2)
+            {
+                d2.CurrentBag++;
+            }
+
+        }
+
+        public int checker(DropOff DF)
+        {
+            DropOff d2 = airport.getDrop("drop2");
+            if (DF == d1)
+            {
+                return currentBagD1;
+            }
+            if (DF == d2)
+            {
+                return d2.CurrentBag;
+            }
+            return 0;
+        }
+
+        private void sendBag(DropOff d, Point loc)
+        {
+            int currentb = checker(d);
+            if (currentb < airport.getBagByDropOff(d).Count)
+            {
+                Baggage b = airport.getBagByDropOff(d)[currentb];
+
+                adder(d);
 
                 if (!b.IsOnConveyer)
                 {
@@ -105,8 +139,8 @@ namespace Procp
                         Name = $"pictureBox{b.BaggageNumber}",
                         Margin = new Padding(4, 4, 4, 4),
                         Size = new Size(50, 55),
-                        Location = new Point(200, 0),
-                        BackColor = Color.Brown
+                        Location = loc,
+                        BackColor = Color.Black
 
                     };
                     this.Controls.Add(p);
@@ -114,202 +148,101 @@ namespace Procp
                 }
             }
         }
-
-        //the red square moves to the drop off in a predefined path
+        
+      
         private void Drop1_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                for (int j = 0; j < currentBag; j++)
+                for (int j = 0; j < currentBagD1; j++)
                 {
                     if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d1)[j].BaggageNumber}")
                     {
-                        bagMove((PictureBox)this.Controls[i]);
+                        bagMoveD1((PictureBox)this.Controls[i]);
                         if (((PictureBox)this.Controls[i]).Location.Y == 520)
                         {
                             link1.PassBaggage(airport.getBagByDropOff(d1)[j]);
-                            CounterForDropOff1++;
                             lbBagsCounterD1.Text = link1.getAllBags().Count().ToString();
                             airport.getBagByDropOff(d1)[j].IsOnConveyer = false;
                         }
-                        
+
                     }
                 }
-                
             }
-            
-            int[] arrays = { 50, 100, 400 };
-            if (count % arrays[nextDrop] == 0)
+            int[] arrays = { 100, 150, 180 };
+            if (countD1 % arrays[nextDropD1] == 0)
             {
-                sendBag();
+                sendBag(d1, PointD1);
                 Random random = new Random();
-                nextDrop = random.Next(0, 2);
+                nextDropD1 = random.Next(0, 2);
             }
-            count++;
-        }  
+            countD1++;
+
+
+        }
 
         //checkIn2
-        private void timerBag4_Tick(object sender, EventArgs e)
+        private void btnCheckIn2_Click(object sender, EventArgs e)
         {
-            //the orange square (from check in 2) moves to the drop off in a predefined path
-            if (pb_luggage4.Top < 60)
+            startDropOff2();
+            Drop2.Interval = 1;
+            Drop2.Start();
+        }
+
+        public void bagMoveD2(PictureBox p)
+        {
+            if (p.Top < 60)
             {
-                pb_luggage4.Top += 2;
+                p.Top += 2;
             }
-            else if (pb_luggage4.Top < 390 && pb_luggage4.Left > 300)
+            else if (p.Top < 390 && p.Left > 300)
             {
-                pb_luggage4.Left -= 2;
+                p.Left -= 2;
 
             }
             else
             {
-                if (pb_luggage4.Top > 390 && pb_luggage4.Left < 515)
+                if (p.Top > 390 && p.Left < 515)
                 {
-                    pb_luggage4.Left += 2;
+                    p.Left += 2;
                 }
                 else
                 {
-                    pb_luggage4.Top += 2;
+                    p.Top += 2;
                 }
             }
-            //the gray square (from check in 2) moves to the drop off in a predefined path
-            if (pb_luggage5.Top < 60 && pb_luggage4.Top > 59)
+        }
+
+        
+        private void Drop2_Tick(object sender, EventArgs e)
+        {
+            DropOff d2 = airport.getDrop("drop2");
+            for (int i = 0; i < this.Controls.Count; i++)
             {
-                pb_luggage5.Top += 2;
-            }
-            else if (pb_luggage5.Top < 390 && pb_luggage5.Left > 300 && pb_luggage4.Top > 59)
-            {
-                pb_luggage5.Left -= 2;
-            }
-            else
-            {
-                if (pb_luggage5.Top > 390 && pb_luggage5.Left < 515 && pb_luggage4.Top > 59)
+                for (int j = 0; j < d2.CurrentBag; j++)
                 {
-                    pb_luggage5.Left += 2;
+                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d2)[j].BaggageNumber}")
+                    {
+                        LinkedList link2 = C2.LinkList;
+                        bagMoveD2((PictureBox)this.Controls[i]);
+                        if (((PictureBox)this.Controls[i]).Location.Y == 520)
+                        {
+                            link2.PassBaggage(airport.getBagByDropOff(d2)[j]);
+                            lbBagsCounterD2.Text = link2.getAllBags().Count().ToString();
+                        }
 
-                }
-                else if (pb_luggage4.Top > 59 || pb_luggage6.Top > 300)
-                {
-                    pb_luggage5.Top += 2;
+                    }
                 }
             }
-            //the pink square (from check in 2) moves to the drop off in a predefined path
-            if (pb_luggage6.Top < 60 && pb_luggage5.Top > 59)
+            //delay for dropOff2
+            int[] arrays = { 100, 150, 180 };
+            if (d2.Count % arrays[nextDropD1] == 0)
             {
-                pb_luggage6.Top += 2;
+                sendBag(d2, d2.Point);
+                Random random = new Random();
+                nextDropD1 = random.Next(0, 2);
             }
-            else if (pb_luggage6.Top < 390 && pb_luggage6.Left > 300 && pb_luggage5.Top > 59)
-            {
-                pb_luggage6.Left -= 2;
-            }
-            else
-            {
-                if (pb_luggage6.Top > 390 && pb_luggage6.Left < 515 && pb_luggage5.Top > 59)
-                {
-                    pb_luggage6.Left += 2;
-
-                }
-                else if (pb_luggage6.Top > 59)
-                {
-                    pb_luggage6.Top += 2;
-                }
-            }
-
-        }
-
-
-        //This places the luggage at the starting point when it finishes the conveyer belt
-        private void pb_luggage_LocationChanged(object sender, EventArgs e)
-        {
-
-            //if (pb_luggage.Top >= this.Width)
-            //{
-            //    pb_luggage.Top = 0 - pb_luggage.Height;
-            //    pb_luggage.Left = 200;
-            //}
-
-        }
-
-        //triggers the bag stuck button, which stops the conveyer
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            //stuck = true;
-            //blink.Start();
-        }
-
-        //stops the blinking of the bag stuck button and starts the conveyer
-        private void bagStuck_Click(object sender, EventArgs e)
-        {
-            //timer2.Stop();
-            //stuck = false;
-
-            //blink.Stop();
-            //bagStuck.BackColor = Color.Blue;
-            //timer2.Start();
-        }
-
-        //changes the color of the bag stuck button 
-        private void blink_Tick(object sender, EventArgs e)
-        {
-            //if (bagStuck.BackColor == Color.Black)
-            //{
-            //    bagStuck.BackColor = Color.Red;
-            //}
-            //else
-            //{
-            //    bagStuck.BackColor = Color.Black;
-            //}
-        }
-
-
-        //triggers the security check button, which sends the bag at the top left corner
-        private void switchTimer_Tick(object sender, EventArgs e)
-        {
-
-            //Drop1.Stop();
-            //blink2.Start();
-            //pb_luggage.Top = 0;
-            //pb_luggage.Left = 0;
-
-        }
-
-        //when you click on the security button it sends the seized bag back to the conveyer
-        private void buttonSec_Click(object sender, EventArgs e)
-        {
-
-            //switchTimer.Stop();
-            //pb_luggage.Visible = true;
-            //Drop1.Start();
-            //blink2.Stop();
-            //buttonSec.BackColor = Color.Blue;
-            //switchTimer.Start();
-
-
-        }
-
-        //changes the color of the security check button
-        private void blink2_Tick(object sender, EventArgs e)
-        {
-
-            //if (buttonSec.BackColor == Color.Black)
-            //{
-            //    buttonSec.BackColor = Color.Red;
-            //}
-            //else
-            //{
-            //    buttonSec.BackColor = Color.Black;
-            //}
-
-        }
-
-        //This places the luggage at the starting point when it finishes the conveyer belt
-        private void pb_luggage2_LocationChanged(object sender, EventArgs e)
-        {
-            //if (pb_luggage2.Top >= this.Width)
-            //{
-            //    pb_luggage2.Top = 0 - pb_luggage2.Height;
-            //    pb_luggage2.Left = 200;
-            //}
+            d2.Count++;
         }
 
         //Slows down the bags in a specific speed
@@ -323,69 +256,7 @@ namespace Procp
         {
             Drop1.Interval = 1;
         }
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //This places the luggage at the starting point when it finishes the conveyer belt
-        private void pictureBox1_LocationChanged(object sender, EventArgs e)
-        {
-            //if (pictureBox1.Top >= this.Width)
-            //{
-            //    pictureBox1.Top = 0 - pictureBox1.Height;
-            //    pictureBox1.Left = 200;
-            //}
-        }
-
-        //This places the luggage at the starting point when it finishes the conveyer belt
-        private void pb_luggage5_LocationChanged(object sender, EventArgs e)
-        {
-            //if (pb_luggage5.Top >= this.Width)
-            //{
-            //    pb_luggage5.Top = 0 - pb_luggage5.Height;
-            //    pb_luggage5.Left = 515;
-            //}
-        }
-
-
-        //This places the luggage at the starting point when it finishes the conveyer belt
-        private void pb_luggage6_LocationChanged(object sender, EventArgs e)
-        {
-            //if (pb_luggage6.Top >= this.Width)
-            //{
-            //    pb_luggage6.Top = 0 - pb_luggage6.Height;
-            //    pb_luggage6.Left = 515;
-            //}
-        }
-
-        //This places the luggage at the starting point when it finishes the conveyer belt
-        private void pb_luggage4_LocationChanged(object sender, EventArgs e)
-        {
-            //if (pb_luggage4.Top >= this.Width)
-            //{
-            //    pb_luggage4.Top = 0 - pb_luggage4.Height;
-            //    pb_luggage4.Left = 515;
-            //}
-        }
-
-        //starts the 2nd check in 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            pb_luggage4.Visible = true;
-            pb_luggage5.Visible = true;
-            pb_luggage6.Visible = true;
-            timerBag4.Start();
-        }
-
-        //closes the 2nd check in
-        private void CloseCheckIn_Click(object sender, EventArgs e)
-        {
-            timerBag4.Stop();
-        }
-
+ 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -428,7 +299,7 @@ namespace Procp
             //g.DrawString("Drop-off", font, myBlackBrush, new PointF(345, 414));
         }
 
-        private void pb_luggage5_Click(object sender, EventArgs e)
+        private void CloseCheckIn_Click(object sender, EventArgs e)
         {
 
         }

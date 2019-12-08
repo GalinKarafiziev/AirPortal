@@ -30,35 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Drop1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.bagStuck = new System.Windows.Forms.Button();
-            this.blink = new System.Windows.Forms.Timer(this.components);
-            this.switchTimer = new System.Windows.Forms.Timer(this.components);
-            this.buttonSec = new System.Windows.Forms.Button();
-            this.blink2 = new System.Windows.Forms.Timer(this.components);
+            this.Drop2 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.timerBag4 = new System.Windows.Forms.Timer(this.components);
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCheckIn2 = new System.Windows.Forms.Button();
             this.CloseCheckIn = new System.Windows.Forms.Button();
             this.labelDrop = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pb_luggage5 = new System.Windows.Forms.PictureBox();
-            this.pb_luggage6 = new System.Windows.Forms.PictureBox();
-            this.pb_luggage4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.b = new System.Windows.Forms.PictureBox();
-            this.pb_luggage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbBagsCounterD1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_luggage5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_luggage6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_luggage4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.b)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_luggage)).BeginInit();
+            this.lbBagsCounterD2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Drop1
@@ -66,51 +49,10 @@
             this.Drop1.Interval = 1000;
             this.Drop1.Tick += new System.EventHandler(this.Drop1_Tick);
             // 
-            // timer2
+            // Drop2
             // 
-            this.timer2.Interval = 2000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // bagStuck
-            // 
-            this.bagStuck.BackColor = System.Drawing.Color.Blue;
-            this.bagStuck.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bagStuck.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bagStuck.Location = new System.Drawing.Point(5, 377);
-            this.bagStuck.Margin = new System.Windows.Forms.Padding(4);
-            this.bagStuck.Name = "bagStuck";
-            this.bagStuck.Size = new System.Drawing.Size(103, 62);
-            this.bagStuck.TabIndex = 2;
-            this.bagStuck.Text = "Bag Stuck";
-            this.bagStuck.UseVisualStyleBackColor = false;
-            this.bagStuck.Click += new System.EventHandler(this.bagStuck_Click);
-            // 
-            // blink
-            // 
-            this.blink.Tick += new System.EventHandler(this.blink_Tick);
-            // 
-            // switchTimer
-            // 
-            this.switchTimer.Interval = 1000;
-            this.switchTimer.Tick += new System.EventHandler(this.switchTimer_Tick);
-            // 
-            // buttonSec
-            // 
-            this.buttonSec.BackColor = System.Drawing.Color.Blue;
-            this.buttonSec.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonSec.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonSec.Location = new System.Drawing.Point(119, 378);
-            this.buttonSec.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonSec.Name = "buttonSec";
-            this.buttonSec.Size = new System.Drawing.Size(103, 62);
-            this.buttonSec.TabIndex = 3;
-            this.buttonSec.Text = "SECURITY!";
-            this.buttonSec.UseVisualStyleBackColor = false;
-            this.buttonSec.Click += new System.EventHandler(this.buttonSec_Click);
-            // 
-            // blink2
-            // 
-            this.blink2.Tick += new System.EventHandler(this.blink2_Tick);
+            this.Drop2.Interval = 2000;
+            this.Drop2.Tick += new System.EventHandler(this.Drop2_Tick);
             // 
             // label1
             // 
@@ -152,23 +94,19 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // timerBag4
+            // btnCheckIn2
             // 
-            this.timerBag4.Tick += new System.EventHandler(this.timerBag4_Tick);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Blue;
-            this.button3.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(5, 277);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 49);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Open check in";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCheckIn2.BackColor = System.Drawing.Color.Blue;
+            this.btnCheckIn2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnCheckIn2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCheckIn2.Location = new System.Drawing.Point(5, 277);
+            this.btnCheckIn2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheckIn2.Name = "btnCheckIn2";
+            this.btnCheckIn2.Size = new System.Drawing.Size(103, 49);
+            this.btnCheckIn2.TabIndex = 12;
+            this.btnCheckIn2.Text = "Open check in 2";
+            this.btnCheckIn2.UseVisualStyleBackColor = false;
+            this.btnCheckIn2.Click += new System.EventHandler(this.btnCheckIn2_Click);
             // 
             // CloseCheckIn
             // 
@@ -206,91 +144,6 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "DROP OFF2";
             // 
-            // pb_luggage5
-            // 
-            this.pb_luggage5.BackColor = System.Drawing.Color.Teal;
-            this.pb_luggage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pb_luggage5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_luggage5.Location = new System.Drawing.Point(687, 0);
-            this.pb_luggage5.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_luggage5.Name = "pb_luggage5";
-            this.pb_luggage5.Size = new System.Drawing.Size(66, 61);
-            this.pb_luggage5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_luggage5.TabIndex = 11;
-            this.pb_luggage5.TabStop = false;
-            this.pb_luggage5.LocationChanged += new System.EventHandler(this.pb_luggage5_LocationChanged);
-            this.pb_luggage5.Click += new System.EventHandler(this.pb_luggage5_Click);
-            // 
-            // pb_luggage6
-            // 
-            this.pb_luggage6.BackColor = System.Drawing.Color.Magenta;
-            this.pb_luggage6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_luggage6.Location = new System.Drawing.Point(687, 0);
-            this.pb_luggage6.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_luggage6.Name = "pb_luggage6";
-            this.pb_luggage6.Size = new System.Drawing.Size(66, 61);
-            this.pb_luggage6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_luggage6.TabIndex = 10;
-            this.pb_luggage6.TabStop = false;
-            this.pb_luggage6.LocationChanged += new System.EventHandler(this.pb_luggage6_LocationChanged);
-            // 
-            // pb_luggage4
-            // 
-            this.pb_luggage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pb_luggage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_luggage4.Location = new System.Drawing.Point(687, 0);
-            this.pb_luggage4.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_luggage4.Name = "pb_luggage4";
-            this.pb_luggage4.Size = new System.Drawing.Size(66, 61);
-            this.pb_luggage4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_luggage4.TabIndex = 9;
-            this.pb_luggage4.TabStop = false;
-            this.pb_luggage4.LocationChanged += new System.EventHandler(this.pb_luggage4_LocationChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Blue;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(267, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            this.pictureBox1.LocationChanged += new System.EventHandler(this.pictureBox1_LocationChanged);
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // b
-            // 
-            this.b.BackColor = System.Drawing.Color.Green;
-            this.b.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.b.Location = new System.Drawing.Point(267, 0);
-            this.b.Margin = new System.Windows.Forms.Padding(4);
-            this.b.Name = "b";
-            this.b.Size = new System.Drawing.Size(66, 61);
-            this.b.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.b.TabIndex = 1;
-            this.b.TabStop = false;
-            this.b.Visible = false;
-            this.b.LocationChanged += new System.EventHandler(this.pb_luggage2_LocationChanged);
-            // 
-            // pb_luggage
-            // 
-            this.pb_luggage.BackColor = System.Drawing.Color.Red;
-            this.pb_luggage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pb_luggage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_luggage.Location = new System.Drawing.Point(267, 0);
-            this.pb_luggage.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_luggage.Name = "pb_luggage";
-            this.pb_luggage.Size = new System.Drawing.Size(66, 61);
-            this.pb_luggage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_luggage.TabIndex = 0;
-            this.pb_luggage.TabStop = false;
-            this.pb_luggage.Visible = false;
-            this.pb_luggage.LocationChanged += new System.EventHandler(this.pb_luggage_LocationChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -318,9 +171,18 @@
             this.lbBagsCounterD1.AutoSize = true;
             this.lbBagsCounterD1.Location = new System.Drawing.Point(194, 645);
             this.lbBagsCounterD1.Name = "lbBagsCounterD1";
-            this.lbBagsCounterD1.Size = new System.Drawing.Size(46, 17);
+            this.lbBagsCounterD1.Size = new System.Drawing.Size(119, 17);
             this.lbBagsCounterD1.TabIndex = 24;
             this.lbBagsCounterD1.Text = "lbBagsCounterD1";
+            // 
+            // lbBagsCounterD2
+            // 
+            this.lbBagsCounterD2.AutoSize = true;
+            this.lbBagsCounterD2.Location = new System.Drawing.Point(885, 624);
+            this.lbBagsCounterD2.Name = "lbBagsCounterD2";
+            this.lbBagsCounterD2.Size = new System.Drawing.Size(119, 17);
+            this.lbBagsCounterD2.TabIndex = 25;
+            this.lbBagsCounterD2.Text = "lbBagsCounterD2";
             // 
             // Form1
             // 
@@ -328,66 +190,41 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1322, 666);
+            this.Controls.Add(this.lbBagsCounterD2);
             this.Controls.Add(this.lbBagsCounterD1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelDrop);
             this.Controls.Add(this.CloseCheckIn);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.pb_luggage5);
-            this.Controls.Add(this.pb_luggage6);
-            this.Controls.Add(this.pb_luggage4);
+            this.Controls.Add(this.btnCheckIn2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonSec);
-            this.Controls.Add(this.bagStuck);
-            this.Controls.Add(this.pb_luggage);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.b);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_luggage5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_luggage6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_luggage4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.b)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_luggage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pb_luggage;
         private System.Windows.Forms.Timer Drop1;
-        private System.Windows.Forms.PictureBox b;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Button bagStuck;
-        private System.Windows.Forms.Timer blink;
-        private System.Windows.Forms.Timer switchTimer;
-        private System.Windows.Forms.Button buttonSec;
-        private System.Windows.Forms.Timer blink2;
+        private System.Windows.Forms.Timer Drop2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pb_luggage4;
-        private System.Windows.Forms.PictureBox pb_luggage6;
-        private System.Windows.Forms.PictureBox pb_luggage5;
-        private System.Windows.Forms.Timer timerBag4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCheckIn2;
         private System.Windows.Forms.Button CloseCheckIn;
         private System.Windows.Forms.Label labelDrop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbBagsCounterD1;
+        private System.Windows.Forms.Label lbBagsCounterD2;
     }
 }
 

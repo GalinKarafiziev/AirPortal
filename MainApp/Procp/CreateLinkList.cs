@@ -8,12 +8,12 @@ namespace Procp
 {
     public class CreateLinkList
     {
-        CheckIn CheckIn { get; set; }
-        Conveyor Conv1 { get; set; }
-        Conveyor Conv2 { get; set; }
-        MainProcessArea MainProcessArea { get; set; }
-        DropOff DropOff { get; set; }
-        LinkedList LinkList { get; set; }
+        public CheckIn CheckIn { get; set; }
+        public Conveyor Conv1 { get; set; }
+        public Conveyor Conv2 { get; set; }
+        public MainProcessArea MainProcessArea { get; set; }
+        public DropOff DropOff { get; set; }
+        public LinkedList LinkList { get; set; }
 
 
 
