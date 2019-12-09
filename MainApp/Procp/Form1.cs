@@ -251,12 +251,14 @@ namespace Procp
         private void button2_Click(object sender, EventArgs e)
         {
             Drop1.Interval = 50;
+            Drop2.Interval = 50;
         }
 
         //returns the speed of the bags into the predifined speed
         private void button1_Click(object sender, EventArgs e)
         {
             Drop1.Interval = 1;
+            Drop2.Interval = 1;
         }
  
         private void Form1_Paint(object sender, PaintEventArgs e)
