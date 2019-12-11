@@ -26,6 +26,9 @@ namespace Procp
         int nextDropD1 = 0;
         Point PointD1 = new Point(200, 0);
 
+        int checkInsOpenD1 = 0;
+        int checkInsOpenD2 = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -66,6 +69,7 @@ namespace Procp
         {
             Drop1.Interval = 1;
             Drop1.Start();
+            checkInsOpenD1++;
         }
 
         public void startDropOff1()
@@ -154,6 +158,8 @@ namespace Procp
         {
             for (int i = 0; i < this.Controls.Count; i++)
             {
+                lbCheckIn.Text = checkInsOpenD1.ToString();
+                lbPassenger.Text = airport.getPassengers(d1).Count().ToString();
                 for (int j = 0; j < currentBagD1; j++)
                 {
                     if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d1)[j].BaggageNumber}")
@@ -162,7 +168,7 @@ namespace Procp
                         if (((PictureBox)this.Controls[i]).Location.Y == 546)
                         {
                             link1.PassBaggage(airport.getBagByDropOff(d1)[j]);
-                            lbBagsCounterD1.Text = link1.getAllBags().Count().ToString();
+                            lbBags.Text = link1.getAllBags().Count().ToString();
                             airport.getBagByDropOff(d1)[j].IsOnConveyer = false;
                             ((PictureBox)this.Controls[i]).Visible = false;
                         }
@@ -188,6 +194,7 @@ namespace Procp
             startDropOff2();
             Drop2.Interval = 1;
             Drop2.Start();
+            checkInsOpenD2 = 1;
         }
 
         public void bagMoveD2(PictureBox p)
@@ -220,6 +227,8 @@ namespace Procp
             DropOff d2 = airport.getDrop("drop2");
             for (int i = 0; i < this.Controls.Count; i++)
             {
+                lbCheckIn2.Text = checkInsOpenD2.ToString();
+                lbPassenger2.Text = airport.getPassengers(d2).Count().ToString();
                 for (int j = 0; j < d2.CurrentBag; j++)
                 {
                     if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d2)[j].BaggageNumber}")
@@ -229,7 +238,7 @@ namespace Procp
                         if (((PictureBox)this.Controls[i]).Location.Y == 546)
                         {
                             link2.PassBaggage(airport.getBagByDropOff(d2)[j]);
-                            lbBagsCounterD2.Text = link2.getAllBags().Count().ToString();
+                            lbBags2.Text = link2.getAllBags().Count().ToString();
                             ((PictureBox)this.Controls[i]).Visible = false;
                         }
 
