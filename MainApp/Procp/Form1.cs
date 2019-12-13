@@ -187,6 +187,7 @@ namespace Procp
                     };
                     this.Controls.Add(p);
                     b.IsOnConveyer = true;
+                    p.Click += this.PictureStatisticsClick;
                 }
                 else if (!b.IsOnConveyer && b.Suspicious == true)
                 {
@@ -248,6 +249,7 @@ namespace Procp
             Drop2.Interval = 1;
             Drop2.Start();
             checkInsOpenD2 = 1;
+            btnCheckIn2.Enabled = false;
         }
 
         public void bagMoveD2(PictureBox p)
@@ -365,11 +367,6 @@ namespace Procp
             //g.DrawString("Drop-off", font, myBlackBrush, new PointF(345, 414));
         }
 
-        private void CloseCheckIn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void Seized(DropOff d, PictureBox pb, Baggage b)
         {
             Controls.Remove(pb);
@@ -385,7 +382,38 @@ namespace Procp
             {
                 Seized(b.DropOffGate, oPictureBox, b);
             }
-            //get bag using the baggageNumber in the name of the picture box
+            
         }
+        private void PictureStatisticsClick(object sender, EventArgs e)
+        {
+            PictureBox oPictureBox = (PictureBox)sender;
+            Baggage b = airport.GetBagFromStringNum(oPictureBox.Name);
+            lbBagId.Text = b.BaggageNumber.ToString();
+            lbDropOffDes.Text = b.DropOffGate.Name;
+            lbTicketId.Text = b.passenger.TicketId;
+            
+        }
+
+        private void btnBreak_Click(object sender, EventArgs e)
+        {
+            
+            if(Drop1.Enabled == false && Drop2.Enabled == false)
+            {
+                Drop1.Interval = 1;
+                Drop2.Interval = 1;
+                Drop1.Start();
+                Drop2.Start();
+            }
+            else
+            {
+                Drop1.Enabled = true;
+                Drop2.Enabled = true;
+                Drop1.Stop();
+                Drop2.Stop();
+            }
+            
+        }
+
+       
     }
 }

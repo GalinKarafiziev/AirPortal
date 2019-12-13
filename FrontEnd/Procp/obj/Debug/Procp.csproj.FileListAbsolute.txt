@@ -38,3 +38,13 @@ C:\Users\user\Documents\Airportal\FrontEnd\airportal\FrontEnd\Procp\obj\Debug\Pr
 C:\Users\user\Documents\Airportal\FrontEnd\airportal\FrontEnd\Procp\obj\Debug\Procp.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\Airportal\FrontEnd\airportal\FrontEnd\Procp\obj\Debug\Procp.exe
 C:\Users\user\Documents\Airportal\FrontEnd\airportal\FrontEnd\Procp\obj\Debug\Procp.pdb
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\bin\Debug\Procp.exe.config
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\bin\Debug\Procp.exe
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\bin\Debug\Procp.pdb
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\obj\Debug\Procp.csprojAssemblyReference.cache
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\obj\Debug\Procp.Form1.resources
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\obj\Debug\Procp.Properties.Resources.resources
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\obj\Debug\Procp.csproj.GenerateResource.cache
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\obj\Debug\Procp.csproj.CoreCompileInputs.cache
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\obj\Debug\Procp.exe
+C:\Users\adamm\OneDrive\Desktop\ProcpApp\airportal\FrontEnd\Procp\obj\Debug\Procp.pdb
