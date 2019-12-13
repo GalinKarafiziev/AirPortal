@@ -38,9 +38,6 @@ namespace Procp
                         //this.baggage.Remove(data);
                         Console.WriteLine($"{this.Name} {this.baggage.Count} has proccessed the baggage");
                     }
-
-
-
                 }
             }
         }

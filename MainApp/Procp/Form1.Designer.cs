@@ -55,6 +55,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Passengers = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbDropoff2.SuspendLayout();
             this.gbDropoff1.SuspendLayout();
@@ -84,7 +85,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Blue;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.Location = new System.Drawing.Point(4, 271);
             this.button2.Name = "button2";
@@ -97,7 +98,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Blue;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(89, 272);
             this.button1.Name = "button1";
@@ -110,7 +111,7 @@
             // btnCheckIn2
             // 
             this.btnCheckIn2.BackColor = System.Drawing.Color.Blue;
-            this.btnCheckIn2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnCheckIn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnCheckIn2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCheckIn2.Location = new System.Drawing.Point(4, 225);
             this.btnCheckIn2.Name = "btnCheckIn2";
@@ -123,7 +124,7 @@
             // CloseCheckIn
             // 
             this.CloseCheckIn.BackColor = System.Drawing.Color.Blue;
-            this.CloseCheckIn.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.CloseCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.CloseCheckIn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.CloseCheckIn.Location = new System.Drawing.Point(89, 225);
             this.CloseCheckIn.Name = "CloseCheckIn";
@@ -341,12 +342,21 @@
             this.Passengers.TabIndex = 2;
             this.Passengers.Text = "Passengers";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 27;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1176, 541);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -398,6 +408,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label Passengers;
+        private System.Windows.Forms.Label label5;
     }
 }
 

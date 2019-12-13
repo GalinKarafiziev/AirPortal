@@ -68,3 +68,13 @@ C:\Users\ivanv\Desktop\airportal\MainApp\Procp\obj\Debug\Procp.csproj.GenerateRe
 C:\Users\ivanv\Desktop\airportal\MainApp\Procp\obj\Debug\Procp.csproj.CoreCompileInputs.cache
 C:\Users\ivanv\Desktop\airportal\MainApp\Procp\obj\Debug\Procp.exe
 C:\Users\ivanv\Desktop\airportal\MainApp\Procp\obj\Debug\Procp.pdb
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\bin\Debug\Procp.exe.config
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\bin\Debug\Procp.exe
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\bin\Debug\Procp.pdb
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\obj\Debug\Procp.csprojResolveAssemblyReference.cache
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\obj\Debug\Procp.Form1.resources
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\obj\Debug\Procp.Properties.Resources.resources
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\obj\Debug\Procp.csproj.GenerateResource.Cache
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\obj\Debug\Procp.csproj.CoreCompileInputs.cache
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\obj\Debug\Procp.exe
+C:\Users\protozaek\Desktop\airportal-master\MainApp\Procp\obj\Debug\Procp.pdb

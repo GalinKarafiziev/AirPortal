@@ -19,6 +19,9 @@ namespace Procp
         DropOff d1;
         LinkedList link1;
         CreateLinkList C2;
+        //array to be checked
+        Random rnd = new Random();
+        List<int> numbersList = new List<int>();
 
         //for dropOff1
         int countD1 = 0;
@@ -37,8 +40,17 @@ namespace Procp
             link1 = new LinkedList();
             d1 = airport.getDrop("drop1");
             startDropOff1();
-        }
 
+        }
+        //Populate array to be checked
+        public void PopulateArraylist()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                int rndNr = rnd.Next(1, 10) - 1;
+                numbersList.Add(rndNr);
+            }
+        }
         public void bagMoveD1(PictureBox p)
         {
             if (p.Top < 60)
@@ -133,10 +145,35 @@ namespace Procp
             if (currentb < airport.getBagByDropOff(d).Count)
             {
                 Baggage b = airport.getBagByDropOff(d)[currentb];
+                //Check if the bag should go to SEIZED
+                string temp = b.BaggageId.Substring(b.BaggageId.Length - 1, 1);
+                int x = 0;
+                Int32.TryParse(temp, out x);
+                //checking if statement
+                if (numbersList.Contains(x))
+                {
+                    int arrayPos = 0;
+                    foreach (var t in numbersList.ToList())
+                    {
+                        if (x == numbersList[arrayPos])
+                        {
+                            numbersList.RemoveAt(arrayPos);
+                            b.Suspicious = true;
+                        }
+                        else
+                        {
+                            arrayPos++;
+                        }
+                    }
+                }
+                //if the array to be checked is empty - repopulate it
+                if (numbersList.Count == 0)
+                {
+                    PopulateArraylist();
+                }
 
                 adder(d);
-
-                if (!b.IsOnConveyer)
+                if (!b.IsOnConveyer && b.Suspicious == false)
                 {
                     PictureBox p = new PictureBox
                     {
@@ -144,11 +181,28 @@ namespace Procp
                         Margin = new Padding(4, 4, 4, 4),
                         Size = new Size(50, 55),
                         Location = loc,
-                        BackColor = Color.Black
+                        BackColor = Color.Black,
+                        
 
                     };
                     this.Controls.Add(p);
                     b.IsOnConveyer = true;
+                }
+                else if (!b.IsOnConveyer && b.Suspicious == true)
+                {
+
+                    PictureBox p = new PictureBox
+                    {
+                        Name = $"pictureBox{b.BaggageNumber}",
+                        Margin = new Padding(4, 4, 4, 4),
+                        Size = new Size(50, 55),
+                        Location = new Point(10,35),
+                        BackColor = Color.Black,
+                        
+
+                    };
+                    this.Controls.Add(p);
+                    p.Click += this.PictureClick;
                 }
             }
         }
@@ -162,7 +216,7 @@ namespace Procp
                 lbPassenger.Text = airport.getPassengers(d1).Count().ToString();
                 for (int j = 0; j < currentBagD1; j++)
                 {
-                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d1)[j].BaggageNumber}")
+                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d1)[j].BaggageNumber}" && airport.getBagByDropOff(d1)[j].Suspicious == false)
                     {
                         bagMoveD1((PictureBox)this.Controls[i]);
                         if (((PictureBox)this.Controls[i]).Location.Y == 546)
@@ -172,7 +226,6 @@ namespace Procp
                             airport.getBagByDropOff(d1)[j].IsOnConveyer = false;
                             ((PictureBox)this.Controls[i]).Visible = false;
                         }
-
                     }
                 }
             }
@@ -315,6 +368,24 @@ namespace Procp
         private void CloseCheckIn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void Seized(DropOff d, PictureBox pb, Baggage b)
+        {
+            Controls.Remove(pb);
+            Baggage bag = new Baggage(b.DropOffGate, b.BaggageNumber, b.passenger);
+            airport.AddBag(bag);
+        }
+
+        private void PictureClick(object sender, EventArgs e)
+        {
+            PictureBox oPictureBox = (PictureBox)sender;
+            Baggage b = airport.GetBagFromStringNum(oPictureBox.Name);
+            if (oPictureBox.Location == new Point(10,35))
+            {
+                Seized(b.DropOffGate, oPictureBox, b);
+            }
+            //get bag using the baggageNumber in the name of the picture box
         }
     }
 }

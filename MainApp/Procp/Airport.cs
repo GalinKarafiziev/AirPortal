@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Procp
@@ -79,6 +80,19 @@ namespace Procp
             ticketsSold.Add(t);
         }
 
+        public Baggage GetBaggageByNumber(int bagNmbr)
+        {
+            
+            foreach (Baggage bag in bags)
+            {
+                if (bag.BaggageNumber == bagNmbr)
+                {
+                    return bag;
+                }
+            }
+            return null;
+        }
+
         public List<Passenger> getAllPassengers()
         {
             return Passengers;
@@ -126,6 +140,23 @@ namespace Procp
                 }
             }
             return temp.Count();
+        }
+
+        public Baggage GetBagFromStringNum(string PicBoxName)
+        {
+            Baggage b = null;
+            string[] number = Regex.Split(PicBoxName, @"\D+");
+            int i = int.Parse(number[1]);
+
+            foreach (Baggage bag in bags)
+            {
+                if (bag.BaggageNumber == i)
+                {
+                    b = bag;
+                }
+            }
+
+            return b;
         }
     }
 }
