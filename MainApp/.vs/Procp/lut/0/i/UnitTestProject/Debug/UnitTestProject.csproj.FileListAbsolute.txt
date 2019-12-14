@@ -1,0 +1,8 @@
+D:\Fontys\ProCP\airportal\MainApp\.vs\Procp\lut\0\b\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Fontys\ProCP\airportal\MainApp\.vs\Procp\lut\0\b\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Fontys\ProCP\airportal\MainApp\.vs\Procp\lut\0\b\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Fontys\ProCP\airportal\MainApp\.vs\Procp\lut\0\b\UnitTestProject\bin\Debug\UnitTestProject.dll
+D:\Fontys\ProCP\airportal\MainApp\.vs\Procp\lut\0\i\UnitTestProject\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
+D:\Fontys\ProCP\airportal\MainApp\.vs\Procp\lut\0\i\UnitTestProject\Debug\UnitTestProject.csproj.CopyComplete
+D:\Fontys\ProCP\airportal\MainApp\.vs\Procp\lut\0\i\UnitTestProject\Debug\UnitTestProject.dll
+D:\Fontys\ProCP\airportal\MainApp\.vs\Procp\lut\0\i\UnitTestProject\Debug\UnitTestProject.csprojAssemblyReference.cache

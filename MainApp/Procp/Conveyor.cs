@@ -52,8 +52,8 @@ namespace Procp
                             next.baggage.Add(data);
                         }
                         //this.baggage.Remove(data);
-                        Console.WriteLine($"{this.Name} {this.baggage.Count} has proccessed the baggage");
-                        Console.WriteLine($"{this.Number}");
+                        Console.WriteLine($"{this.Name} Number of baggages: {this.baggage.Count} has proccessed the baggage");
+                        //Console.WriteLine($"{this.Number}");
                     }
                 }
                 else

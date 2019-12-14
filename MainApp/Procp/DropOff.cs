@@ -25,8 +25,12 @@ namespace Procp
         {
 
 
-            Console.WriteLine($"{this.Name} has proccessed the baggage");
-            Console.WriteLine($"{this.baggage.Count} ");
+            Console.WriteLine($"{this.Name} has proccessed the baggage Number: {this.baggage.Count}");
+            foreach(Baggage a in this.baggage)
+            {
+                Console.WriteLine(a.passenger.TicketId);
+            }
+            
         }
 
     }
