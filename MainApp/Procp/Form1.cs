@@ -328,10 +328,107 @@ namespace Procp
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen myBlackPen = new Pen(Color.Black); // Pen: Draws the border around a shape
+            Pen myBlackPen = new Pen(Color.Gray); // Pen: Draws the border around a shape
             Pen myWhitePen = new Pen(Color.White);
-            SolidBrush myBlackBrush = new SolidBrush(Color.Black); // Brush: Paints the interior of a shape 
+
+            SolidBrush myBlackBrush = new SolidBrush(Color.White); // Brush: Paints the interior of a shape
+            SolidBrush myBlueBrush = new SolidBrush(Color.MediumAquamarine);// Brush: Paints the interior of a shape
+            SolidBrush myGrayBrush = new SolidBrush(Color.DarkRed);
             SolidBrush myWhiteBrush = new SolidBrush(Color.White);
+
+
+
+            Rectangle[] rectangles =  {
+                new Rectangle(0, 50, 90, 80), //Security down1
+                new Rectangle(90, 50, 95, 80), //Security left1 
+                new Rectangle(185, 52, 90, 180),
+                new Rectangle(91, 380, 94, 75), //checkin1 left1
+                new Rectangle(1, 380, 90, 160), //checkin1 down2
+                new Rectangle(500, 50, 90, 80), //checkin2 down1 
+                new Rectangle(290, 50, 210, 80), //checkin2 left1  
+                new Rectangle(365, 380, 135, 75), //checkin2 right1 
+                new Rectangle(500, 380, 90, 160), //chechkin2 down2
+                new Rectangle(185, 130, 180, 325), //down checkin1,2
+            };
+            e.Graphics.DrawRectangles(myBlackPen, rectangles); //Draw conveyer
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[0]);//color inside the rectangles
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[1]);
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[2]);
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[3]);
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[4]);
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[5]);
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[6]);
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[7]);
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[8]);
+            e.Graphics.FillRectangle(myBlackBrush, rectangles[9]);
+
+            //color the checkins and seized and security
+            Rectangle[] checkins =  {
+             new Rectangle(185, 0, 90, 51), //checkin1 down1
+             new Rectangle(500, 0, 90, 50), //checkin1 down1
+             new Rectangle(0, 0, 90, 50), //Seized
+             //new Rectangle(185, 130, 180, 50), //Security
+
+             };
+            e.Graphics.DrawRectangles(myBlackPen, checkins); //Draw check in
+            e.Graphics.FillRectangle(myBlueBrush, checkins[0]);
+            e.Graphics.FillRectangle(myBlueBrush, checkins[1]);
+            e.Graphics.FillRectangle(myBlueBrush, checkins[2]);
+            //e.Graphics.FillRectangle(myGrayBrush, checkins[3]);
+
+
+            Rectangle[] sidebars =  {
+             new Rectangle(0, 125, 183, 10),
+             new Rectangle(178, 125, 10, 262),
+             new Rectangle(0, 377, 183, 10),
+             new Rectangle(357, 125, 233, 10),
+             new Rectangle(357, 125, 10, 262),
+             new Rectangle(357, 377, 233, 10),
+             new Rectangle(0, 378, 8, 170),
+             new Rectangle(580, 378, 10, 170),
+             new Rectangle(87, 450, 417, 10),
+             new Rectangle(85, 450, 10, 170),
+             new Rectangle(500, 450, 10, 170),
+             new Rectangle(90, 40 , 95, 10),
+             new Rectangle(275, 40 , 225, 10),
+             new Rectangle(276, 50, 20, 79),
+             };
+            e.Graphics.DrawRectangles(myBlackPen, sidebars); //Draw sidebars
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[0]);//Fill sidebars with color
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[1]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[2]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[3]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[4]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[5]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[6]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[7]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[8]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[9]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[10]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[11]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[12]);
+            e.Graphics.FillRectangle(myBlueBrush, sidebars[13]);
+            //g.DrawLine(myWhitePen, 90, 51, 90, 129); //Line that hides black line on Security down1 + Security left1
+            //g.DrawLine(myWhitePen, 185, 51, 185, 129); //Line that hides black line on left1 Security + down1 checkin1
+            //g.DrawLine(myWhitePen, 186, 130, 274, 130); //Line that hides black line on down1 checkin1 + down checkin1,2
+            //g.DrawLine(myWhitePen, 185, 381, 185, 454); //Line that hides black line on down checkin1,2 + checkin1 left1
+            //g.DrawLine(myWhitePen, 91, 381, 91, 454); //Line that hides black line on checkin1 left1 + checkin1 down2
+
+            //g.DrawLine(myWhitePen, 500, 51, 500, 129); //Line that hides black line on checkin2 down1 + checkin2 left1
+            //g.DrawLine(myWhitePen, 291, 130, 364, 130); //Line that hides black line on checkin2 left1 + down checkin1,2
+            //g.DrawLine(myWhitePen, 365, 381, 365, 454); //Line that hides black line on down checkin1,2 + checkin2 right1
+            //g.DrawLine(myWhitePen, 500, 381, 500, 454); //Line that hides black line on checkin2 right1 + chechkin2 down2
+            /*
+            g.DrawLine(myBlackPen, 190, 0, 190, 380);
+            g.DrawLine(myBlackPen, 260, 0, 260, 100);
+            g.DrawLine(myBlackPen, 5, 380, 190, 380);
+            g.DrawLine(myBlackPen, 5, 380, 5, 500);
+            g.DrawLine(myBlackPen, 260, 0, 260, 450);
+            g.DrawLine(myBlackPen, 260, 450, 70, 450);
+            g.DrawLine(myBlackPen, 70, 450, 70, 500);
+           /*
+
+            /*
             Rectangle[] rectangles =
             {
                 new Rectangle(0, 0, 90, 130), //Security down1
@@ -365,6 +462,7 @@ namespace Procp
             //g.DrawString("Check-in", font, myBlackBrush, new PointF(62, 24));
             //g.DrawString("Security", font, myBlackBrush, new PointF(205, 220));
             //g.DrawString("Drop-off", font, myBlackBrush, new PointF(345, 414));
+            */
         }
 
         public void Seized(DropOff d, PictureBox pb, Baggage b)
