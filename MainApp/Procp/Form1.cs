@@ -40,6 +40,7 @@ namespace Procp
             link1 = new LinkedList();
             d1 = airport.getDrop("drop1");
             startDropOff1();
+            airport.GetAllBags();
 
         }
         //Populate array to be checked
@@ -489,7 +490,9 @@ namespace Procp
             lbBagId.Text = b.BaggageNumber.ToString();
             lbDropOffDes.Text = b.DropOffGate.Name;
             lbTicketId.Text = b.passenger.TicketId;
-            
+            lbBaggy.Text = b.BaggageId;
+
+
         }
 
         private void btnBreak_Click(object sender, EventArgs e)
