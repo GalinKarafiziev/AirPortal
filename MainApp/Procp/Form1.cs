@@ -495,19 +495,28 @@ namespace Procp
         private void btnBreak_Click(object sender, EventArgs e)
         {
             
-            if(Drop1.Enabled == false && Drop2.Enabled == false)
+            if(Drop1.Enabled == false)
             {
                 Drop1.Interval = 1;
-                Drop2.Interval = 1;
                 Drop1.Start();
-                Drop2.Start();
+
+                if(btnCheckIn2.Enabled == false)
+                {
+                    Drop2.Interval = 1;
+                    Drop2.Start();
+                }
+                
             }
             else
             {
                 Drop1.Enabled = true;
-                Drop2.Enabled = true;
                 Drop1.Stop();
-                Drop2.Stop();
+                if(btnCheckIn2.Enabled == false)
+                {
+                    Drop2.Enabled = true;
+                    Drop2.Stop();
+                }
+                
             }
             
         }

@@ -31,7 +31,7 @@ namespace Procp
             };
 
             //random values for passengers
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 200; i++)
             {
                 Passengers.Add(new Passenger(i.ToString(), RandomDrop=DropOffs[rnd.Next(DropOffs.Count)]));
                 bags.Add(new Baggage(RandomDrop, i, Passengers[i]));
