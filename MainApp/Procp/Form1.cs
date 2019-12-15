@@ -287,7 +287,7 @@ namespace Procp
                 lbPassenger2.Text = airport.getPassengers(d2).Count().ToString();
                 for (int j = 0; j < d2.CurrentBag; j++)
                 {
-                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d2)[j].BaggageNumber}")
+                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d2)[j].BaggageNumber}" && airport.getBagByDropOff(d2)[j].Suspicious == false)
                     {
                         LinkedList link2 = C2.LinkList;
                         bagMoveD2((PictureBox)this.Controls[i]);
