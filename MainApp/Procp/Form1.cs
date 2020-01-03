@@ -17,7 +17,7 @@ namespace Procp
         Airport airport;
         MainProcessArea mpa;
         DropOff d1;
-        LinkedList link1;
+        CreateLinkList C1;
         CreateLinkList C2;
         //array to be checked
         Random rnd = new Random();
@@ -25,23 +25,49 @@ namespace Procp
 
         //for dropOff1
         int countD1 = 0;
-        int currentBagD1 = 0;
         int nextDropD1 = 0;
-        Point PointD1 = new Point(200, 0);
 
-        int checkInsOpenD1 = 0;
-        int checkInsOpenD2 = 0;
-
+        
         public Form1()
         {
             InitializeComponent();
             airport = new Airport();
             mpa = new MainProcessArea();
-            link1 = new LinkedList();
+            
             d1 = airport.getDrop("drop1");
             startDropOff1();
             airport.GetAllBags();
 
+        }
+
+        //if checkin has more then 50bags try to make use of another checkin
+        public string MoreThen50Bags(DropOff d)
+        {
+            string x= "";
+            int bags = airport.getBagByDropOff(d).Count();
+            if (bags < 10)
+            {
+                return "";
+            }
+            
+            //first let's check if the second checkin is used
+            if(btnCheckIn2.Enabled == true)
+            {
+                //use checkin2 as well
+                if (MessageBox.Show("Are you sure?", "Make use of checkIn2 for "+d.Name, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // user clicked yes
+                    btnCheckIn2.Enabled = false;
+                    x = "checkIn2";
+
+                }
+                else
+                {
+                    return "";
+                }
+
+            }
+            return x;
         }
         //Populate array to be checked
         public void PopulateArraylist()
@@ -80,36 +106,69 @@ namespace Procp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Drop1.Interval = 1;
-            Drop1.Start();
-            checkInsOpenD1++;
+           
         }
 
         public void startDropOff1()
         {
             //For dropOff1
-            CheckIn checkIn1 = new CheckIn(d1, "checkIn1");
+            CheckIn checkIn1 = new CheckIn(d1, "checkIn1",1);
             airport.addCheckin(checkIn1);
             Conveyor conveyor1 = new Conveyor(d1, "conv1");
             Conveyor conveyor2 = new Conveyor(d1, "conv2");
+            checkIn1.Point = new Point(200, 0);
 
-            CreateLinkList C1 = new CreateLinkList(link1, checkIn1, conveyor1, conveyor2, mpa, d1);
+            LinkedList link1 = new LinkedList();
+            C1 = new CreateLinkList(link1, checkIn1, conveyor1, conveyor2, mpa, d1);
+            string more50 = MoreThen50Bags(d1);
+            if(more50 == "checkIn2")
+            {
+                CheckIn1.Enabled = false;
+                btnCheckIn2.Enabled = false;
+
+                CheckIn checkIn2 = new CheckIn(airport.getDrop("drop1"), "checkIn2",2);
+                airport.addCheckin(checkIn2);
+                checkIn2.Point = new Point(520, 0);
+                lbDrop2.Text = "DROP OFF1";
+
+                //assgin the timerusage for each bag between 1&2
+                foreach (Baggage B in airport.getBagByDropOff(d1))
+                {
+                    B.TimerId = rnd.Next(1, 3);
+                }
+                drop1NewCheck.Tag = d1;
+                drop1NewCheck.Interval = 1;
+                drop1NewCheck.Start();
+            }
+            else
+            {
+                CheckIn1.Interval = 1;
+                CheckIn1.Start();
+            }
+            
+
         }
 
-        public void startDropOff2()
+        public void startCheckIn2(string dropName)
         {
             //For dropOff2
-            CheckIn checkIn2 = new CheckIn(airport.getDrop("drop2"), "checkIn2");
+            CheckIn checkIn2 = new CheckIn(airport.getDrop(dropName), "checkIn2",2);
             airport.addCheckin(checkIn2);
-            Conveyor conveyor3 = new Conveyor(d1, "conv3");
-            Conveyor conveyor4 = new Conveyor(d1, "conv4");
-            DropOff d2 = airport.getDrop("drop2");
-            d2.Count = 0;
-            d2.CurrentBag = 0;
-            d2.Point = new Point(520, 0);
+            DropOff drop = airport.getDrop(dropName);
+            Conveyor conveyor3 = new Conveyor(drop, "conv3");
+            Conveyor conveyor4 = new Conveyor(drop, "conv4");
+            checkIn2.Point = new Point(520, 0);
             LinkedList link2 = new LinkedList();
 
-            C2 = new CreateLinkList(link2, checkIn2, conveyor3, conveyor4, mpa, d2);
+            if(drop.Number == 2)
+            {
+                C2 = new CreateLinkList(link2, checkIn2, conveyor3, conveyor4, mpa, drop);
+            }
+            //foreach (Baggage B in airport.getBagByDropOff(drop))
+            //{
+            //    B.TimerId = rnd.Next(1, 2);
+            //}
+
         }
 
         public void adder(DropOff DF)
@@ -117,7 +176,7 @@ namespace Procp
             DropOff d2 = airport.getDrop("drop2");
             if (DF == d1)
             {
-                currentBagD1++;
+                d1.CurrentBag++;
             }
             if (DF == d2)
             {
@@ -131,7 +190,7 @@ namespace Procp
             DropOff d2 = airport.getDrop("drop2");
             if (DF == d1)
             {
-                return currentBagD1;
+                return d1.CurrentBag;
             }
             if (DF == d2)
             {
@@ -147,7 +206,7 @@ namespace Procp
             {
                 Baggage b = airport.getBagByDropOff(d)[currentb];
                 //Check if the bag should go to SEIZED
-                string temp = b.BaggageId.Substring(b.BaggageId.Length - 1, 1);
+                 string temp = b.BaggageId.Substring(b.BaggageId.Length - 1, 1);
                 int x = 0;
                 Int32.TryParse(temp, out x);
                 //checking if statement
@@ -172,6 +231,19 @@ namespace Procp
                 {
                     PopulateArraylist();
                 }
+                //if loc = 1,2 means drop1 is using checkin 1&2
+                if(loc == new Point(1, 2))
+                {
+                    if(b.TimerId == 1)
+                    {
+                        loc = new Point(200, 0);
+                    }
+                    if(b.TimerId == 2)
+                    {
+                        loc = new Point(520, 0);
+                    }
+                }
+                
 
                 adder(d);
                 if (!b.IsOnConveyer && b.Suspicious == false)
@@ -199,7 +271,7 @@ namespace Procp
                         Margin = new Padding(4, 4, 4, 4),
                         Size = new Size(50, 55),
                         Location = new Point(10,35),
-                        BackColor = Color.Black,
+                        BackColor = Color.DarkRed,
                         
 
                     };
@@ -210,16 +282,19 @@ namespace Procp
         }
         
       
-        private void Drop1_Tick(object sender, EventArgs e)
+        private void CheckIn1_Tick(object sender, EventArgs e)
         {
+            CheckIn ch = airport.GetCheckInById(1);
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                lbCheckIn.Text = checkInsOpenD1.ToString();
+                lbCheckIn.Text = airport.GetCheckInForDrops(d1).Count().ToString();
                 lbPassenger.Text = airport.getPassengers(d1).Count().ToString();
-                for (int j = 0; j < currentBagD1; j++)
+                for (int j = 0; j < d1.CurrentBag; j++)
                 {
-                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d1)[j].BaggageNumber}" && airport.getBagByDropOff(d1)[j].Suspicious == false)
+                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d1)[j].BaggageNumber}" && airport.getBagByDropOff(d1)[j].Suspicious == false )
                     {
+                        bagMoveD1((PictureBox)this.Controls[i]);
+                        LinkedList link1 = C1.LinkList;
                         bagMoveD1((PictureBox)this.Controls[i]);
                         if (((PictureBox)this.Controls[i]).Location.Y == 546)
                         {
@@ -234,7 +309,7 @@ namespace Procp
             int[] arrays = { 100, 150, 180 };
             if (countD1 % arrays[nextDropD1] == 0)
             {
-                sendBag(d1, PointD1);
+                sendBag(d1, ch.Point);
                 Random random = new Random();
                 nextDropD1 = random.Next(0, 2);
             }
@@ -246,10 +321,10 @@ namespace Procp
         //checkIn2
         private void btnCheckIn2_Click(object sender, EventArgs e)
         {
-            startDropOff2();
-            Drop2.Interval = 1;
-            Drop2.Start();
-            checkInsOpenD2 = 1;
+            startCheckIn2("drop2");
+            CheckIn2.Interval = 1;
+            CheckIn2.Tag = airport.getDrop("drop2"); ;
+            CheckIn2.Start();
             btnCheckIn2.Enabled = false;
         }
 
@@ -278,23 +353,35 @@ namespace Procp
         }
 
         
-        private void Drop2_Tick(object sender, EventArgs e)
+        private void CheckIn2_Tick(object sender, EventArgs e)
         {
-            DropOff d2 = airport.getDrop("drop2");
+            DropOff d =(DropOff) CheckIn2.Tag;
+            CreateLinkList c = null;
+            CheckIn ch = airport.GetCheckInById(2);
+            
+            if(d.Number == 1)
+            {
+                c = C1;
+            }
+            if(d.Number == 2)
+            {
+                c = C2;
+            }
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                lbCheckIn2.Text = checkInsOpenD2.ToString();
-                lbPassenger2.Text = airport.getPassengers(d2).Count().ToString();
-                for (int j = 0; j < d2.CurrentBag; j++)
+                lbCheckIn2.Text = airport.GetCheckInForDrops(d).Count().ToString();
+                lbPassenger2.Text = airport.getPassengers(d).Count().ToString();
+                for (int j = 0; j < d.CurrentBag; j++)
                 {
-                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d2)[j].BaggageNumber}" && airport.getBagByDropOff(d2)[j].Suspicious == false)
+                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d)[j].BaggageNumber}" && airport.getBagByDropOff(d)[j].Suspicious == false)
                     {
-                        LinkedList link2 = C2.LinkList;
+                        LinkedList link = c.LinkList;
                         bagMoveD2((PictureBox)this.Controls[i]);
                         if (((PictureBox)this.Controls[i]).Location.Y == 546)
                         {
-                            link2.PassBaggage(airport.getBagByDropOff(d2)[j]);
-                            lbBags2.Text = link2.getAllBags().Count().ToString();
+                            link.PassBaggage(airport.getBagByDropOff(d)[j]);
+                            lbBags2.Text = link.getAllBags().Count().ToString();
+                            airport.getBagByDropOff(d)[j].IsOnConveyer = false;
                             ((PictureBox)this.Controls[i]).Visible = false;
                         }
 
@@ -303,27 +390,27 @@ namespace Procp
             }
             //delay for dropOff2
             int[] arrays = { 100, 150, 180 };
-            if (d2.Count % arrays[nextDropD1] == 0)
+            if (d.Count % arrays[nextDropD1] == 0)
             {
-                sendBag(d2, d2.Point);
+                sendBag(d, ch.Point);
                 Random random = new Random();
                 nextDropD1 = random.Next(0, 2);
             }
-            d2.Count++;
+            d.Count++;
         }
 
         //Slows down the bags in a specific speed
         private void button2_Click(object sender, EventArgs e)
         {
-            Drop1.Interval = 50;
-            Drop2.Interval = 50;
+            CheckIn1.Interval = 50;
+            CheckIn2.Interval = 50;
         }
 
         //returns the speed of the bags into the predifined speed
         private void button1_Click(object sender, EventArgs e)
         {
-            Drop1.Interval = 1;
-            Drop2.Interval = 1;
+            CheckIn1.Interval = 1;
+            CheckIn2.Interval = 1;
         }
  
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -470,6 +557,8 @@ namespace Procp
         {
             Controls.Remove(pb);
             Baggage bag = new Baggage(b.DropOffGate, b.BaggageNumber, b.passenger);
+            bag.TimerId = b.TimerId;
+            bag.BaggageId = b.BaggageId;
             airport.AddBag(bag);
         }
 
@@ -487,7 +576,6 @@ namespace Procp
         {
             PictureBox oPictureBox = (PictureBox)sender;
             Baggage b = airport.GetBagFromStringNum(oPictureBox.Name);
-            lbBagId.Text = b.BaggageNumber.ToString();
             lbDropOffDes.Text = b.DropOffGate.Name;
             lbTicketId.Text = b.passenger.TicketId;
             lbBaggy.Text = b.BaggageId;
@@ -498,32 +586,83 @@ namespace Procp
         private void btnBreak_Click(object sender, EventArgs e)
         {
             
-            if(Drop1.Enabled == false)
+            if(CheckIn1.Enabled == false)
             {
-                Drop1.Interval = 1;
-                Drop1.Start();
+                CheckIn1.Interval = 1;
+                CheckIn1.Start();
 
                 if(btnCheckIn2.Enabled == false)
                 {
-                    Drop2.Interval = 1;
-                    Drop2.Start();
+                    CheckIn2.Interval = 1;
+                    CheckIn2.Start();
                 }
                 
             }
             else
             {
-                Drop1.Enabled = true;
-                Drop1.Stop();
+                CheckIn1.Enabled = true;
+                CheckIn1.Stop();
                 if(btnCheckIn2.Enabled == false)
                 {
-                    Drop2.Enabled = true;
-                    Drop2.Stop();
+                    CheckIn2.Enabled = true;
+                    CheckIn2.Stop();
                 }
                 
             }
             
         }
 
-       
+        private void drop1NewCheck_Tick(object sender, EventArgs e)
+        {
+            DropOff d = (DropOff)drop1NewCheck.Tag;
+            CheckIn selectedCheck = airport.GetCheckInById(1);
+            CheckIn ch1 = airport.GetCheckInById(1);
+            CheckIn ch2 = airport.GetCheckInById(2);
+
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                lbCheckIn.Text = airport.GetCheckInForDrops(d).Count().ToString();
+                lbPassenger.Text = airport.getPassengers(d).Count().ToString();
+
+                for (int j = 0; j < d.CurrentBag; j++)
+                {
+                    if (this.Controls[i].Name == $"pictureBox{airport.getBagByDropOff(d)[j].BaggageNumber}" && airport.getBagByDropOff(d)[j].Suspicious == false)
+                    {
+                        LinkedList link = C1.LinkList;
+                        if(airport.getBagByDropOff(d)[j].TimerId == 1)
+                        {
+                            bagMoveD1((PictureBox)this.Controls[i]);
+                            selectedCheck = ch1;
+                        }
+                        if (airport.getBagByDropOff(d)[j].TimerId == 2)
+                        {
+                            bagMoveD2((PictureBox)this.Controls[i]);
+                            selectedCheck = ch2;
+                        }
+
+                        
+                        if (((PictureBox)this.Controls[i]).Location.Y == 546)
+                        {
+                            link.PassBaggage(airport.getBagByDropOff(d)[j]);
+                            lbBags.Text = link.getAllBags().Count().ToString();
+                            airport.getBagByDropOff(d)[j].IsOnConveyer = false;
+                            ((PictureBox)this.Controls[i]).Visible = false;
+                        }
+                        
+                    }
+                    
+                }
+            }
+            //delay for dropOff2
+            int[] arrays = { 100, 150, 180 };
+            if (d.Count % arrays[nextDropD1] == 0)
+            {
+                sendBag(d, new Point(1,2));
+                Random random = new Random();
+                nextDropD1 = random.Next(0, 2);
+            }
+            d.Count++;
+
+        }
     }
 }

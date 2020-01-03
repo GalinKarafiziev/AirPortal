@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Drop1 = new System.Windows.Forms.Timer(this.components);
-            this.Drop2 = new System.Windows.Forms.Timer(this.components);
+            this.CheckIn1 = new System.Windows.Forms.Timer(this.components);
+            this.CheckIn2 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCheckIn2 = new System.Windows.Forms.Button();
-            this.labelDrop = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbDrop1 = new System.Windows.Forms.Label();
+            this.lbDrop2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,28 +57,29 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnBreak = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbBagId = new System.Windows.Forms.Label();
+            this.lbBaggy = new System.Windows.Forms.Label();
             this.lbDropOffDes = new System.Windows.Forms.Label();
             this.lbTicketId = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbBaggy = new System.Windows.Forms.Label();
+            this.drop1NewCheck = new System.Windows.Forms.Timer(this.components);
+            this.lbBagId = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbDropoff2.SuspendLayout();
             this.gbDropoff1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Drop1
+            // CheckIn1
             // 
-            this.Drop1.Interval = 1000;
-            this.Drop1.Tick += new System.EventHandler(this.Drop1_Tick);
+            this.CheckIn1.Interval = 1000;
+            this.CheckIn1.Tick += new System.EventHandler(this.CheckIn1_Tick);
             // 
-            // Drop2
+            // CheckIn2
             // 
-            this.Drop2.Interval = 2000;
-            this.Drop2.Tick += new System.EventHandler(this.Drop2_Tick);
+            this.CheckIn2.Interval = 2000;
+            this.CheckIn2.Tick += new System.EventHandler(this.CheckIn2_Tick);
             // 
             // label1
             // 
@@ -98,7 +99,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.Location = new System.Drawing.Point(5, 334);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 36);
             this.button2.TabIndex = 6;
@@ -112,7 +113,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(119, 335);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 36);
             this.button1.TabIndex = 7;
@@ -126,7 +127,7 @@
             this.btnCheckIn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnCheckIn2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCheckIn2.Location = new System.Drawing.Point(5, 277);
-            this.btnCheckIn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckIn2.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckIn2.Name = "btnCheckIn2";
             this.btnCheckIn2.Size = new System.Drawing.Size(217, 49);
             this.btnCheckIn2.TabIndex = 12;
@@ -134,27 +135,27 @@
             this.btnCheckIn2.UseVisualStyleBackColor = false;
             this.btnCheckIn2.Click += new System.EventHandler(this.btnCheckIn2_Click);
             // 
-            // labelDrop
+            // lbDrop1
             // 
-            this.labelDrop.AutoSize = true;
-            this.labelDrop.BackColor = System.Drawing.Color.Transparent;
-            this.labelDrop.Location = new System.Drawing.Point(9, 449);
-            this.labelDrop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDrop.Name = "labelDrop";
-            this.labelDrop.Size = new System.Drawing.Size(87, 17);
-            this.labelDrop.TabIndex = 15;
-            this.labelDrop.Text = "DROP OFF1";
+            this.lbDrop1.AutoSize = true;
+            this.lbDrop1.BackColor = System.Drawing.Color.Transparent;
+            this.lbDrop1.Location = new System.Drawing.Point(9, 449);
+            this.lbDrop1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDrop1.Name = "lbDrop1";
+            this.lbDrop1.Size = new System.Drawing.Size(87, 17);
+            this.lbDrop1.TabIndex = 15;
+            this.lbDrop1.Text = "DROP OFF1";
             // 
-            // label2
+            // lbDrop2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(683, 449);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "DROP OFF2";
+            this.lbDrop2.AutoSize = true;
+            this.lbDrop2.BackColor = System.Drawing.Color.Transparent;
+            this.lbDrop2.Location = new System.Drawing.Point(683, 449);
+            this.lbDrop2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDrop2.Name = "lbDrop2";
+            this.lbDrop2.Size = new System.Drawing.Size(87, 17);
+            this.lbDrop2.TabIndex = 21;
+            this.lbDrop2.Text = "DROP OFF2";
             // 
             // label3
             // 
@@ -349,7 +350,7 @@
             this.btnBreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnBreak.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBreak.Location = new System.Drawing.Point(5, 379);
-            this.btnBreak.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBreak.Margin = new System.Windows.Forms.Padding(4);
             this.btnBreak.Name = "btnBreak";
             this.btnBreak.Size = new System.Drawing.Size(217, 36);
             this.btnBreak.TabIndex = 28;
@@ -375,14 +376,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Selected Bag";
             // 
-            // lbBagId
+            // lbBaggy
             // 
-            this.lbBagId.AutoSize = true;
-            this.lbBagId.Location = new System.Drawing.Point(181, 65);
-            this.lbBagId.Name = "lbBagId";
-            this.lbBagId.Size = new System.Drawing.Size(72, 17);
-            this.lbBagId.TabIndex = 5;
-            this.lbBagId.Text = "SelectBag";
+            this.lbBaggy.AutoSize = true;
+            this.lbBaggy.Location = new System.Drawing.Point(16, 196);
+            this.lbBaggy.Name = "lbBaggy";
+            this.lbBaggy.Size = new System.Drawing.Size(146, 17);
+            this.lbBaggy.TabIndex = 6;
+            this.lbBaggy.Text = "Destanation Drop Off:";
             // 
             // lbDropOffDes
             // 
@@ -429,34 +430,39 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Bag Id:";
             // 
-            // lbBaggy
+            // drop1NewCheck
             // 
-            this.lbBaggy.AutoSize = true;
-            this.lbBaggy.Location = new System.Drawing.Point(16, 196);
-            this.lbBaggy.Name = "lbBaggy";
-            this.lbBaggy.Size = new System.Drawing.Size(146, 17);
-            this.lbBaggy.TabIndex = 6;
-            this.lbBaggy.Text = "Destanation Drop Off:";
+            this.drop1NewCheck.Interval = 2000;
+            this.drop1NewCheck.Tick += new System.EventHandler(this.drop1NewCheck_Tick);
+            // 
+            // lbBagId
+            // 
+            this.lbBagId.AutoSize = true;
+            this.lbBagId.Location = new System.Drawing.Point(181, 65);
+            this.lbBagId.Name = "lbBagId";
+            this.lbBagId.Size = new System.Drawing.Size(72, 17);
+            this.lbBagId.TabIndex = 5;
+            this.lbBagId.Text = "SelectBag";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1371, 666);
+            this.ClientSize = new System.Drawing.Size(1570, 666);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnBreak);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.labelDrop);
+            this.Controls.Add(this.lbDrop2);
+            this.Controls.Add(this.lbDrop1);
             this.Controls.Add(this.btnCheckIn2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -474,14 +480,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer Drop1;
-        private System.Windows.Forms.Timer Drop2;
+        private System.Windows.Forms.Timer CheckIn1;
+        private System.Windows.Forms.Timer CheckIn2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCheckIn2;
-        private System.Windows.Forms.Label labelDrop;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbDrop1;
+        private System.Windows.Forms.Label lbDrop2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -505,10 +511,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lbBagId;
         private System.Windows.Forms.Label lbDropOffDes;
         private System.Windows.Forms.Label lbTicketId;
         private System.Windows.Forms.Label lbBaggy;
+        private System.Windows.Forms.Timer drop1NewCheck;
+        private System.Windows.Forms.Label lbBagId;
     }
 }
 

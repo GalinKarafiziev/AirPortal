@@ -12,12 +12,14 @@ namespace Procp
         public int Number { get; set; }
         public int Count { get; set; }
         public int CurrentBag { get; set; }
-        public Point Point { get; set; }
+        
 
         public DropOff(int number ,string name)
         {
             this.Number = number;
             this.Name = name;
+            Count = 0;
+            CurrentBag = 0;
 
         }
 

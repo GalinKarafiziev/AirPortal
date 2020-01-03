@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,13 @@ namespace Procp
     public class CheckIn : Node
     {
         public DropOff DestinationGate { get; set; }
-
-        public CheckIn(DropOff destination, string name)
+        public Point Point { get; set; }
+        public int Id { get; set; }
+        public CheckIn(DropOff destination, string name,int id)
         {
             this.DestinationGate = destination;
             this.Name = name;
+            this.Id = id;
         }
 
         public void PassBaggage(Baggage data)

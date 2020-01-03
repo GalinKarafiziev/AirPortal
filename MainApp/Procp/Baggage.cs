@@ -17,12 +17,15 @@ namespace Procp
         public string BaggageId { get; set; }
         public Boolean Suspicious { get; set; }
         public bool IsOnConveyer { get; set; }
+        public int TimerId { get; set; }
+
         public Baggage(DropOff dropOffGate, int baggageNumber, Passenger passenger)
         {
             this.DropOffGate = dropOffGate;
             this.BaggageNumber = baggageNumber;
             this.passenger = passenger;
             this.Suspicious = false;
+            this.IsOnConveyer = false;
         }
     }
 }
