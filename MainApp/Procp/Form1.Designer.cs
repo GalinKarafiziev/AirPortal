@@ -592,7 +592,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1543, 541);
+            this.ClientSize = new System.Drawing.Size(1370, 541);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -619,6 +619,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.groupBox1.ResumeLayout(false);
             this.gbDropoff2.ResumeLayout(false);
