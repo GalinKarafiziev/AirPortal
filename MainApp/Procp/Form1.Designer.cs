@@ -35,8 +35,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCheckIn2 = new System.Windows.Forms.Button();
-            this.lbDrop1 = new System.Windows.Forms.Label();
-            this.lbDrop2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -77,6 +75,8 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbDropoff2.SuspendLayout();
             this.gbDropoff1.SuspendLayout();
@@ -142,26 +142,6 @@
             this.btnCheckIn2.Text = "Open check in 2";
             this.btnCheckIn2.UseVisualStyleBackColor = false;
             this.btnCheckIn2.Click += new System.EventHandler(this.btnCheckIn2_Click);
-            // 
-            // lbDrop1
-            // 
-            this.lbDrop1.AutoSize = true;
-            this.lbDrop1.BackColor = System.Drawing.Color.Transparent;
-            this.lbDrop1.Location = new System.Drawing.Point(197, 492);
-            this.lbDrop1.Name = "lbDrop1";
-            this.lbDrop1.Size = new System.Drawing.Size(67, 13);
-            this.lbDrop1.TabIndex = 15;
-            this.lbDrop1.Text = "DROP OFF1";
-            // 
-            // lbDrop2
-            // 
-            this.lbDrop2.AutoSize = true;
-            this.lbDrop2.BackColor = System.Drawing.Color.Transparent;
-            this.lbDrop2.Location = new System.Drawing.Point(357, 492);
-            this.lbDrop2.Name = "lbDrop2";
-            this.lbDrop2.Size = new System.Drawing.Size(67, 13);
-            this.lbDrop2.TabIndex = 21;
-            this.lbDrop2.Text = "DROP OFF3";
             // 
             // label3
             // 
@@ -493,7 +473,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 13);
             this.label15.TabIndex = 32;
-            this.label15.Text = "DROP OFF2";
+            this.label15.Text = "DROP OFF1";
             // 
             // label20
             // 
@@ -599,12 +579,34 @@
             this.label19.Text = "DROP OFF1";
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Location = new System.Drawing.Point(357, 492);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(67, 13);
+            this.label21.TabIndex = 46;
+            this.label21.Text = "DROP OFF1";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Location = new System.Drawing.Point(197, 492);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(67, 13);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "DROP OFF1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1370, 541);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
@@ -623,8 +625,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lbDrop2);
-            this.Controls.Add(this.lbDrop1);
             this.Controls.Add(this.btnCheckIn2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -653,8 +653,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCheckIn2;
-        private System.Windows.Forms.Label lbDrop1;
-        private System.Windows.Forms.Label lbDrop2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -695,6 +693,8 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }
 

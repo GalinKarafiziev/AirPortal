@@ -80,28 +80,73 @@ namespace Procp
         }
         public void bagMoveD1(PictureBox p)
         {
-            if (p.Top < 160)
-            {
-                p.Top += 2;
+            //if (p.Top < 165)
+            //{
+            //    p.Top += 2;
+            //}
+            //else if (p.Top < 390 && p.Left > 205)
+            //{
+            //    p.Left -= 2;
 
-            }
-            else if (p.Top < 390 && p.Left > 205)
-            {
-                p.Left -= 2;
+            //}
+            //else
+            //{
+            //    if (p.Top > 390 && p.Left > 205)
+            //    {
+            //        p.Left -= 2;
 
-            }
-            else
-            {
-                if (p.Top > 390 && p.Left > 205)
-                {
-                    p.Left -= 2;
+            //    }
+            //    else
+            //    {
+            //        p.Top += 2;
+            //    }
+            //}
+            p.Top += 2;
+        }
 
-                }
-                else
-                {
-                    p.Top += 2;
-                }
-            }
+        public void bagMoveD2(PictureBox p)
+        {
+            //if (p.Top < 165)
+            //{
+            //    p.Top += 2;
+            //}
+            //else
+            //{
+            //    if (p.Top > 390 && p.Left < 525)
+            //    {
+            //        p.Left += 2;
+            //    }
+            //    else
+            //    {
+            //        p.Top += 2;
+            //    }
+            //}
+            p.Top += 2;
+        }
+
+        public void bagMoveD3(PictureBox p)
+        {
+            //if (p.Top < 165)
+            //{
+            //    p.Top += 2;
+            //}
+            //else
+            //{
+            //    if (p.Top > 390 && p.Left < 365)
+            //    {
+            //        p.Left += 2;
+            //    }
+            //    else
+            //    {
+            //        p.Top += 2;
+            //    }
+            //}
+            p.Top += 2;
+        }
+
+        public void bagMoveD4(PictureBox p)
+        {
+            p.Top += 2;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -129,7 +174,6 @@ namespace Procp
                 CheckIn checkIn2 = new CheckIn(airport.getDrop("drop1"), "checkIn2",2);
                 airport.addCheckin(checkIn2);
                 checkIn2.Point = new Point(525, 0);
-                lbDrop2.Text = "DROP OFF1";
 
                 //assgin the timerusage for each bag between 1&2
                 foreach (Baggage B in airport.getBagByDropOff(d1))
@@ -326,43 +370,7 @@ namespace Procp
             btnCheckIn2.Enabled = false;
         }
 
-        public void bagMoveD2(PictureBox p)
-        {
-            if (p.Top < 165)
-            {
-                p.Top += 2;
-            }
-            else
-            {
-                if (p.Top > 390 && p.Left < 525)
-                {
-                    p.Left += 2;
-                }
-                else
-                {
-                    p.Top += 2;
-                }
-            }
-        }
-
-        public void bagMoveD3(PictureBox p)
-        {
-            if (p.Top < 165)
-            {
-                p.Top += 2;
-            }
-            else
-            {
-                if (p.Top > 390 && p.Left < 365)
-                {
-                    p.Left += 2;
-                }
-                else
-                {
-                    p.Top += 2;
-                }
-            }
-        }
+        
 
         
         private void CheckIn2_Tick(object sender, EventArgs e)
