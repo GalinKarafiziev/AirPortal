@@ -441,9 +441,9 @@ namespace Procp
                 new Rectangle(185, 50, 90, 500), //checkin1 to dropoff1
                 new Rectangle(345, 50, 90, 500), //checkin2 to dropoff2
                 new Rectangle(505, 50, 90, 500), //checkin3 to dropoff3
-                new Rectangle(665, 50, 90, 185), //checkin4
+                new Rectangle(665, 50, 90, 500), //checkin4 to dropoff4
                 new Rectangle(185, 130, 500, 100), //bellow all checkins
-                new Rectangle(185, 230, 340, 225), //MPA
+                new Rectangle(185, 230, 560, 225), //MPA
             };
             e.Graphics.DrawRectangles(myBlackPen, rectangles); //Draw conveyer
             for (int i = 0; i < rectangles.Length; i++)//color inside the rectangles
@@ -482,12 +482,13 @@ namespace Procp
                 new Rectangle(435, 450, 80, 10),
                 new Rectangle(505, 450, 10, 170),
                 new Rectangle(505, 50, 10, 85),
-                new Rectangle(585, 230, 170, 10),
-                new Rectangle(585, 230, 10, 340),
                 new Rectangle(585, 50, 10, 85),
+                new Rectangle(585, 450, 10, 170),
                 new Rectangle(595, 125, 79, 10),
+                new Rectangle(595, 450, 80, 10),
                 new Rectangle(665, 50, 10, 85),
-                new Rectangle(745, 50, 10, 185)
+                new Rectangle(665, 450, 10, 170),
+                new Rectangle(745, 50, 10, 500),
             };
             e.Graphics.DrawRectangles(myBlackPen, sidebars); //Draw sidebars
             for (int i = 0; i < sidebars.Length; i++)//Fill sidebars with color
@@ -616,6 +617,11 @@ namespace Procp
         private void Form1_Shown(object sender, EventArgs e)
         {
             
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
