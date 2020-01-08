@@ -10,9 +10,9 @@ namespace Procp
     {
 
 
-        public MainProcessArea()
+        public MainProcessArea(string name)
         {
-
+            this.Name = name;
         }
 
 

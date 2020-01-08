@@ -40,6 +40,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbPassenger3 = new System.Windows.Forms.Label();
+            this.lbCheckIn3 = new System.Windows.Forms.Label();
+            this.lbBags3 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.gbDropoff2 = new System.Windows.Forms.GroupBox();
             this.lbPassenger2 = new System.Windows.Forms.Label();
             this.lbCheckIn2 = new System.Windows.Forms.Label();
@@ -76,23 +83,16 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnCheckIn3 = new System.Windows.Forms.Button();
             this.btnCheckIn4 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lbPassenger3 = new System.Windows.Forms.Label();
-            this.lbCheckIn3 = new System.Windows.Forms.Label();
-            this.lbBags3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.CheckIn3Timer = new System.Windows.Forms.Timer(this.components);
             this.CheckIn4Timer = new System.Windows.Forms.Timer(this.components);
             this.Check2NewCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.Check3NewCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.Check4NewCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.gbDropoff2.SuspendLayout();
             this.gbDropoff1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // CheckIn1Timer
@@ -209,7 +209,7 @@
             this.groupBox1.Controls.Add(this.gbDropoff2);
             this.groupBox1.Controls.Add(this.gbDropoff1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1288, 14);
+            this.groupBox1.Location = new System.Drawing.Point(1166, 14);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -217,6 +217,77 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistics";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lbPassenger3);
+            this.groupBox3.Controls.Add(this.lbCheckIn3);
+            this.groupBox3.Controls.Add(this.lbBags3);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Location = new System.Drawing.Point(223, 198);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(304, 148);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Dropoff 3";
+            // 
+            // lbPassenger3
+            // 
+            this.lbPassenger3.AutoSize = true;
+            this.lbPassenger3.Location = new System.Drawing.Point(173, 114);
+            this.lbPassenger3.Name = "lbPassenger3";
+            this.lbPassenger3.Size = new System.Drawing.Size(18, 20);
+            this.lbPassenger3.TabIndex = 7;
+            this.lbPassenger3.Text = "0";
+            // 
+            // lbCheckIn3
+            // 
+            this.lbCheckIn3.AutoSize = true;
+            this.lbCheckIn3.Location = new System.Drawing.Point(173, 76);
+            this.lbCheckIn3.Name = "lbCheckIn3";
+            this.lbCheckIn3.Size = new System.Drawing.Size(18, 20);
+            this.lbCheckIn3.TabIndex = 6;
+            this.lbCheckIn3.Text = "0";
+            // 
+            // lbBags3
+            // 
+            this.lbBags3.AutoSize = true;
+            this.lbBags3.Location = new System.Drawing.Point(173, 38);
+            this.lbBags3.Name = "lbBags3";
+            this.lbBags3.Size = new System.Drawing.Size(18, 20);
+            this.lbBags3.TabIndex = 5;
+            this.lbBags3.Text = "0";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(5, 38);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(106, 20);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Bags Arrived";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(5, 76);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 20);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Check In/s";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(5, 114);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(62, 20);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "label20";
             // 
             // gbDropoff2
             // 
@@ -464,11 +535,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Bag Id:";
             // 
-            // Check1NewCheckTimer
-            // 
-            this.Check1NewCheckTimer.Interval = 2000;
-            this.Check1NewCheckTimer.Tick += new System.EventHandler(this.Check1NewCheck_Tick);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -595,6 +661,7 @@
             this.btnCheckIn3.TabIndex = 48;
             this.btnCheckIn3.Text = "Open check in 3";
             this.btnCheckIn3.UseVisualStyleBackColor = false;
+            this.btnCheckIn3.Click += new System.EventHandler(this.btnCheckIn3_Click_1);
             // 
             // btnCheckIn4
             // 
@@ -608,77 +675,7 @@
             this.btnCheckIn4.TabIndex = 49;
             this.btnCheckIn4.Text = "Open check in 4";
             this.btnCheckIn4.UseVisualStyleBackColor = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lbPassenger3);
-            this.groupBox3.Controls.Add(this.lbCheckIn3);
-            this.groupBox3.Controls.Add(this.lbBags3);
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Location = new System.Drawing.Point(223, 198);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(304, 148);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Dropoff 3";
-            // 
-            // lbPassenger3
-            // 
-            this.lbPassenger3.AutoSize = true;
-            this.lbPassenger3.Location = new System.Drawing.Point(173, 114);
-            this.lbPassenger3.Name = "lbPassenger3";
-            this.lbPassenger3.Size = new System.Drawing.Size(18, 20);
-            this.lbPassenger3.TabIndex = 7;
-            this.lbPassenger3.Text = "0";
-            // 
-            // lbCheckIn3
-            // 
-            this.lbCheckIn3.AutoSize = true;
-            this.lbCheckIn3.Location = new System.Drawing.Point(173, 76);
-            this.lbCheckIn3.Name = "lbCheckIn3";
-            this.lbCheckIn3.Size = new System.Drawing.Size(18, 20);
-            this.lbCheckIn3.TabIndex = 6;
-            this.lbCheckIn3.Text = "0";
-            // 
-            // lbBags3
-            // 
-            this.lbBags3.AutoSize = true;
-            this.lbBags3.Location = new System.Drawing.Point(173, 38);
-            this.lbBags3.Name = "lbBags3";
-            this.lbBags3.Size = new System.Drawing.Size(18, 20);
-            this.lbBags3.TabIndex = 5;
-            this.lbBags3.Text = "0";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(5, 38);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 20);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Bags Arrived";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(5, 76);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 20);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Check In/s";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(5, 114);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(62, 20);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "label20";
+            this.btnCheckIn4.Click += new System.EventHandler(this.btnCheckIn4_Click);
             // 
             // CheckIn3Timer
             // 
@@ -690,27 +687,12 @@
             this.CheckIn4Timer.Interval = 2000;
             this.CheckIn4Timer.Tick += new System.EventHandler(this.CheckIn4Timer_Tick);
             // 
-            // Check2NewCheckTimer
-            // 
-            this.Check2NewCheckTimer.Interval = 2000;
-            this.Check2NewCheckTimer.Tick += new System.EventHandler(this.Check2NewCheckTimer_Tick);
-            // 
-            // Check3NewCheckTimer
-            // 
-            this.Check3NewCheckTimer.Interval = 2000;
-            this.Check3NewCheckTimer.Tick += new System.EventHandler(this.Check3NewCheckTimer_Tick);
-            // 
-            // Check4NewCheckTimer
-            // 
-            this.Check4NewCheckTimer.Interval = 2000;
-            this.Check4NewCheckTimer.Tick += new System.EventHandler(this.Check4NewCheckTimer_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1827, 666);
+            this.ClientSize = new System.Drawing.Size(1924, 670);
             this.Controls.Add(this.btnCheckIn4);
             this.Controls.Add(this.btnCheckIn3);
             this.Controls.Add(this.comboBox1);
@@ -739,14 +721,14 @@
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.gbDropoff2.ResumeLayout(false);
             this.gbDropoff2.PerformLayout();
             this.gbDropoff1.ResumeLayout(false);
             this.gbDropoff1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

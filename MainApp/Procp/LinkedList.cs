@@ -70,22 +70,25 @@ namespace Procp
                 if (current is CheckIn)
                 {
                     (current as CheckIn).PassBaggage(data);
-
+                    
                 }
                 if (current is Conveyor)
                 {
                     (current as Conveyor).PassBaggage(data);
+                    
 
                 }
                 if (current is MainProcessArea)
                 {
                     (current as MainProcessArea).PassBaggage(data);
+                    
 
                 }
                 if (current is DropOff)
                 {
                     (current as DropOff).PassBaggage(data);
                     current.baggage.Add(data);
+                   
                 }
                 current = current.next;
 

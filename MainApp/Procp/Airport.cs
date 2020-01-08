@@ -13,6 +13,10 @@ namespace Procp
         List<Passenger> Passengers = new List<Passenger>();
         public List<Baggage> bags = new List<Baggage>();
         List<Ticket> ticketsSold = new List<Ticket>();
+
+        //listOfCreatedLinkLists
+        List<CreateLinkList> lists = new List<CreateLinkList>();
+
         List<DropOff> DropOffs;
         Random rnd = new Random();
         DropOff RandomDrop;
@@ -219,6 +223,47 @@ namespace Procp
             }
         }
 
+        public void AssignTimerToBags(int timerId,DropOff d)
+        {
+            foreach (Baggage b in getBagByDropOff(d))
+            {
+                b.TimerId = timerId;
+            }
+        }
+
+        public List<Baggage> getBagsWithTimerId(int t)
+        {
+            List<Baggage> temp = new List<Baggage>();
+            foreach (Baggage b in bags)
+            {
+                if(b.TimerId == t)
+                {
+                    temp.Add(b);
+                }
+            }
+
+            return temp;
+        }
+
+        //add linklist to lists
+        public void addLinkList(CreateLinkList l)
+        {
+            lists.Add(l);
+        }
+
+        //get linklist according to the checkin number
+        public CreateLinkList getCLinkList(int checkinNum)
+        {
+            CreateLinkList c = null;
+            foreach (CreateLinkList cl in lists)
+            {
+                if(cl.CheckIn.Id == checkinNum)
+                {
+                    c = cl;
+                }
+            }
+            return c;
+        }
 
 
     }

@@ -20,7 +20,8 @@ namespace Procp
             this.DropOffGate = destinationgate;
             this.Name = name;
             Random random = new Random();
-            Number = random.Next(0, 3);
+            Number = 2 ;
+            //random.Next(0, 3)
             Broken();
         }
 
