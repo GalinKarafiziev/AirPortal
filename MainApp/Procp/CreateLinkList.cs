@@ -29,7 +29,7 @@ namespace Procp
 
             LinkList.AddLast(CheckIn);
             LinkList.AddLast(Conv1);
-            LinkList.AddLast(MainProcessArea);
+           // LinkList.AddLast(MainProcessArea);
             LinkList.AddLast(Conv2);
             LinkList.AddLast(DropOff);
         }

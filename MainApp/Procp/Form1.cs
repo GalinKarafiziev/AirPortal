@@ -75,9 +75,9 @@ namespace Procp
 
                     airport.DevideBetween2Checks(d, checkInNum, 2);
 
-                    //CheckIn1Timer.Tag = d;
-                    //CheckIn1Timer.Interval = 1;
-                    //CheckIn1Timer.Start();
+                    CheckIn1Timer.Tag = d;
+                    CheckIn1Timer.Interval = 1;
+                    CheckIn1Timer.Start();
 
                     CheckIn2Timer.Tag = d;
                     CheckIn2Timer.Interval = 1;
@@ -514,8 +514,10 @@ namespace Procp
                             }
 
                             LinkedList link1 = C.LinkList;
-                            link1.PassBaggage(airport.getBagsWithTimerId(timer)[j]);
-                            lbbags.Text = link1.getAllBags().Count().ToString();
+                            link1.PassBaggage(airport.getBagByDropOff(d)[j]);
+                            d.BagsArrived.Add(airport.getBagByDropOff(d)[j]);
+                            lbbags.Text = d.BagsArrived.Count().ToString();
+                            //lbbags.Text = link1.getAllBags().Count().ToString();
                             airport.getBagByDropOff(d)[j].IsOnConveyer = false;
                             airport.getBagByDropOff(d)[j].ReachedDrop = true;
                             ((PictureBox)this.Controls[i]).Visible = false;
@@ -539,21 +541,21 @@ namespace Procp
             DropOff drop = GetDropSelected(2);
             if (drop.UsedBy != 0)
             {
+                startCheckIn2(drop);
                 airport.DevideBetween2Checks(drop, 2, drop.UsedBy);
                 drop.UsedBy = 2;
                 comboBox2.Items.RemoveAt(drop.Number);
             }
             else
             {
-
-
-                drop.UsedBy = 2;
+                startCheckIn2(drop);
+                drop.UsedBy = 2;           
+                CheckIn2Timer.Interval = 1;
+                CheckIn2Timer.Tag = drop;
+                CheckIn2Timer.Start();
             }
 
-            startCheckIn2(drop);
-            CheckIn2Timer.Interval = 1;
-            CheckIn2Timer.Tag = drop;
-            CheckIn2Timer.Start();
+            
             btnCheckIn2.Enabled = false;
         }
         private void CheckIn2_Tick(object sender, EventArgs e)
@@ -603,8 +605,10 @@ namespace Procp
                                 }
                                 LinkedList link = C.LinkList;
                                 
-                                link.PassBaggage(airport.getBagsWithTimerId(timer)[j]);
-                                lbbags.Text = link.getAllBags().Count().ToString();
+                                link.PassBaggage(airport.getBagByDropOff(d)[j]);
+                                d.BagsArrived.Add(airport.getBagByDropOff(d)[j]);
+                                lbbags.Text = d.BagsArrived.Count().ToString();
+                                //lbbags.Text = link.getAllBags().Count().ToString();
                                 airport.getBagByDropOff(d)[j].IsOnConveyer = false;
                                 airport.getBagByDropOff(d)[j].ReachedDrop = true;
                                 ((PictureBox)this.Controls[i]).Visible = false;
@@ -844,9 +848,8 @@ namespace Procp
                 comboBox3,
                 comboBox4
             };
-            
-            
-                foreach (ComboBox c in combos)
+
+            foreach (ComboBox c in combos)
                 {
                     c.Items.RemoveAt(num);
                 }
@@ -939,8 +942,9 @@ namespace Procp
                                 }
 
                                 LinkedList link = C.LinkList;
-                                link.PassBaggage(airport.getBagsWithTimerId(timer)[j]);
-                                lbbags.Text = link.getAllBags().Count().ToString();
+                                link.PassBaggage(airport.getBagByDropOff(d)[j]);
+                                d.BagsArrived.Add(airport.getBagByDropOff(d)[j]);
+                                lbbags.Text = d.BagsArrived.Count().ToString();
                                 airport.getBagByDropOff(d)[j].IsOnConveyer = false;
                                 airport.getBagByDropOff(d)[j].ReachedDrop = true;
                                 ((PictureBox)this.Controls[i]).Visible = false;
@@ -1008,8 +1012,9 @@ namespace Procp
                                 }
 
                                 LinkedList link = C.LinkList;
-                                link.PassBaggage(airport.getBagsWithTimerId(timer)[j]);
-                                lbbags.Text = link.getAllBags().Count().ToString();
+                                link.PassBaggage(airport.getBagByDropOff(d)[j]);
+                                d.BagsArrived.Add(airport.getBagByDropOff(d)[j]);
+                                lbbags.Text = d.BagsArrived.Count().ToString();
                                 airport.getBagByDropOff(d)[j].IsOnConveyer = false;
                                 airport.getBagByDropOff(d)[j].ReachedDrop = true;
                                 ((PictureBox)this.Controls[i]).Visible = false;
@@ -1034,38 +1039,45 @@ namespace Procp
             DropOff drop = GetDropSelected(3);
             if (drop.UsedBy != 0)
             {
+                startCheckIn3(drop);
                 airport.DevideBetween2Checks(drop, 3, drop.UsedBy);
                 drop.UsedBy = 3;
+                comboBox3.Items.RemoveAt(drop.Number);
             }
             else
             {
+                startCheckIn3(drop);
                 drop.UsedBy = 3;
+                CheckIn3Timer.Interval = 1;
+                CheckIn3Timer.Tag = drop;
+                CheckIn3Timer.Start();
             }
 
-            startCheckIn3(drop);
-            CheckIn3Timer.Interval = 1;
-            CheckIn3Timer.Tag = drop;
-            CheckIn3Timer.Start();
+            
+            
             btnCheckIn3.Enabled = false;
         }
+
 
         private void btnCheckIn4_Click(object sender, EventArgs e)
         {
             DropOff drop = GetDropSelected(4);
             if (drop.UsedBy != 0)
             {
+                startCheckIn4(drop);
                 airport.DevideBetween2Checks(drop, 4, drop.UsedBy);
                 drop.UsedBy = 4;
+                comboBox4.Items.RemoveAt(drop.Number);
             }
             else
             {
+                startCheckIn4(drop);
                 drop.UsedBy = 4;
+                CheckIn4Timer.Interval = 1;
+                CheckIn4Timer.Tag = drop;
+                CheckIn4Timer.Start();
             }
 
-            startCheckIn4(drop);
-            CheckIn4Timer.Interval = 1;
-            CheckIn4Timer.Tag = drop;
-            CheckIn4Timer.Start();
             btnCheckIn4.Enabled = false;
         }
 

@@ -14,6 +14,7 @@ namespace Procp
         public int Count { get; set; }
         public int CurrentBag { get; set; }
         public int UsedBy { get; set; }
+        public List<Baggage> BagsArrived;
 
 
         public DropOff(int number, string name)
@@ -23,7 +24,10 @@ namespace Procp
             Count = 0;
             CurrentBag = 0;
             UsedBy = 0;
+            BagsArrived = new List<Baggage>();
         }
+
+
 
         public void PassBaggage(Baggage data)
         {
