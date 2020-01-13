@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
+    [Serializable]
     public class DropOff : Node
     {
         public int Number { get; set; }
@@ -26,12 +27,13 @@ namespace Procp
 
         public void PassBaggage(Baggage data)
         {
-            Console.WriteLine($"{this.Name} has proccessed the baggage Number: {this.baggage.Count}");
-            foreach (Baggage a in this.baggage)
-            {
-                Console.WriteLine(a.passenger.TicketId);
+            if (!(this.baggage.Contains(data))){
+                this.baggage.Add(data);
             }
             
+            Console.WriteLine("Dropoff: {0}, Number: {1}", this.Name, this.baggage.Count);
+
+
 
         }
 

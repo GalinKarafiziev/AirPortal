@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
-    class Ticket
+    [Serializable]
+    public class Ticket
     {
         public string FlightNr { get; set; }
         public Passenger cust;

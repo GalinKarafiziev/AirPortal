@@ -4,7 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,13 +22,19 @@ namespace Procp
         //array to be checked
         Random rnd = new Random();
         List<int> numbersList = new List<int>();
-
+        List<Baggage> serializedBaggages;
+        
         int nextDropD = 0;
 
 
         public Form1()
         {
             InitializeComponent();
+            serializedBaggages = new List<Baggage>();
+            airport = new Airport();
+            
+            
+            
         }
 
         //if checkin has more then 50bags try to make use of another checkin
@@ -1060,8 +1069,113 @@ namespace Procp
             btnCheckIn4.Enabled = false;
         }
 
+        public void Export()
+        {
+            Statistics statistics = new Statistics();
+            statistics.DropOff1Bags = lbBags1.Text;
+            statistics.DropOff1CheckIns = lbCheckIn1.Text;
+            statistics.DropOff1Passengers = lbPassenger1.Text;
+            statistics.DropOff2Bags = lbBags2.Text;
+            statistics.DropOff2CheckIns = lbCheckIn2.Text;
+            statistics.DropOff2Passengers = lbPassenger2.Text;
+            statistics.DropOff3Bags = lbBags3.Text;
+            statistics.DropOff3CheckIns = lbCheckIn3.Text;
+            statistics.DropOff3Passengers = lbPassenger3.Text;
 
 
+            string path = @"D:\Example.txt";
+
+            using (TextWriter tw = new StreamWriter(path))
+            {
+                tw.WriteLine("Drop off 1:");
+                tw.WriteLine("Bags {0}", statistics.DropOff1Bags);
+                tw.WriteLine("Check Ins started {0}", statistics.DropOff1CheckIns);
+                tw.WriteLine("Passengers for this drop off {0}", statistics.DropOff1Passengers);
+
+                tw.WriteLine("Drop off 2:");
+                tw.WriteLine("Bags {0}", statistics.DropOff2Bags);
+                tw.WriteLine("Check Ins started {0}", statistics.DropOff2CheckIns);
+                tw.WriteLine("Passengers for this drop off {0}", statistics.DropOff2Passengers);
+
+                tw.WriteLine("Drop off 3:");
+                tw.WriteLine("Bags {0}", statistics.DropOff3Bags);
+                tw.WriteLine("Check Ins started {0}", statistics.DropOff3CheckIns);
+                tw.WriteLine("Passengers for this drop off {0}", statistics.DropOff3Passengers);
+
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Export();
+        }
+
+        private void AddBaggages()
+        {
+
+
+            string path = @"D:\Example.binary";
+
+            IFormatter bf = new BinaryFormatter();
+            Stream fsout = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
+            try
+            {
+                using (fsout)
+                {
+                    bf.Serialize(fsout, airport.GetAllBags());
+                    MessageBox.Show("here");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+        }
+
+        private void DeserializeBaggages()
+        {
+            
+            string path = @"D:\Example.binary";
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fsout = new FileStream(path, FileMode.Open);
+            try
+            {
+                using(fsout)
+                {
+                    if(fsout.Length > 0)
+                    {
+
+                        List<Baggage> baggages = bf.Deserialize(fsout) as List<Baggage>;
+
+                        foreach(Baggage b in baggages)
+                        {
+                            airport.AddBag(b);
+                        }
+
+                        //airport.AddBag(baggage as Baggage);
+                        MessageBox.Show("done");
+                    }
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
+
+            fsout.Close();
+
+           
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            AddBaggages();
+        }
         //public CreateLinkList GetListUsingBagTimer(int timer)
         //{
         //    CreateLinkList c = null;
@@ -1069,5 +1183,17 @@ namespace Procp
 
         //    return c;
         //}
+
+
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            DeserializeBaggages();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            label15.Text = Convert.ToString(airport.GetAllBags().Count);
+        }
     }
 }

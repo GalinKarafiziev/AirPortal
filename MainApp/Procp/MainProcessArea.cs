@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
+    [Serializable]
     public class MainProcessArea : Node
     {
 

@@ -8,7 +8,7 @@ namespace Procp
 {
     public class LinkedList
     {
-        private Node first;
+        public Node first;
 
         public List<Baggage> getAllBags()
         {
@@ -78,16 +78,10 @@ namespace Procp
                     
 
                 }
-                if (current is MainProcessArea)
-                {
-                    (current as MainProcessArea).PassBaggage(data);
-                    
-
-                }
                 if (current is DropOff)
                 {
                     (current as DropOff).PassBaggage(data);
-                    current.baggage.Add(data);
+                    //current.baggage.Add(data);
                    
                 }
                 current = current.next;

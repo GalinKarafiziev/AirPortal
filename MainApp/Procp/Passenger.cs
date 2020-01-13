@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
+    [Serializable]
     public class Passenger
     {
         public string TicketId { get; set; }

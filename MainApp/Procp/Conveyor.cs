@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
+    [Serializable]
     public class Conveyor : Node
     {
         public DropOff DropOffGate { get; set; }
@@ -42,25 +43,31 @@ namespace Procp
         {
             if (data.DropOffGate == this.DropOffGate)
             {
-                if (!IsBroken)
-                {
+                
                     if (this.baggage != null)
                     {
-
-                        this.IsFree = true;
+                        //this.baggage.Add(data);
+                        //this.IsFree = true;
                         if (next != null)
                         {
-                            next.baggage.Add(data);
+                            //(next as Conveyor).PassBaggage(data);
+                            if(next is Conveyor)
+                            {
+                                (next as Conveyor).PassBaggage(data);
+                                this.baggage.Remove(data);
+                                Console.WriteLine("Conveyor: {0}, Number: {1}" ,this.Name, this.baggage.Count);
+                            }
+                            else if(next is DropOff)
+                            {
+                                (next as DropOff).PassBaggage(data);
+                                this.baggage.Remove(data);
+                                Console.WriteLine("Conveyor: {0}, Number: {1}", this.Name, this.baggage.Count);
+                            }
+                            
                         }
-                        //this.baggage.Remove(data);
-                        Console.WriteLine($"{this.Name} Number of baggages: {this.baggage.Count} has proccessed the baggage");
-                        //Console.WriteLine($"{this.Number}");
+                        
                     }
-                }
-                else
-                {
-                    Console.WriteLine("LEAN");
-                }
+                
 
 
             }

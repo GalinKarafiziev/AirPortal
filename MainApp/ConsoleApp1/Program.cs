@@ -15,36 +15,40 @@ namespace ConsoleApp1
             DropOff drop = new DropOff(5, "drop1");
             CheckIn check = new CheckIn(drop, "check1", 4);
             CheckIn check2 = new CheckIn(drop, "check2", 5);
-            Conveyor conveyor = new Conveyor(drop, "conv2");
-            Conveyor conveyor1 = new Conveyor(drop, "conv3");
-            Conveyor conveyor2 = new Conveyor(drop, "conv4");
-            Conveyor conveyor3 = new Conveyor(drop, "conv5");
+            Conveyor conveyorl = new Conveyor(drop, "convl");
+            Conveyor conveyorl1 = new Conveyor(drop, "convl1");
+            Conveyor conveyorb2 = new Conveyor(drop, "convb");
+            Conveyor conveyorb3 = new Conveyor(drop, "convb1");
             MainProcessArea mpa = new MainProcessArea("mpa1");
 
             LinkedList l = new LinkedList();
             LinkedList b = new LinkedList();
             l.AddLast(check);
-            l.AddLast(conveyor);
-            l.AddLast(mpa);
-            l.AddLast(conveyor1);
+            l.AddLast(conveyorl);
+            //l.AddLast(mpa);
+            l.AddLast(conveyorl1);
             l.AddLast(drop);
 
             b.AddLast(check2);
-            b.AddLast(conveyor2);
-            b.AddLast(mpa);
-            b.AddLast(conveyor3);
+            b.AddLast(conveyorb2);
+            //b.AddLast(mpa);
+            b.AddLast(conveyorb3);
             b.AddLast(drop);
 
             Airport airport = new Airport();
-            
 
-            
 
-            Baggage x = new Baggage(drop, 5, new Passenger("sdfdsf", drop));
-            Baggage xy = new Baggage(drop, 6, new Passenger("ssf", drop));
+
+
+            Baggage x = new Baggage(drop, 5, new Passenger("bag1", drop));
+            Baggage xy = new Baggage(drop, 6, new Passenger("bag2", drop));
             l.PassBaggage(x);
             b.PassBaggage(xy);
-            Console.WriteLine(drop.baggage.Count);
+            //Console.WriteLine(l.first.Name);
+            //Console.WriteLine(l.first.Name);
+
+            //l.printAllNodes();
+
             Console.ReadKey();
         }
     }

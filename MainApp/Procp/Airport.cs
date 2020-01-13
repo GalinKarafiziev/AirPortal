@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
+    [Serializable]
     public class Airport
     {
         List<CheckIn> checkIns = new List<CheckIn>();

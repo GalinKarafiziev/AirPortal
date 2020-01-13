@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
+    [Serializable]
     public class CheckIn : Node
     {
         public DropOff DestinationGate { get; set; }
@@ -21,18 +22,26 @@ namespace Procp
 
         public void PassBaggage(Baggage data)
         {
-            if (this.DestinationGate == data.DropOffGate)
+            if(next is Conveyor)
             {
-                this.IsFree = false;
-                this.baggage.Add(data);
-                this.IsFree = true;
-                if (next != null)
+
+                if (this.DestinationGate == data.DropOffGate)
                 {
-                    next.baggage.Add(data);
+                    this.IsFree = false;
+                    this.baggage.Add(data);
+                    this.IsFree = true;
+                    if (next != null)
+                    {
+                         (next as Conveyor).PassBaggage(data);
+                         this.baggage.Remove(data);
+                         Console.WriteLine("Conveyor: {0}, Number: {1}", this.Name, this.baggage.Count);
+                      
+                    }
+
+                    //Console.WriteLine($"{this.Name} {this.baggage.Count} has proccessed the baggage");
                 }
-                //this.baggage.Remove(data);
-                Console.WriteLine($"{this.Name} {this.baggage.Count} has proccessed the baggage");
             }
+           
         }
     }
 }

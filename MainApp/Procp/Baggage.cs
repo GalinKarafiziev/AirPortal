@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
-
+    [Serializable]
     public class Baggage
     {
         private Random random = new Random();

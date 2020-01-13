@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Procp
 {
+    [Serializable]
     public class CreateLinkList
     {
         public CheckIn CheckIn { get; set; }
