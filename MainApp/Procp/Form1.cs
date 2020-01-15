@@ -830,7 +830,6 @@ namespace Procp
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            airport = new Airport();
             mpa = new MainProcessArea("mpa1");
             btnStart.Enabled = false;
             DropOff drop = GetDropSelected(1);
@@ -1161,7 +1160,7 @@ namespace Procp
         private void AddBaggages()
         {
 
-            Airport airportExport = new Airport();
+            //Airport airportExport = new Airport();
             string path = @"D:\Example.binary";
 
             IFormatter bf = new BinaryFormatter();

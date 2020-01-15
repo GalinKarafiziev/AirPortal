@@ -37,20 +37,20 @@ namespace Procp
             };
 
             //random values for passengers
-            for (int i = 0; i < 100; i++)
-            {
-                Passengers.Add(new Passenger(i.ToString(), RandomDrop = DropOffs[rnd.Next(DropOffs.Count)]));
-                Baggage b = new Baggage(RandomDrop, i, Passengers[i]);
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    Passengers.Add(new Passenger(i.ToString(), RandomDrop = DropOffs[rnd.Next(DropOffs.Count)]));
+            //    Baggage b = new Baggage(RandomDrop, i, Passengers[i]);
 
-                string r = "";
+            //    string r = "";
 
-                for (int q = 0; q < 7; q++)
-                {
-                    r += nig.Next(0, 9).ToString();
-                }
-                b.BaggageId = "EIN" + r;
-                bags.Add(b);
-            }
+            //    for (int q = 0; q < 7; q++)
+            //    {
+            //        r += nig.Next(0, 9).ToString();
+            //    }
+            //    b.BaggageId = "EIN" + r;
+            //    bags.Add(b);
+            //}
         }
 
         public List<Baggage> GetAllBags()
@@ -98,7 +98,7 @@ namespace Procp
 
             foreach (Baggage b in bags)
             {
-                if (b.DropOffGate == d)
+                if (b.DropOffGate.Name == d.Name)
                 {
                     temp.Add(b);
                 }
