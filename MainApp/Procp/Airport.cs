@@ -18,7 +18,7 @@ namespace Procp
         //listOfCreatedLinkLists
         List<CreateLinkList> lists = new List<CreateLinkList>();
 
-        List<DropOff> DropOffs;
+        public List<DropOff> DropOffs;
         Random rnd = new Random();
         DropOff RandomDrop;
         Random nig = new Random();
@@ -69,6 +69,27 @@ namespace Procp
                 }
             }
             return dropy;
+        }
+
+        public List<Baggage> GenerateBaggages()
+        {
+            List<Baggage> temp = new List<Baggage>();
+            for (int i = 0; i < 100; i++)
+            {
+                Passengers.Add(new Passenger(i.ToString(), RandomDrop = DropOffs[rnd.Next(DropOffs.Count)]));
+                Baggage b = new Baggage(RandomDrop, i, Passengers[i]);
+
+                string r = "";
+
+                for (int q = 0; q < 7; q++)
+                {
+                    r += nig.Next(0, 9).ToString();
+                }
+                b.BaggageId = "EINM" + r;
+                temp.Add(b);
+            }
+
+            return temp;
         }
 
         public List<Baggage> getBagByDropOff(DropOff d)

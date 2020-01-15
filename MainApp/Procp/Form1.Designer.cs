@@ -115,22 +115,21 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.Location = new System.Drawing.Point(8, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 26);
+            this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.TabIndex = 4;
             this.label1.Text = "SEIZED";
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Blue;
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(13, 473);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(10, 384);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 36);
+            this.button2.Size = new System.Drawing.Size(77, 29);
             this.button2.TabIndex = 6;
             this.button2.Text = "Slow Down Conveyer";
             this.button2.UseVisualStyleBackColor = false;
@@ -139,12 +138,12 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(125, 474);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(94, 385);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 36);
+            this.button1.Size = new System.Drawing.Size(77, 29);
             this.button1.TabIndex = 7;
             this.button1.Text = "return speed";
             this.button1.UseVisualStyleBackColor = false;
@@ -153,12 +152,12 @@
             // btnCheckIn2
             // 
             this.btnCheckIn2.BackColor = System.Drawing.Color.Blue;
+            this.btnCheckIn2.Enabled = false;
             this.btnCheckIn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnCheckIn2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCheckIn2.Location = new System.Drawing.Point(13, 292);
-            this.btnCheckIn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckIn2.Location = new System.Drawing.Point(10, 237);
             this.btnCheckIn2.Name = "btnCheckIn2";
-            this.btnCheckIn2.Size = new System.Drawing.Size(217, 49);
+            this.btnCheckIn2.Size = new System.Drawing.Size(163, 40);
             this.btnCheckIn2.TabIndex = 12;
             this.btnCheckIn2.Text = "Open check in 2";
             this.btnCheckIn2.UseVisualStyleBackColor = false;
@@ -168,10 +167,9 @@
             // 
             this.lbDrop1.AutoSize = true;
             this.lbDrop1.BackColor = System.Drawing.Color.Transparent;
-            this.lbDrop1.Location = new System.Drawing.Point(263, 606);
-            this.lbDrop1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDrop1.Location = new System.Drawing.Point(197, 492);
             this.lbDrop1.Name = "lbDrop1";
-            this.lbDrop1.Size = new System.Drawing.Size(79, 17);
+            this.lbDrop1.Size = new System.Drawing.Size(61, 13);
             this.lbDrop1.TabIndex = 15;
             this.lbDrop1.Text = "DROP OFF";
             // 
@@ -179,10 +177,9 @@
             // 
             this.lbDrop2.AutoSize = true;
             this.lbDrop2.BackColor = System.Drawing.Color.Transparent;
-            this.lbDrop2.Location = new System.Drawing.Point(476, 606);
-            this.lbDrop2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDrop2.Location = new System.Drawing.Point(357, 492);
             this.lbDrop2.Name = "lbDrop2";
-            this.lbDrop2.Size = new System.Drawing.Size(79, 17);
+            this.lbDrop2.Size = new System.Drawing.Size(61, 13);
             this.lbDrop2.TabIndex = 21;
             this.lbDrop2.Text = "DROP OFF";
             // 
@@ -190,10 +187,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(263, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(197, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 17);
+            this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 22;
             this.label3.Text = "CHECK IN1";
             // 
@@ -201,10 +197,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(476, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(357, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 17);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 23;
             this.label4.Text = "CHECK IN2";
             // 
@@ -214,11 +209,11 @@
             this.groupBox1.Controls.Add(this.gbDropoff2);
             this.groupBox1.Controls.Add(this.gbDropoff1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1165, 14);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(874, 11);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(755, 354);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(566, 288);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistics";
@@ -231,11 +226,11 @@
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Location = new System.Drawing.Point(223, 198);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Location = new System.Drawing.Point(167, 161);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(304, 148);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(228, 120);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dropoff 3";
@@ -243,54 +238,60 @@
             // lbPassenger3
             // 
             this.lbPassenger3.AutoSize = true;
-            this.lbPassenger3.Location = new System.Drawing.Point(173, 114);
+            this.lbPassenger3.Location = new System.Drawing.Point(130, 93);
+            this.lbPassenger3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassenger3.Name = "lbPassenger3";
-            this.lbPassenger3.Size = new System.Drawing.Size(18, 20);
+            this.lbPassenger3.Size = new System.Drawing.Size(16, 17);
             this.lbPassenger3.TabIndex = 7;
             this.lbPassenger3.Text = "0";
             // 
             // lbCheckIn3
             // 
             this.lbCheckIn3.AutoSize = true;
-            this.lbCheckIn3.Location = new System.Drawing.Point(173, 76);
+            this.lbCheckIn3.Location = new System.Drawing.Point(130, 62);
+            this.lbCheckIn3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCheckIn3.Name = "lbCheckIn3";
-            this.lbCheckIn3.Size = new System.Drawing.Size(18, 20);
+            this.lbCheckIn3.Size = new System.Drawing.Size(16, 17);
             this.lbCheckIn3.TabIndex = 6;
             this.lbCheckIn3.Text = "0";
             // 
             // lbBags3
             // 
             this.lbBags3.AutoSize = true;
-            this.lbBags3.Location = new System.Drawing.Point(173, 38);
+            this.lbBags3.Location = new System.Drawing.Point(130, 31);
+            this.lbBags3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBags3.Name = "lbBags3";
-            this.lbBags3.Size = new System.Drawing.Size(18, 20);
+            this.lbBags3.Size = new System.Drawing.Size(16, 17);
             this.lbBags3.TabIndex = 5;
             this.lbBags3.Text = "0";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(5, 38);
+            this.label18.Location = new System.Drawing.Point(4, 31);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 20);
+            this.label18.Size = new System.Drawing.Size(89, 17);
             this.label18.TabIndex = 0;
             this.label18.Text = "Bags Arrived";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(5, 76);
+            this.label19.Location = new System.Drawing.Point(4, 62);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 20);
+            this.label19.Size = new System.Drawing.Size(73, 17);
             this.label19.TabIndex = 1;
             this.label19.Text = "Check In/s";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(5, 114);
+            this.label20.Location = new System.Drawing.Point(4, 93);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(98, 20);
+            this.label20.Size = new System.Drawing.Size(83, 17);
             this.label20.TabIndex = 2;
             this.label20.Text = "Passengers";
             // 
@@ -302,11 +303,11 @@
             this.gbDropoff2.Controls.Add(this.label11);
             this.gbDropoff2.Controls.Add(this.label13);
             this.gbDropoff2.Controls.Add(this.label14);
-            this.gbDropoff2.Location = new System.Drawing.Point(437, 46);
-            this.gbDropoff2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbDropoff2.Location = new System.Drawing.Point(328, 37);
+            this.gbDropoff2.Margin = new System.Windows.Forms.Padding(2);
             this.gbDropoff2.Name = "gbDropoff2";
-            this.gbDropoff2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbDropoff2.Size = new System.Drawing.Size(304, 148);
+            this.gbDropoff2.Padding = new System.Windows.Forms.Padding(2);
+            this.gbDropoff2.Size = new System.Drawing.Size(228, 120);
             this.gbDropoff2.TabIndex = 10;
             this.gbDropoff2.TabStop = false;
             this.gbDropoff2.Text = "Dropoff 2";
@@ -314,54 +315,60 @@
             // lbPassenger2
             // 
             this.lbPassenger2.AutoSize = true;
-            this.lbPassenger2.Location = new System.Drawing.Point(173, 114);
+            this.lbPassenger2.Location = new System.Drawing.Point(130, 93);
+            this.lbPassenger2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassenger2.Name = "lbPassenger2";
-            this.lbPassenger2.Size = new System.Drawing.Size(18, 20);
+            this.lbPassenger2.Size = new System.Drawing.Size(16, 17);
             this.lbPassenger2.TabIndex = 7;
             this.lbPassenger2.Text = "0";
             // 
             // lbCheckIn2
             // 
             this.lbCheckIn2.AutoSize = true;
-            this.lbCheckIn2.Location = new System.Drawing.Point(173, 76);
+            this.lbCheckIn2.Location = new System.Drawing.Point(130, 62);
+            this.lbCheckIn2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCheckIn2.Name = "lbCheckIn2";
-            this.lbCheckIn2.Size = new System.Drawing.Size(18, 20);
+            this.lbCheckIn2.Size = new System.Drawing.Size(16, 17);
             this.lbCheckIn2.TabIndex = 6;
             this.lbCheckIn2.Text = "0";
             // 
             // lbBags2
             // 
             this.lbBags2.AutoSize = true;
-            this.lbBags2.Location = new System.Drawing.Point(173, 38);
+            this.lbBags2.Location = new System.Drawing.Point(130, 31);
+            this.lbBags2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBags2.Name = "lbBags2";
-            this.lbBags2.Size = new System.Drawing.Size(18, 20);
+            this.lbBags2.Size = new System.Drawing.Size(16, 17);
             this.lbBags2.TabIndex = 5;
             this.lbBags2.Text = "0";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(5, 38);
+            this.label11.Location = new System.Drawing.Point(4, 31);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 20);
+            this.label11.Size = new System.Drawing.Size(89, 17);
             this.label11.TabIndex = 0;
             this.label11.Text = "Bags Arrived";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(5, 76);
+            this.label13.Location = new System.Drawing.Point(4, 62);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 20);
+            this.label13.Size = new System.Drawing.Size(73, 17);
             this.label13.TabIndex = 1;
             this.label13.Text = "Check In/s";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(5, 114);
+            this.label14.Location = new System.Drawing.Point(4, 93);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 20);
+            this.label14.Size = new System.Drawing.Size(83, 17);
             this.label14.TabIndex = 2;
             this.label14.Text = "Passengers";
             // 
@@ -373,11 +380,11 @@
             this.gbDropoff1.Controls.Add(this.label6);
             this.gbDropoff1.Controls.Add(this.label7);
             this.gbDropoff1.Controls.Add(this.Passengers);
-            this.gbDropoff1.Location = new System.Drawing.Point(19, 46);
-            this.gbDropoff1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbDropoff1.Location = new System.Drawing.Point(14, 37);
+            this.gbDropoff1.Margin = new System.Windows.Forms.Padding(2);
             this.gbDropoff1.Name = "gbDropoff1";
-            this.gbDropoff1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbDropoff1.Size = new System.Drawing.Size(304, 148);
+            this.gbDropoff1.Padding = new System.Windows.Forms.Padding(2);
+            this.gbDropoff1.Size = new System.Drawing.Size(228, 120);
             this.gbDropoff1.TabIndex = 4;
             this.gbDropoff1.TabStop = false;
             this.gbDropoff1.Text = "Dropoff 1";
@@ -385,75 +392,80 @@
             // lbPassenger1
             // 
             this.lbPassenger1.AutoSize = true;
-            this.lbPassenger1.Location = new System.Drawing.Point(173, 114);
+            this.lbPassenger1.Location = new System.Drawing.Point(130, 93);
+            this.lbPassenger1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassenger1.Name = "lbPassenger1";
-            this.lbPassenger1.Size = new System.Drawing.Size(18, 20);
+            this.lbPassenger1.Size = new System.Drawing.Size(16, 17);
             this.lbPassenger1.TabIndex = 7;
             this.lbPassenger1.Text = "0";
             // 
             // lbCheckIn1
             // 
             this.lbCheckIn1.AutoSize = true;
-            this.lbCheckIn1.Location = new System.Drawing.Point(173, 76);
+            this.lbCheckIn1.Location = new System.Drawing.Point(130, 62);
+            this.lbCheckIn1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCheckIn1.Name = "lbCheckIn1";
-            this.lbCheckIn1.Size = new System.Drawing.Size(18, 20);
+            this.lbCheckIn1.Size = new System.Drawing.Size(16, 17);
             this.lbCheckIn1.TabIndex = 6;
             this.lbCheckIn1.Text = "0";
             // 
             // lbBags1
             // 
             this.lbBags1.AutoSize = true;
-            this.lbBags1.Location = new System.Drawing.Point(173, 38);
+            this.lbBags1.Location = new System.Drawing.Point(130, 31);
+            this.lbBags1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBags1.Name = "lbBags1";
-            this.lbBags1.Size = new System.Drawing.Size(18, 20);
+            this.lbBags1.Size = new System.Drawing.Size(16, 17);
             this.lbBags1.TabIndex = 5;
             this.lbBags1.Text = "0";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 38);
+            this.label6.Location = new System.Drawing.Point(4, 31);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.Size = new System.Drawing.Size(89, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Bags Arrived";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 76);
+            this.label7.Location = new System.Drawing.Point(4, 62);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 20);
+            this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "Check In/s";
             // 
             // Passengers
             // 
             this.Passengers.AutoSize = true;
-            this.Passengers.Location = new System.Drawing.Point(5, 114);
+            this.Passengers.Location = new System.Drawing.Point(4, 93);
+            this.Passengers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Passengers.Name = "Passengers";
-            this.Passengers.Size = new System.Drawing.Size(98, 20);
+            this.Passengers.Size = new System.Drawing.Size(83, 17);
             this.Passengers.TabIndex = 2;
             this.Passengers.Text = "Passengers";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 59);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(12, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 27;
             // 
             // btnBreak
             // 
             this.btnBreak.BackColor = System.Drawing.Color.Blue;
+            this.btnBreak.Enabled = false;
             this.btnBreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnBreak.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBreak.Location = new System.Drawing.Point(13, 519);
-            this.btnBreak.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBreak.Location = new System.Drawing.Point(10, 422);
             this.btnBreak.Name = "btnBreak";
-            this.btnBreak.Size = new System.Drawing.Size(217, 36);
+            this.btnBreak.Size = new System.Drawing.Size(163, 29);
             this.btnBreak.TabIndex = 28;
             this.btnBreak.Text = "Break/Release Conveyors";
             this.btnBreak.UseVisualStyleBackColor = false;
@@ -468,11 +480,11 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(1288, 373);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(966, 303);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(351, 239);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(263, 194);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Selected Bag";
@@ -480,63 +492,70 @@
             // lbtimerS
             // 
             this.lbtimerS.AutoSize = true;
-            this.lbtimerS.Location = new System.Drawing.Point(261, 32);
+            this.lbtimerS.Location = new System.Drawing.Point(196, 26);
+            this.lbtimerS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbtimerS.Name = "lbtimerS";
-            this.lbtimerS.Size = new System.Drawing.Size(52, 17);
+            this.lbtimerS.Size = new System.Drawing.Size(41, 13);
             this.lbtimerS.TabIndex = 7;
             this.lbtimerS.Text = "Bag Id:";
             // 
             // lbBaggy
             // 
             this.lbBaggy.AutoSize = true;
-            this.lbBaggy.Location = new System.Drawing.Point(177, 65);
+            this.lbBaggy.Location = new System.Drawing.Point(133, 53);
+            this.lbBaggy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBaggy.Name = "lbBaggy";
-            this.lbBaggy.Size = new System.Drawing.Size(72, 17);
+            this.lbBaggy.Size = new System.Drawing.Size(56, 13);
             this.lbBaggy.TabIndex = 6;
             this.lbBaggy.Text = "SelectBag";
             // 
             // lbDropOffDes
             // 
             this.lbDropOffDes.AutoSize = true;
-            this.lbDropOffDes.Location = new System.Drawing.Point(181, 154);
+            this.lbDropOffDes.Location = new System.Drawing.Point(136, 125);
+            this.lbDropOffDes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDropOffDes.Name = "lbDropOffDes";
-            this.lbDropOffDes.Size = new System.Drawing.Size(72, 17);
+            this.lbDropOffDes.Size = new System.Drawing.Size(56, 13);
             this.lbDropOffDes.TabIndex = 4;
             this.lbDropOffDes.Text = "SelectBag";
             // 
             // lbTicketId
             // 
             this.lbTicketId.AutoSize = true;
-            this.lbTicketId.Location = new System.Drawing.Point(181, 110);
+            this.lbTicketId.Location = new System.Drawing.Point(136, 89);
+            this.lbTicketId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTicketId.Name = "lbTicketId";
-            this.lbTicketId.Size = new System.Drawing.Size(72, 17);
+            this.lbTicketId.Size = new System.Drawing.Size(56, 13);
             this.lbTicketId.TabIndex = 3;
             this.lbTicketId.Text = "SelectBag";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 154);
+            this.label10.Location = new System.Drawing.Point(12, 125);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(146, 17);
+            this.label10.Size = new System.Drawing.Size(110, 13);
             this.label10.TabIndex = 2;
             this.label10.Text = "Destanation Drop Off:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 110);
+            this.label9.Location = new System.Drawing.Point(12, 89);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 17);
+            this.label9.Size = new System.Drawing.Size(107, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "Passenger Ticket ID:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 65);
+            this.label8.Location = new System.Drawing.Point(12, 53);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 17);
+            this.label8.Size = new System.Drawing.Size(41, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Bag Id:";
             // 
@@ -544,10 +563,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(689, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(517, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 30;
             this.label2.Text = "CHECK IN3";
             // 
@@ -555,10 +573,9 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(903, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(677, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 17);
+            this.label12.Size = new System.Drawing.Size(63, 13);
             this.label12.TabIndex = 31;
             this.label12.Text = "CHECK IN4";
             // 
@@ -566,10 +583,9 @@
             // 
             this.lbDrop3.AutoSize = true;
             this.lbDrop3.BackColor = System.Drawing.Color.Transparent;
-            this.lbDrop3.Location = new System.Drawing.Point(689, 606);
-            this.lbDrop3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDrop3.Location = new System.Drawing.Point(517, 492);
             this.lbDrop3.Name = "lbDrop3";
-            this.lbDrop3.Size = new System.Drawing.Size(79, 17);
+            this.lbDrop3.Size = new System.Drawing.Size(61, 13);
             this.lbDrop3.TabIndex = 32;
             this.lbDrop3.Text = "DROP OFF";
             // 
@@ -580,12 +596,10 @@
             "dropoff1",
             "dropoff2",
             "dropoff3"});
-            this.comboBox2.Location = new System.Drawing.Point(372, 11);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Location = new System.Drawing.Point(279, 9);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(80, 24);
+            this.comboBox2.Size = new System.Drawing.Size(61, 21);
             this.comboBox2.TabIndex = 42;
-            this.comboBox2.Text = "dropoff1";
             // 
             // comboBox3
             // 
@@ -594,12 +608,10 @@
             "dropoff1",
             "dropoff2",
             "dropoff3"});
-            this.comboBox3.Location = new System.Drawing.Point(587, 11);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Location = new System.Drawing.Point(440, 9);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(80, 24);
+            this.comboBox3.Size = new System.Drawing.Size(61, 21);
             this.comboBox3.TabIndex = 43;
-            this.comboBox3.Text = "dropoff1";
             // 
             // comboBox4
             // 
@@ -608,21 +620,18 @@
             "dropoff1",
             "dropoff2",
             "dropoff3"});
-            this.comboBox4.Location = new System.Drawing.Point(799, 11);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox4.Location = new System.Drawing.Point(599, 9);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(80, 24);
+            this.comboBox4.Size = new System.Drawing.Size(61, 21);
             this.comboBox4.TabIndex = 44;
-            this.comboBox4.Text = "dropoff1";
             // 
             // lbDrop4
             // 
             this.lbDrop4.AutoSize = true;
             this.lbDrop4.BackColor = System.Drawing.Color.Transparent;
-            this.lbDrop4.Location = new System.Drawing.Point(903, 606);
-            this.lbDrop4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDrop4.Location = new System.Drawing.Point(677, 492);
             this.lbDrop4.Name = "lbDrop4";
-            this.lbDrop4.Size = new System.Drawing.Size(79, 17);
+            this.lbDrop4.Size = new System.Drawing.Size(61, 13);
             this.lbDrop4.TabIndex = 45;
             this.lbDrop4.Text = "DROP OFF";
             // 
@@ -631,10 +640,9 @@
             this.btnStart.BackColor = System.Drawing.Color.Blue;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnStart.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnStart.Location = new System.Drawing.Point(16, 198);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStart.Location = new System.Drawing.Point(12, 161);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(216, 75);
+            this.btnStart.Size = new System.Drawing.Size(162, 61);
             this.btnStart.TabIndex = 46;
             this.btnStart.Text = "Start Simulation And Check In 1";
             this.btnStart.UseVisualStyleBackColor = false;
@@ -647,22 +655,20 @@
             "dropoff1",
             "dropoff2",
             "dropoff3"});
-            this.comboBox1.Location = new System.Drawing.Point(163, 11);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(122, 9);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(80, 24);
+            this.comboBox1.Size = new System.Drawing.Size(61, 21);
             this.comboBox1.TabIndex = 47;
-            this.comboBox1.Text = "dropoff1";
             // 
             // btnCheckIn3
             // 
             this.btnCheckIn3.BackColor = System.Drawing.Color.Blue;
+            this.btnCheckIn3.Enabled = false;
             this.btnCheckIn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnCheckIn3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCheckIn3.Location = new System.Drawing.Point(16, 354);
-            this.btnCheckIn3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckIn3.Location = new System.Drawing.Point(12, 288);
             this.btnCheckIn3.Name = "btnCheckIn3";
-            this.btnCheckIn3.Size = new System.Drawing.Size(217, 49);
+            this.btnCheckIn3.Size = new System.Drawing.Size(163, 40);
             this.btnCheckIn3.TabIndex = 48;
             this.btnCheckIn3.Text = "Open check in 3";
             this.btnCheckIn3.UseVisualStyleBackColor = false;
@@ -671,12 +677,12 @@
             // btnCheckIn4
             // 
             this.btnCheckIn4.BackColor = System.Drawing.Color.Blue;
+            this.btnCheckIn4.Enabled = false;
             this.btnCheckIn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnCheckIn4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCheckIn4.Location = new System.Drawing.Point(16, 416);
-            this.btnCheckIn4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckIn4.Location = new System.Drawing.Point(12, 338);
             this.btnCheckIn4.Name = "btnCheckIn4";
-            this.btnCheckIn4.Size = new System.Drawing.Size(217, 49);
+            this.btnCheckIn4.Size = new System.Drawing.Size(163, 40);
             this.btnCheckIn4.TabIndex = 49;
             this.btnCheckIn4.Text = "Open check in 4";
             this.btnCheckIn4.UseVisualStyleBackColor = false;
@@ -694,10 +700,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1697, 393);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(1273, 319);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 50;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
@@ -705,10 +710,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1697, 432);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(1273, 351);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 28);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 51;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
@@ -716,10 +720,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1697, 473);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Location = new System.Drawing.Point(1273, 384);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 28);
+            this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 52;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
@@ -728,19 +731,17 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1715, 551);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(1286, 448);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 17);
+            this.label15.Size = new System.Drawing.Size(41, 13);
             this.label15.TabIndex = 53;
             this.label15.Text = "label15";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1697, 508);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Location = new System.Drawing.Point(1273, 413);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 28);
+            this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 54;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
@@ -748,10 +749,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1924, 670);
+            this.ClientSize = new System.Drawing.Size(1443, 544);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button5);
@@ -780,7 +781,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);

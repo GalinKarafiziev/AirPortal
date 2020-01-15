@@ -32,7 +32,7 @@ namespace Procp
             InitializeComponent();
             serializedBaggages = new List<Baggage>();
             airport = new Airport();
-            
+            UpdateComboBoxes();
             
             
         }
@@ -71,7 +71,7 @@ namespace Procp
                     //btnCheckIn2.Enabled = false;
                     //comboBox2.Enabled = false;
                     //lbDrop2.Text = d.Name;
-                    removeDropFromComboBoxs(d.Number);
+                    //removeDropFromComboBoxs(d.Number);
 
                     airport.DevideBetween2Checks(d, checkInNum, 2);
 
@@ -233,6 +233,7 @@ namespace Procp
 
         public void startCheckIn1(DropOff dr)
         {
+            UpdateComboBoxes();
             CreateCheckIn1(dr);
             airport.AssignTimerToBags(1, dr);
             //CheckIn checkIn1;
@@ -263,6 +264,7 @@ namespace Procp
         }
         public void startCheckIn3(DropOff dr)
         {
+            UpdateComboBoxes();
             CreateCheckIn3(dr);
             airport.AssignTimerToBags(3, dr);
             //CheckIn checkIn3 = new CheckIn(dr, "checkIn3", 3);
@@ -292,6 +294,7 @@ namespace Procp
 
         public void startCheckIn2(DropOff dr)
         {
+            UpdateComboBoxes();
             CreateCheckIn2(dr);
             airport.AssignTimerToBags(2,dr);
             //CheckIn checkIn2;
@@ -317,6 +320,7 @@ namespace Procp
 
         public void startCheckIn4(DropOff dr)
         {
+            UpdateComboBoxes();
             CreateCheckIn4(dr);
             airport.AssignTimerToBags(4, dr);
             //CheckIn checkIn4 = new CheckIn(dr, "checkIn4", 4);
@@ -463,6 +467,30 @@ namespace Procp
             }
         }
 
+        public void UpdateComboBoxes()
+        {
+
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
+
+            foreach(DropOff a in airport.DropOffs)
+            {
+                comboBox1.Items.Add(a.Name);
+                comboBox2.Items.Add(a.Name);
+                comboBox3.Items.Add(a.Name);
+                comboBox4.Items.Add(a.Name);
+            }
+          
+            
+
+            
+           
+
+            
+            
+        }
 
         private void CheckIn1_Tick(object sender, EventArgs e)
         {
@@ -537,7 +565,7 @@ namespace Procp
 
         private void btnCheckIn2_Click(object sender, EventArgs e)
         {
-
+            UpdateComboBoxes();
             DropOff drop = GetDropSelected(2);
             if (drop.UsedBy != 0)
             {
@@ -808,6 +836,12 @@ namespace Procp
             DropOff drop = GetDropSelected(1);
             drop.UsedBy = 1;
             startCheckIn1(drop);
+            btnCheckIn2.Enabled = true;
+            btnCheckIn3.Enabled = true;
+            btnBreak.Enabled = true;
+            btnCheckIn4.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
 
         }
 
@@ -879,15 +913,15 @@ namespace Procp
             }
 
             //after gitting which combox now which drop 1||2||3
-            if (cb.Text == "dropoff1")
+            if (cb.Text == "drop1")
             {
                 d = airport.getDrop("drop1");
             }
-            else if (cb.Text == "dropoff2")
+            else if (cb.Text == "drop2")
             {
                 d = airport.getDrop("drop2");
             }
-            else if (cb.Text == "dropoff3")
+            else if (cb.Text == "drop3")
             {
                 d = airport.getDrop("drop3");
             }
@@ -1036,13 +1070,14 @@ namespace Procp
 
         private void btnCheckIn3_Click_1(object sender, EventArgs e)
         {
+            UpdateComboBoxes();
             DropOff drop = GetDropSelected(3);
             if (drop.UsedBy != 0)
             {
                 startCheckIn3(drop);
                 airport.DevideBetween2Checks(drop, 3, drop.UsedBy);
                 drop.UsedBy = 3;
-                comboBox3.Items.RemoveAt(drop.Number);
+                //comboBox3.Items.RemoveAt(drop.Number);
             }
             else
             {
@@ -1061,13 +1096,14 @@ namespace Procp
 
         private void btnCheckIn4_Click(object sender, EventArgs e)
         {
+            UpdateComboBoxes();
             DropOff drop = GetDropSelected(4);
             if (drop.UsedBy != 0)
             {
                 startCheckIn4(drop);
                 airport.DevideBetween2Checks(drop, 4, drop.UsedBy);
                 drop.UsedBy = 4;
-                comboBox4.Items.RemoveAt(drop.Number);
+                //comboBox4.Items.RemoveAt(drop.Number);
             }
             else
             {
@@ -1125,7 +1161,7 @@ namespace Procp
         private void AddBaggages()
         {
 
-
+            Airport airportExport = new Airport();
             string path = @"D:\Example.binary";
 
             IFormatter bf = new BinaryFormatter();
@@ -1134,7 +1170,8 @@ namespace Procp
             {
                 using (fsout)
                 {
-                    bf.Serialize(fsout, airport.GetAllBags());
+                    bf.Serialize(fsout, airport.GenerateBaggages());
+                    
                     MessageBox.Show("here");
                 }
             }catch(Exception ex)
@@ -1160,12 +1197,26 @@ namespace Procp
                     {
 
                         List<Baggage> baggages = bf.Deserialize(fsout) as List<Baggage>;
+                        //List<Passenger> passengers = bf.Deserialize(fsout) as List<Passenger>;
+
+                       
 
                         foreach(Baggage b in baggages)
                         {
                             airport.AddBag(b);
                         }
+                        foreach(Baggage a in airport.GetAllBags())
+                        {
+                            Console.WriteLine(a.BaggageId);
+                            Console.WriteLine(a.DropOffGate.Name);
+                            
+                        }
 
+                        foreach(DropOff d in airport.DropOffs)
+                        {
+                            Debug.WriteLine(airport.getBagByDropOff(d).Count);
+                            
+                        }
                         //airport.AddBag(baggage as Baggage);
                         MessageBox.Show("done");
                     }
