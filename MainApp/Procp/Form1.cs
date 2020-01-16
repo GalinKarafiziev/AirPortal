@@ -1161,7 +1161,7 @@ namespace Procp
         {
 
             //Airport airportExport = new Airport();
-            string path = @"D:\Example.binary";
+            string path = @"C:\Example.binary";
 
             IFormatter bf = new BinaryFormatter();
             Stream fsout = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
@@ -1185,7 +1185,7 @@ namespace Procp
         private void DeserializeBaggages()
         {
             
-            string path = @"D:\Example.binary";
+            string path = @"C:\Example.binary";
             BinaryFormatter bf = new BinaryFormatter();
             FileStream fsout = new FileStream(path, FileMode.Open);
             try

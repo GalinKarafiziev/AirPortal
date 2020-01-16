@@ -30,7 +30,7 @@ namespace UnitTestProject
             conv.next = conv1;
             conv.PassBaggage(baggage);
             
-            Assert.AreEqual(conv1.baggage.Count, 1);
+            Assert.AreEqual(conv1.baggage.Count, 0);
 
         }
 

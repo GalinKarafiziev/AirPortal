@@ -700,31 +700,31 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1273, 319);
+            this.button3.Location = new System.Drawing.Point(1245, 319);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(103, 23);
             this.button3.TabIndex = 50;
-            this.button3.Text = "button3";
+            this.button3.Text = "Export statistics";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1273, 351);
+            this.button4.Location = new System.Drawing.Point(1245, 351);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(103, 23);
             this.button4.TabIndex = 51;
-            this.button4.Text = "button4";
+            this.button4.Text = "Export example baggages";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1273, 384);
+            this.button5.Location = new System.Drawing.Point(1245, 384);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(103, 23);
             this.button5.TabIndex = 52;
-            this.button5.Text = "button5";
+            this.button5.Text = "Import baggage";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
@@ -739,11 +739,11 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1273, 413);
+            this.button6.Location = new System.Drawing.Point(1245, 413);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(103, 23);
             this.button6.TabIndex = 54;
-            this.button6.Text = "button6";
+            this.button6.Text = "Get total amount";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
