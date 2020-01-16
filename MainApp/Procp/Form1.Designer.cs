@@ -123,10 +123,10 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Blue;
+            this.button2.BackColor = System.Drawing.Color.DarkTurquoise;
             this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button2.Location = new System.Drawing.Point(10, 384);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(77, 29);
@@ -137,10 +137,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.BackColor = System.Drawing.Color.DarkTurquoise;
             this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.Location = new System.Drawing.Point(94, 385);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 29);
@@ -151,13 +151,13 @@
             // 
             // btnCheckIn2
             // 
-            this.btnCheckIn2.BackColor = System.Drawing.Color.Blue;
+            this.btnCheckIn2.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnCheckIn2.Enabled = false;
-            this.btnCheckIn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnCheckIn2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCheckIn2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCheckIn2.Location = new System.Drawing.Point(10, 237);
             this.btnCheckIn2.Name = "btnCheckIn2";
-            this.btnCheckIn2.Size = new System.Drawing.Size(163, 40);
+            this.btnCheckIn2.Size = new System.Drawing.Size(173, 40);
             this.btnCheckIn2.TabIndex = 12;
             this.btnCheckIn2.Text = "Open check in 2";
             this.btnCheckIn2.UseVisualStyleBackColor = false;
@@ -167,9 +167,10 @@
             // 
             this.lbDrop1.AutoSize = true;
             this.lbDrop1.BackColor = System.Drawing.Color.Transparent;
+            this.lbDrop1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.lbDrop1.Location = new System.Drawing.Point(197, 492);
             this.lbDrop1.Name = "lbDrop1";
-            this.lbDrop1.Size = new System.Drawing.Size(61, 13);
+            this.lbDrop1.Size = new System.Drawing.Size(69, 13);
             this.lbDrop1.TabIndex = 15;
             this.lbDrop1.Text = "DROP OFF";
             // 
@@ -177,9 +178,10 @@
             // 
             this.lbDrop2.AutoSize = true;
             this.lbDrop2.BackColor = System.Drawing.Color.Transparent;
+            this.lbDrop2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.lbDrop2.Location = new System.Drawing.Point(357, 492);
             this.lbDrop2.Name = "lbDrop2";
-            this.lbDrop2.Size = new System.Drawing.Size(61, 13);
+            this.lbDrop2.Size = new System.Drawing.Size(69, 13);
             this.lbDrop2.TabIndex = 21;
             this.lbDrop2.Text = "DROP OFF";
             // 
@@ -187,21 +189,23 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(197, 0);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label3.Location = new System.Drawing.Point(189, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(83, 15);
             this.label3.TabIndex = 22;
-            this.label3.Text = "CHECK IN1";
+            this.label3.Text = "CHECK IN 1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(357, 0);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label4.Location = new System.Drawing.Point(346, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(83, 15);
             this.label4.TabIndex = 23;
-            this.label4.Text = "CHECK IN2";
+            this.label4.Text = "CHECK IN 2";
             // 
             // groupBox1
             // 
@@ -209,6 +213,7 @@
             this.groupBox1.Controls.Add(this.gbDropoff2);
             this.groupBox1.Controls.Add(this.gbDropoff1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(874, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -217,6 +222,7 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistics";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox3
             // 
@@ -238,6 +244,7 @@
             // lbPassenger3
             // 
             this.lbPassenger3.AutoSize = true;
+            this.lbPassenger3.ForeColor = System.Drawing.Color.Blue;
             this.lbPassenger3.Location = new System.Drawing.Point(130, 93);
             this.lbPassenger3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassenger3.Name = "lbPassenger3";
@@ -248,6 +255,7 @@
             // lbCheckIn3
             // 
             this.lbCheckIn3.AutoSize = true;
+            this.lbCheckIn3.ForeColor = System.Drawing.Color.Blue;
             this.lbCheckIn3.Location = new System.Drawing.Point(130, 62);
             this.lbCheckIn3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCheckIn3.Name = "lbCheckIn3";
@@ -258,6 +266,7 @@
             // lbBags3
             // 
             this.lbBags3.AutoSize = true;
+            this.lbBags3.ForeColor = System.Drawing.Color.Blue;
             this.lbBags3.Location = new System.Drawing.Point(130, 31);
             this.lbBags3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBags3.Name = "lbBags3";
@@ -268,6 +277,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.Black;
             this.label18.Location = new System.Drawing.Point(4, 31);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
@@ -278,6 +288,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.Black;
             this.label19.Location = new System.Drawing.Point(4, 62);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
@@ -288,6 +299,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Black;
             this.label20.Location = new System.Drawing.Point(4, 93);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
@@ -315,6 +327,7 @@
             // lbPassenger2
             // 
             this.lbPassenger2.AutoSize = true;
+            this.lbPassenger2.ForeColor = System.Drawing.Color.Blue;
             this.lbPassenger2.Location = new System.Drawing.Point(130, 93);
             this.lbPassenger2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassenger2.Name = "lbPassenger2";
@@ -325,6 +338,7 @@
             // lbCheckIn2
             // 
             this.lbCheckIn2.AutoSize = true;
+            this.lbCheckIn2.ForeColor = System.Drawing.Color.Blue;
             this.lbCheckIn2.Location = new System.Drawing.Point(130, 62);
             this.lbCheckIn2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCheckIn2.Name = "lbCheckIn2";
@@ -335,6 +349,7 @@
             // lbBags2
             // 
             this.lbBags2.AutoSize = true;
+            this.lbBags2.ForeColor = System.Drawing.Color.Blue;
             this.lbBags2.Location = new System.Drawing.Point(130, 31);
             this.lbBags2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBags2.Name = "lbBags2";
@@ -345,6 +360,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(4, 31);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
@@ -355,6 +371,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(4, 62);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
@@ -365,6 +382,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(4, 93);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
@@ -392,6 +410,7 @@
             // lbPassenger1
             // 
             this.lbPassenger1.AutoSize = true;
+            this.lbPassenger1.ForeColor = System.Drawing.Color.Blue;
             this.lbPassenger1.Location = new System.Drawing.Point(130, 93);
             this.lbPassenger1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassenger1.Name = "lbPassenger1";
@@ -402,6 +421,7 @@
             // lbCheckIn1
             // 
             this.lbCheckIn1.AutoSize = true;
+            this.lbCheckIn1.ForeColor = System.Drawing.Color.Blue;
             this.lbCheckIn1.Location = new System.Drawing.Point(130, 62);
             this.lbCheckIn1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCheckIn1.Name = "lbCheckIn1";
@@ -412,6 +432,7 @@
             // lbBags1
             // 
             this.lbBags1.AutoSize = true;
+            this.lbBags1.ForeColor = System.Drawing.Color.Blue;
             this.lbBags1.Location = new System.Drawing.Point(130, 31);
             this.lbBags1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBags1.Name = "lbBags1";
@@ -422,6 +443,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(4, 31);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
@@ -432,6 +454,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(4, 62);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
@@ -442,6 +465,7 @@
             // Passengers
             // 
             this.Passengers.AutoSize = true;
+            this.Passengers.ForeColor = System.Drawing.Color.Black;
             this.Passengers.Location = new System.Drawing.Point(4, 93);
             this.Passengers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Passengers.Name = "Passengers";
@@ -459,10 +483,10 @@
             // 
             // btnBreak
             // 
-            this.btnBreak.BackColor = System.Drawing.Color.Blue;
+            this.btnBreak.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnBreak.Enabled = false;
-            this.btnBreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnBreak.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBreak.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBreak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnBreak.Location = new System.Drawing.Point(10, 422);
             this.btnBreak.Name = "btnBreak";
             this.btnBreak.Size = new System.Drawing.Size(163, 29);
@@ -480,6 +504,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(966, 303);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -563,29 +588,32 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(517, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label2.Location = new System.Drawing.Point(507, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(83, 15);
             this.label2.TabIndex = 30;
-            this.label2.Text = "CHECK IN3";
+            this.label2.Text = "CHECK IN 3";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(677, 0);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label12.Location = new System.Drawing.Point(666, 11);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 13);
+            this.label12.Size = new System.Drawing.Size(83, 15);
             this.label12.TabIndex = 31;
-            this.label12.Text = "CHECK IN4";
+            this.label12.Text = "CHECK IN 4";
             // 
             // lbDrop3
             // 
             this.lbDrop3.AutoSize = true;
             this.lbDrop3.BackColor = System.Drawing.Color.Transparent;
+            this.lbDrop3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.lbDrop3.Location = new System.Drawing.Point(517, 492);
             this.lbDrop3.Name = "lbDrop3";
-            this.lbDrop3.Size = new System.Drawing.Size(61, 13);
+            this.lbDrop3.Size = new System.Drawing.Size(69, 13);
             this.lbDrop3.TabIndex = 32;
             this.lbDrop3.Text = "DROP OFF";
             // 
@@ -629,20 +657,21 @@
             // 
             this.lbDrop4.AutoSize = true;
             this.lbDrop4.BackColor = System.Drawing.Color.Transparent;
+            this.lbDrop4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.lbDrop4.Location = new System.Drawing.Point(677, 492);
             this.lbDrop4.Name = "lbDrop4";
-            this.lbDrop4.Size = new System.Drawing.Size(61, 13);
+            this.lbDrop4.Size = new System.Drawing.Size(69, 13);
             this.lbDrop4.TabIndex = 45;
             this.lbDrop4.Text = "DROP OFF";
             // 
             // btnStart
             // 
-            this.btnStart.BackColor = System.Drawing.Color.Blue;
-            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnStart.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnStart.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnStart.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnStart.Location = new System.Drawing.Point(12, 161);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(162, 61);
+            this.btnStart.Size = new System.Drawing.Size(171, 61);
             this.btnStart.TabIndex = 46;
             this.btnStart.Text = "Start Simulation And Check In 1";
             this.btnStart.UseVisualStyleBackColor = false;
@@ -662,13 +691,13 @@
             // 
             // btnCheckIn3
             // 
-            this.btnCheckIn3.BackColor = System.Drawing.Color.Blue;
+            this.btnCheckIn3.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnCheckIn3.Enabled = false;
-            this.btnCheckIn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnCheckIn3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCheckIn3.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCheckIn3.Location = new System.Drawing.Point(12, 288);
             this.btnCheckIn3.Name = "btnCheckIn3";
-            this.btnCheckIn3.Size = new System.Drawing.Size(163, 40);
+            this.btnCheckIn3.Size = new System.Drawing.Size(171, 40);
             this.btnCheckIn3.TabIndex = 48;
             this.btnCheckIn3.Text = "Open check in 3";
             this.btnCheckIn3.UseVisualStyleBackColor = false;
@@ -676,13 +705,13 @@
             // 
             // btnCheckIn4
             // 
-            this.btnCheckIn4.BackColor = System.Drawing.Color.Blue;
+            this.btnCheckIn4.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnCheckIn4.Enabled = false;
-            this.btnCheckIn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.btnCheckIn4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCheckIn4.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCheckIn4.Location = new System.Drawing.Point(12, 338);
             this.btnCheckIn4.Name = "btnCheckIn4";
-            this.btnCheckIn4.Size = new System.Drawing.Size(163, 40);
+            this.btnCheckIn4.Size = new System.Drawing.Size(171, 40);
             this.btnCheckIn4.TabIndex = 49;
             this.btnCheckIn4.Text = "Open check in 4";
             this.btnCheckIn4.UseVisualStyleBackColor = false;
@@ -751,8 +780,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1443, 544);
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.ClientSize = new System.Drawing.Size(1370, 544);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button5);
@@ -783,6 +812,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

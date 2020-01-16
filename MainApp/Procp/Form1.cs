@@ -681,7 +681,7 @@ namespace Procp
             Pen myWhitePen = new Pen(Color.White);
 
             SolidBrush myBlackBrush = new SolidBrush(Color.Black); // Brush: Paints the interior of a shape
-            SolidBrush myBlueBrush = new SolidBrush(Color.MediumAquamarine);// Brush: Paints the interior of a shape
+            SolidBrush myBlueBrush = new SolidBrush(Color.DarkTurquoise);// Brush: Paints the interior of a shape
             SolidBrush myGrayBrush = new SolidBrush(Color.DarkRed);
             SolidBrush myWhiteBrush = new SolidBrush(Color.White);
 
@@ -1161,7 +1161,7 @@ namespace Procp
         {
 
             //Airport airportExport = new Airport();
-            string path = @"C:\Example.binary";
+            string path = @"D:\Example.binary";
 
             IFormatter bf = new BinaryFormatter();
             Stream fsout = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
@@ -1185,7 +1185,7 @@ namespace Procp
         private void DeserializeBaggages()
         {
             
-            string path = @"C:\Example.binary";
+            string path = @"D:\Example.binary";
             BinaryFormatter bf = new BinaryFormatter();
             FileStream fsout = new FileStream(path, FileMode.Open);
             try
@@ -1256,6 +1256,16 @@ namespace Procp
         private void Button6_Click(object sender, EventArgs e)
         {
             label15.Text = Convert.ToString(airport.GetAllBags().Count);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
